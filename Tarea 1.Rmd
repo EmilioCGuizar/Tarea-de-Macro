@@ -37,11 +37,53 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.align=
 
 # Preguntas teóricas
 
+**1. Resuelva los ejercicios 11.2 y 11.9 (5a Ed.). Realice estos con ayuda de su 
+laboratorista y entregue las soluciones a máquina, utilizando LaTeX.**
+
 # Ejercicios prácticos
 
+```{r}
+pacman::p_load(tidyverse,
+               ggthemes,
+               haven, readxl,
+               kableExtra,
+               cowplot, ggplot2, scales, viridis, latticeExtra,
+               knitr, tinytex, reshape, lubridate, scales)
+```
 
 
+**2. Estudie el mercado laboral en México siguiendo estos pasos:**
 
+  + Obtenga del INEGI una serie anual de los salarios (en términos reales) en México, 
+  calcule la serie de su tasa de cambio anual, calcule la volatilidad de dicha serie. (Serie 1)
+
+```{r echo=TRUE} 
+#Cambio Porcentual
+
+empleo <- read_excel("/Users/emilio/Documents/GitHub/Tarea-de-Macro/Empleo.xls",
+                     sheet = 1) 
+
+empleo <- empleo %>% mutate(Serie2 = (`PEA Ocupada`/lag(`PEA Ocupada`)-1)*100)
+
+#Volatilidad
+
+Serie2 <- empleo$Serie2
+vol_s2 <- sd(Serie2, na.rm = T)
+vol_s2
+```
+
+  + Obtenga del INEGI una serie anual del empleo total en México, calcule la 
+  serie de su tasa de cambio anual, calcule la volatilidad de dicha serie. (Serie 2)
+  
+  + Obtenga del INEGI una serie anual del producto interno bruto en términos 
+  reales, calcule su tasa de cambio anual, calcule su volatilidad. (Serie 3)
+  
+  + Grafique las tres series de tasas de cambios de forma que se puedan comparar.
+  
+  + Calcule la covarianza de la serie 1 con la 3 y de la 2 con la 3.
+  
+  + Explique si sus resultados son o no consistentes con los hechos estilizados
+  para EEUU que se discutieron en clase.
 
 
 
