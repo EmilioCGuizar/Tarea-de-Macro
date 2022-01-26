@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.1.24)  24 JAN 2022 20:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.1.24)  25 JAN 2022 19:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -616,15 +616,15 @@ LaTeX Info: Redefining \% on input line 1.
 \openout7 = `Tarea-1.lot'.
 
 [2]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 179.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 183.
 (/Users/emilio/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 185.
+(Font)              <10> on input line 189.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 185.
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 185.
+(Font)              <7> on input line 189.
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 189.
 (/Users/emilio/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [3] (./Tarea-1.aux
@@ -643,7 +643,7 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  60i,12n,63p,592b,381s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/emilio/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/Users/emilio/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on Tarea-1.pdf (3 pages, 215234 bytes).
+Output written on Tarea-1.pdf (3 pages, 216038 bytes).
 PDF statistics:
  100 PDF objects out of 1000 (max. 8388607)
  75 compressed objects within 1 object stream
