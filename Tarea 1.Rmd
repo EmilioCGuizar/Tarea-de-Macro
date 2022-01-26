@@ -41,7 +41,7 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.align=
 
 **linea dos pa ver si no estoy wey**
 
-**MACROECONOMÍA 2.000000**
+**NEO MACROECONOMÍA 400**
 
 **SANTIAGO BAZDRESCH**
 
