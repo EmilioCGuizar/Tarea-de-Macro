@@ -37,6 +37,8 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.align=
 
 # Preguntas teóricas
 
+**escribo en negritas porque no tengoewfdasdasdas idea que hago**
+
 **1. Resuelva los ejercicios 11.2 y 11.9 (5a Ed.). Realice estos con ayuda de su 
 laboratorista y entregue las soluciones a máquina, utilizando LaTeX.**
 
