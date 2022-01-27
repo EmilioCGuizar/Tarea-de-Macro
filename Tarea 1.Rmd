@@ -39,26 +39,27 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.align=
 # Preguntas teóricas
 
 
-**NEO MACROECONOMÍA 400**
-
-**SANTIAGO BAZDRESCH**
-
 **1. Resuelva los ejercicios 11.2 y 11.9 (5a Ed.). Realice estos con ayuda de su 
 laboratorista y entregue las soluciones a máquina, utilizando LaTeX.**
 ## 11.2
 
-**11.2- Efficiency wagesand bargaining. (Garino and Martin, 2000.)Summers (1988), p.386) states, "In an effiency wage environment, firms that are forced to pay their workers preminum wages suffer only second-order losses. In almost any plausible bargaining framework, this makes it easier for workers to extract concessions." This problem asks you to investigate this claim.**
+# Preguntas teóricas
+
+**1. Resuelva los ejercicios 11.2 y 11.9 (5a Ed.). Realice estos con ayuda de su 
+laboratorista y entregue las soluciones a máquina, utilizando LaTeX.**
+
+**11.2.-** Efficiency wages and bargaining. (Garino and Martin, 2000.)Summers (1988), p.386) states, "In an effiency wage environment, firms that are forced to pay their workers preminum wages suffer only second-order losses. In almost any plausible bargaining framework, this makes it easier for workers to extract concessions." This problem asks you to investigate this claim.
 
 Consider a firm with profits given by $\pi=[\frac{(eL)^{\alpha}}{\alpha}]-wL$, $0<\alpha<1$, and a union with objective function $U=(w-x)L$, where x is an index of its workers'outside opportunities. Assume that the firm and the union bargain over the wage, and that the firm then chooses L taking w as given.
 
-a) *Suppose that e is fixed a 1, so that the effiency-wage considerations are absent.*
+a) Suppose that e is fixed at 1, so that the effiency-wage considerations are absent.
 
-(i) What value of L does the firm choose, given w$?$ what is the resulting level of profits$?$ 
+  - What value of L does the firm choose, given w$?$ what is the resulting level of profits$?$ 
 
 
-(ii) Suppose that the firm and the union choose w to maximize ${U}^{\gamma}{\pi}^{1- \gamma}$ , where $0 <{\gamma} <  {\alpha }$ indexes the union’s power in the bargaining. What level of w do they choose$?$
+  - Suppose that the firm and the union choose w to maximize ${U}^{\gamma}{\pi}^{1- \gamma}$ , where $0 <{\gamma} <  {\alpha }$ indexes the union’s power in the bargaining. What level of w do they choose$?$
 
-(b)*Suppose that e is given by equation (11.12) in the text: $e=[\frac{(w-x}{x}]^{\beta}$ for  $w>x$*
+b) Suppose that e is given by equation (11.12) in the text: $e=[\frac{(w-x}{x}]^{\beta}$ for  $w>x$
 
 
 # Ejercicios prácticos
@@ -79,22 +80,39 @@ pacman::p_load(tidyverse,
   calcule la serie de su tasa de cambio anual, calcule la volatilidad de dicha serie. (Serie 1)
 
 ```{r echo=TRUE} 
-#Cambio Porcentual
+# Cambio Porcentual
 
 empleo <- read_excel("Empleo.xls",
                      sheet = 1) 
 
-empleo <- empleo %>% mutate(Serie2 = (`PEA Ocupada`/lag(`PEA Ocupada`)-1)*100)
+empleo$Periodos <- year(parse_date_time(empleo$Periodos, orders = "%Y/%q"))
 
-#Volatilidad
+empleo <- empleo %>% group_by(Periodos) %>% summarise(`PEA Ocupada`, PEA_Ocup_anualizado = mean(`PEA Ocupada`, na.rm=T), .groups = 'drop')
 
-Serie2 <- empleo$Serie2
-vol_s2 <- sd(Serie2, na.rm = T)
+empleo <- empleo[!duplicated(empleo[c('PEA_Ocup_anualizado')]),]
+
+empleo <- empleo %>% mutate(Serie_2 = (PEA_Ocup_anualizado/lag(PEA_Ocup_anualizado)-1)*100) 
+
+empleo <- empleo[,c(1,3,4)]
+
+
+# Volatilidad
+Serie_2 <- empleo$Serie_2
+
+vol_s2 <- sd(Serie_2, na.rm = T)
+
 vol_s2
 ```
 
   + Obtenga del INEGI una serie anual del empleo total en México, calcule la 
   serie de su tasa de cambio anual, calcule la volatilidad de dicha serie. (Serie 2)
+  
+```{r echo=TRUE} 
+#Cambio Porcentual
+
+datos <- read_excel("PIB_K.xls",
+                     sheet = 1) 
+```
   
   + Obtenga del INEGI una serie anual del producto interno bruto en términos 
   reales, calcule su tasa de cambio anual, calcule su volatilidad. (Serie 3)
