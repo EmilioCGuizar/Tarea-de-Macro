@@ -68,7 +68,7 @@ pacman::p_load(tidyverse,
 ```{r echo=TRUE} 
 #Cambio Porcentual
 
-empleo <- read_excel("/Users/emilio/Documents/GitHub/Tarea-de-Macro/Empleo.xls",
+empleo <- read_excel("Empleo.xls",
                      sheet = 1) 
 
 empleo <- empleo %>% mutate(Serie2 = (`PEA Ocupada`/lag(`PEA Ocupada`)-1)*100)
