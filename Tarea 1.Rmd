@@ -20,6 +20,7 @@ header-includes:
   - \usepackage[spanish]{babel}
   - \usepackage{graphicx}
   - \usepackage{float}
+
 ---
 
 
@@ -37,9 +38,6 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.align=
 
 # Preguntas teóricas
 
-**escribo en negritas porque no tengoewfdasdasdas idea que hago**
-
-**linea dos pa ver si no estoy wey**
 
 **NEO MACROECONOMÍA 400**
 
@@ -47,6 +45,21 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.align=
 
 **1. Resuelva los ejercicios 11.2 y 11.9 (5a Ed.). Realice estos con ayuda de su 
 laboratorista y entregue las soluciones a máquina, utilizando LaTeX.**
+## 11.2
+
+**11.2- Efficiency wagesand bargaining. (Garino and Martin, 2000.)Summers (1988), p.386) states, "In an effiency wage environment, firms that are forced to pay their workers preminum wages suffer only second-order losses. In almost any plausible bargaining framework, this makes it easier for workers to extract concessions." This problem asks you to investigate this claim.**
+
+Consider a firm with profits given by $\pi=[\frac{(eL)^{\alpha}}{\alpha}]-wL$, $0<\alpha<1$, and a union with objective function $U=(w-x)L$, where x is an index of its workers'outside opportunities. Assume that the firm and the union bargain over the wage, and that the firm then chooses L taking w as given.
+
+a) *Suppose that e is fixed a 1, so that the effiency-wage considerations are absent.*
+
+(i) What value of L does the firm choose, given w$?$ what is the resulting level of profits$?$ 
+
+
+(ii) Suppose that the firm and the union choose w to maximize ${U}^{\gamma}{\pi}^{1- \gamma}$ , where $0 <{\gamma} <  {\alpha }$ indexes the union’s power in the bargaining. What level of w do they choose$?$
+
+(b)*Suppose that e is given by equation (11.12) in the text: $e=[\frac{(w-x}{x}]^{\beta}$ for  $w>x$*
+
 
 # Ejercicios prácticos
 
