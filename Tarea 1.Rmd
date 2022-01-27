@@ -59,9 +59,15 @@ a) Suppose that e is fixed at 1, so that the effiency-wage considerations are ab
 
   - Suppose that the firm and the union choose w to maximize ${U}^{\gamma}{\pi}^{1- \gamma}$ , where $0 <{\gamma} <  {\alpha }$ indexes the union’s power in the bargaining. What level of w do they choose$?$
 
-b) Suppose that e is given by equation (11.12) in the text: $e=[\frac{(w-x}{x}]^{\beta}$ for  $w>x$
+b) Suppose that e is given by equation (11.12) in the text: $e=[\frac{(w-x}{x}]^{\beta}$ for  $w>x$ where $0<\beta <1$.
 
+  - What value of L does the firm choose, given w$?$, What is the resulting level of profits$?$
 
+  - Suppose that the firm and the union choose w to maximize ${U}^{\gamma}{\pi}^{1- \gamma}$, $0<{\gamma} < {\alpha}$ What level of w do they choose? (Hint: For the case of $\beta =0$, your answer should simplify to your answer in part [a][ii].)
+
+  -  Is the proportional impact of workers’ bargaining power on wages greater with efficiency wages than without, as Summers implies? Is it greater when efficiency-wage effects, $\beta$, are greater?
+
+  
 # Ejercicios prácticos
 
 ```{r}
@@ -102,6 +108,7 @@ Serie_2 <- empleo$Serie_2
 vol_s2 <- sd(Serie_2, na.rm = T)
 
 vol_s2
+
 ```
 
   + Obtenga del INEGI una serie anual del empleo total en México, calcule la 
