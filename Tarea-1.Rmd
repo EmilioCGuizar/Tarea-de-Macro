@@ -36,12 +36,6 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.align=
 
 \newpage
 
-# Preguntas teóricas
-
-
-**1. Resuelva los ejercicios 11.2 y 11.9 (5a Ed.). Realice estos con ayuda de su 
-laboratorista y entregue las soluciones a máquina, utilizando LaTeX.**
-## 11.2
 
 # Preguntas teóricas
 
@@ -56,13 +50,71 @@ a) Suppose that e is fixed at 1, so that the effiency-wage considerations are ab
 
   - What value of L does the firm choose, given w$?$ what is the resulting level of profits$?$ 
 
+$$ \max\limits_{L}\pi=  \frac{L^{\alpha}}{\alpha}-wL  $$
+CPO:
+
+$$ \frac{\partial \pi}{\partial L}: \alpha \frac{L^{\alpha -1}}{\alpha}-w =0  $$
+$$ \Rightarrow L^{\alpha -1} = w $$
+$$ \Rightarrow L^*=w^{\frac{1}{\alpha -1}}$$
+Sustituyendo L* en $\pi$ obtenemos $\pi^*$, donde la empresa maximiza el beneficio dado $w$
+
+$$ \pi^*= \frac{{\left(w^{\frac{1}{\alpha-1}} \right)}^{\alpha}}{\alpha} - w \left (w^{\frac{1}{\alpha-1}} \right )= \frac{w^{\frac{\alpha}{\alpha-1}}-\alpha w^{\frac{\alpha}{\alpha-1}}}{\alpha}$$
+
+$$  \Rightarrow \pi^*= \left (\frac{1- \alpha}{\alpha} \right )w^{\frac{1}{\alpha-1}} $$
 
   - Suppose that the firm and the union choose w to maximize ${U}^{\gamma}{\pi}^{1- \gamma}$ , where $0 <{\gamma} <  {\alpha }$ indexes the union’s power in the bargaining. What level of w do they choose$?$
 
+$$\max\limits_{w}{U}^{\gamma}{\pi^*}^{1- \gamma} $$
+$$\max\limits_{w} [(w-x)L^*]^{\gamma} \left[ \left (\frac{1- \alpha}{\alpha} \right)w^{\frac{1}{\alpha-1}} \right]^{1- \gamma}$$
+Tomando el logaritmo natural tenemos:
+
+$$\max\limits_{w} \gamma \left[\ln(w-x)+\frac{1}{\alpha -1} \ln(w) \right]
++ (1- \gamma)\left[ \ln \left( \frac{1- \alpha}{\alpha} \right) + \left (\frac{\alpha}{\alpha-1} \right )ln(w) \right]
+$$
+CPO:
+
+$$
+\frac{\partial {U}^{\gamma}{\pi}^{1- \gamma}}{\partial w}: \frac{\gamma}{w-x} + \frac{ \gamma}{w( \alpha-1)}+ \frac{ \alpha(1- \gamma)}{w( \alpha -1)}=0
+$$
+$$
+\Rightarrow \frac{ \gamma}{w-x}=- \left [ \frac{ \gamma + \alpha - \alpha \gamma}{w( \alpha-1)}\right ]=- \left[ \frac{ \alpha + \gamma (1- \alpha)}{w( \alpha-1)} \right]
+$$
+$$
+\Rightarrow \gamma = - \left [ \frac{ \alpha+ \gamma(1- \alpha)}{w( \alpha-1)} \right](w-x)=\frac{- \alpha -\gamma (1- \alpha)}{ \alpha -1}+ \frac{x( \alpha + \gamma (1- \alpha))}{w(\alpha -1)}
+$$
+$$
+\Rightarrow \frac{x( \alpha + \gamma (1- \alpha))}{w(\alpha -1)} = \gamma +\frac{ \alpha +\gamma (1- \alpha)}{ \alpha -1}= \frac{\alpha}{\alpha -1}
+$$
+$$
+\Rightarrow w^*=\frac{x( \alpha + \gamma (1- \alpha))}{\alpha}
+$$
 b) Suppose that e is given by equation (11.12) in the text: $e=[\frac{(w-x}{x}]^{\beta}$ for  $w>x$ where $0<\beta <1$.
 
   - What value of L does the firm choose, given w$?$, What is the resulting level of profits$?$
 
+$$
+\max\limits_{L}\pi= \frac{ \left ( \left ( \frac{w-x}{x} \right )^ \beta L \right )^{\alpha}}{\alpha}-wL
+$$
+CPO:
+$$
+\frac{\partial \pi}{\partial L}: \frac{ \alpha \left ( \left ( \frac{w-x}{x} \right )^ \beta L \right )^{\alpha-1}}{\alpha}-w=0
+$$
+$$
+\Rightarrow w= \left (  \frac{w-x}{x} \right )^ {\alpha \beta} L^{\alpha-1}
+$$
+$$
+\Rightarrow L^{\alpha -1}=w \left( \frac{x}{w-x} \right )^{\alpha \beta}
+$$
+$$
+\Rightarrow L^*= \left ( w \left( \frac{x}{w-x} \right )^{\alpha \beta} \right)^{\frac{1}{\alpha -1}}= \left(\frac{w-x}{x} \right)^{\frac{\alpha \beta}{1- \alpha}}w^{\frac{1}{\alpha -1}}
+$$
+Sustituyendo L* en $\pi$ obtenemos $\pi^*$, donde la empresa maximiza el beneficio dado $w$
+$$
+\pi^*= \frac{ \left[ \left (\frac{w-x}{x} \right )^\beta \left( \frac{w-x}{x} \right )^{\frac{\alpha \beta}{1- \alpha}}w^{\frac{1}{\alpha -1}} \right ]^\alpha}{\alpha}-w \left( \frac{w-x}{x} \right )^{\frac{\alpha \beta}{1- \alpha}}w^{\frac{1}{\alpha -1}}
+$$
+$$
+\Rightarrow \pi^*= \frac{ \left[  \left( \frac{w-x}{x} \right )^{\frac{\alpha \beta}{1- \alpha}}w^{\frac{\alpha}{\alpha -1}} \right ]}{\alpha}- \left( \frac{w-x}{x} \right )^{\frac{\alpha \beta}{1- \alpha}}w^{\frac{\alpha}{\alpha -1}}=\left( \frac{1- \alpha}{\alpha} \right ) w^{\frac{\alpha}{\alpha -1}} \left( \frac{w-x}{x} \right )^{\frac{\alpha \beta}{1- \alpha}} 
+$$
   - Suppose that the firm and the union choose w to maximize ${U}^{\gamma}{\pi}^{1- \gamma}$, $0<{\gamma} < {\alpha}$ What level of w do they choose? (Hint: For the case of $\beta =0$, your answer should simplify to your answer in part [a][ii].)
 
   -  Is the proportional impact of workers’ bargaining power on wages greater with efficiency wages than without, as Summers implies? Is it greater when efficiency-wage effects, $\beta$, are greater?
