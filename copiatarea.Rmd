@@ -1,0 +1,340 @@
+---
+title: "Mercados Laborales: Tarea 1 (Equipo 2)"
+author: 
+  - José Emilio Cendejas Guízar^[El Colegio de México, jcendejas@colmex.mx]
+  - Héctor González Magaña^[El Colegio de México, hgonzalez@colmex.mx]
+  - Lino Antonio Mendoza Millán^[El Colegio de México, lamendoza@colmex.mx]
+date: "1/23/2022"
+output: 
+  pdf_document:
+    toc: true
+    toc_depth: 3
+  tables: true
+toc-title: Contenido
+urlcolor: blue
+header-includes: 
+  - \usepackage[nottoc]{tocbibind}
+  - \renewcommand{\listfigurename}{Lista de figuras}
+  - \renewcommand{\listtablename}{Lista de tablas}
+  - \usepackage[utf8]{inputenc}
+  - \usepackage[spanish]{babel}
+  - \usepackage{graphicx}
+  - \usepackage{float}
+---
+
+
+\newpage
+
+\listoffigures
+
+\listoftables
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.align="center", fig.pos = "H", fig.width = 7, fig.height = 3)
+```
+
+\newpage
+
+# Preguntas teóricas
+
+**1. Resuelva los ejercicios 11.2 y 11.9 (5a Ed.). Realice estos con ayuda de su 
+laboratorista y entregue las soluciones a máquina, utilizando LaTeX.**
+
+**11.2.-** Efficiency wages and bargaining. (Garino and Martin, 2000). Summers (1988), p.386) states, "In an effiency wage environment, firms that are forced to pay their workers preminum wages suffer only second-order losses. In almost any plausible bargaining framework, this makes it easier for workers to extract concessions." This problem asks you to investigate this claim.
+
+Consider a firm with profits given by $\pi=[\frac{(eL)^{\alpha}}{\alpha}]-wL$, $0<\alpha<1$, and a union with objective function $U=(w-x)L$, where x is an index of its workers'outside opportunities. Assume that the firm and the union bargain over the wage, and that the firm then chooses L taking w as given.
+
+a) Suppose that e is fixed at 1, so that the effiency-wage considerations are absent.
+
+  - What value of L does the firm choose, given w$?$ what is the resulting level of profits$?$ 
+$$ \max\limits_{L}\pi=  \frac{L^{\alpha}}{\alpha}-wL  $$
+CPO:
+
+$$ \frac{\partial \pi}{\partial L}: \alpha \frac{L^{\alpha -1}}{\alpha}-w =0  $$
+$$ \Rightarrow L^{\alpha -1} = w $$
+$$ \Rightarrow L^*=w^{\frac{1}{\alpha -1}}$$
+
+Sustituyendo L* en $\pi$ obtenemos $\pi^*$, donde la empresa maximiza el beneficio dado $w$
+
+$$ \pi^*= \frac{{\left(w^{\frac{1}{\alpha-1}} \right)}^{\alpha}}{\alpha} - w \left (w^{\frac{1}{\alpha-1}} \right )= \frac{w^{\frac{\alpha}{\alpha-1}}-\alpha w^{\frac{\alpha}{\alpha-1}}}{\alpha}$$
+
+$$  \Rightarrow \pi^*= \left (\frac{1- \alpha}{\alpha} \right )w^{\frac{1}{\alpha-1}} $$
+
+  - Suppose that the firm and the union choose w to maximize ${U}^{\gamma}{\pi}^{1- \gamma}$ , where $0 <{\gamma} <  {\alpha }$ indexes the union’s power in the bargaining. What level of w do they choose$?$
+  
+$$\max\limits_{w}{U}^{\gamma}{\pi^*}^{1- \gamma} $$
+$$\max\limits_{w} [(w-x)L^*]^{\gamma} \left[ \left (\frac{1- \alpha}{\alpha} \right)w^{\frac{1}{\alpha-1}} \right]^{1- \gamma}$$
+Tomando el logaritmo natural tenemos:
+
+$$\max\limits_{w} \gamma \left[\ln(w-x)+\frac{1}{\alpha -1} \ln(w) \right]
++ (1- \gamma)\left[ \ln \left( \frac{1- \alpha}{\alpha} \right) + \left (\frac{\alpha}{\alpha-1} \right )ln(w) \right]
+$$
+CPO:
+
+$$
+\frac{\partial {U}^{\gamma}{\pi}^{1- \gamma}}{\partial w}: \frac{\gamma}{w-x} + \frac{ \gamma}{w( \alpha-1)}+ \frac{ \alpha(1- \gamma)}{w( \alpha -1)}=0
+$$
+$$
+\Rightarrow \frac{ \gamma}{w-x}=- \left [ \frac{ \gamma + \alpha - \alpha \gamma}{w( \alpha-1)}\right ]=- \left[ \frac{ \alpha + \gamma (1- \alpha)}{w( \alpha-1)} \right]
+$$
+$$
+\Rightarrow \gamma = - \left [ \frac{ \alpha+ \gamma(1- \alpha)}{w( \alpha-1)} \right](w-x)=\frac{- \alpha -\gamma (1- \alpha)}{ \alpha -1}+ \frac{x( \alpha + \gamma (1- \alpha))}{w(\alpha -1)}
+$$
+$$
+\Rightarrow \frac{x( \alpha + \gamma (1- \alpha))}{w(\alpha -1)} = \gamma +\frac{ \alpha +\gamma (1- \alpha)}{ \alpha -1}= \frac{\alpha}{\alpha -1}
+$$
+$$
+\Rightarrow w^*=\frac{x( \alpha + \gamma (1- \alpha))}{\alpha}
+$$  
+  
+
+b) Suppose that e is given by equation (11.12) in the text: $e=[\frac{(w-x}{x}]^{\beta}$ for  $w>x$
+
+ - What value of L does the firm choose, given w$?$, What is the resulting level of profits$?$
+
+$$
+\max\limits_{L}\pi= \frac{ \left ( \left ( \frac{w-x}{x} \right )^ \beta L \right )^{\alpha}}{\alpha}-wL
+$$
+CPO:
+$$
+\frac{\partial \pi}{\partial L}: \frac{ \alpha \left ( \left ( \frac{w-x}{x} \right )^ \beta L \right )^{\alpha-1}}{\alpha}-w=0
+$$
+$$
+\Rightarrow w= \left (  \frac{w-x}{x} \right )^ {\alpha \beta} L^{\alpha-1}
+$$
+$$
+\Rightarrow L^{\alpha -1}=w \left( \frac{x}{w-x} \right )^{\alpha \beta}
+$$
+$$
+\Rightarrow L^*= \left ( w \left( \frac{x}{w-x} \right )^{\alpha \beta} \right)^{\frac{1}{\alpha -1}}= \left(\frac{w-x}{x} \right)^{\frac{\alpha \beta}{1- \alpha}}w^{\frac{1}{\alpha -1}}
+$$
+Sustituyendo L* en $\pi$ obtenemos $\pi^*$, donde la empresa maximiza el beneficio dado $w$
+$$
+\pi^*= \frac{ \left[ \left (\frac{w-x}{x} \right )^\beta \left( \frac{w-x}{x} \right )^{\frac{\alpha \beta}{1- \alpha}}w^{\frac{1}{\alpha -1}} \right ]^\alpha}{\alpha}-w \left( \frac{w-x}{x} \right )^{\frac{\alpha \beta}{1- \alpha}}w^{\frac{1}{\alpha -1}}
+$$
+$$
+\Rightarrow \pi^*= \frac{ \left[  \left( \frac{w-x}{x} \right )^{\frac{\alpha \beta}{1- \alpha}}w^{\frac{\alpha}{\alpha -1}} \right ]}{\alpha}- \left( \frac{w-x}{x} \right )^{\frac{\alpha \beta}{1- \alpha}}w^{\frac{\alpha}{\alpha -1}}=\left( \frac{1- \alpha}{\alpha} \right ) w^{\frac{\alpha}{\alpha -1}} \left( \frac{w-x}{x} \right )^{\frac{\alpha \beta}{1- \alpha}} 
+$$
+
+# Ejercicios prácticos
+
+```{r}
+pacman::p_load(tidyverse,
+               ggthemes,
+               haven, readxl,
+               kableExtra,
+               cowplot, ggplot2, scales, viridis, latticeExtra,
+               knitr, tinytex, reshape, lubridate, scales, reshape2)
+```
+
+
+**2. Estudie el mercado laboral en México siguiendo estos pasos:**
+
+  + Obtenga del INEGI una serie anual de los salarios (en términos reales) en México, 
+  calcule la serie de su tasa de cambio anual, calcule la volatilidad de dicha serie. (Serie 1)
+
+Cambio porcentual y Volatilidad de Serie 1
+
+```{r}
+salarios <- read.csv(file = "Salarios.csv", sep = ",")
+
+salarios <- salarios[,-c(3,4)]
+
+View(salarios)
+
+sal08 <- salarios[2:13,-1]
+sal08 <- mean(sal08)
+sal09 <- salarios[15:26,-1]
+sal09 <- mean(sal09)
+sal10 <- salarios[28:39,-1]
+sal10 <- mean(sal10)
+sal11 <- salarios[41:52,-1]
+sal11 <- mean(sal11)
+sal12 <- salarios[54:65,-1]
+sal12 <- mean(sal12)
+sal13 <- salarios[67:78,-1]
+sal13 <- mean(sal13)
+sal14 <- salarios[80:91,-1]
+sal14 <- mean(sal14)
+sal15 <- salarios[93:104,-1]
+sal15 <- mean(sal15)
+sal16 <- salarios[106:117,-1]
+sal16 <- mean(sal16)
+sal17 <- salarios[119:130,-1]
+sal17 <- mean(sal17)
+sal18 <- salarios[132:143,-1]
+sal18 <- mean(sal18)
+sal19 <- salarios[145:156,-1]
+sal19 <- mean(sal19)
+sal20 <- salarios[158:169,-1]
+sal20 <- mean(sal20)
+sal21 <- salarios[171:178,-1]
+sal21 <- mean(sal21)
+
+
+sal_anual_real <- c(sal08, sal09, sal10, sal11, sal12, sal13, sal14, sal15, sal16, sal17,
+           sal18, sal19, sal20, sal21)
+
+year <- c(2008:2021)
+
+salr <- data.frame(year, sal_anual_real)
+
+salr <- salr %>% mutate(Serie_1 = (sal_anual_real/lag(sal_anual_real)-1)*100)
+
+options(knitr.kable.NA = "-")
+
+knitr::kable(
+  salr, booktabs = TRUE, format = 'latex', col.names = c("Año", "Remuneración Media Real (Índice)","Variación %"),
+  caption = "Variación Porcentual de los Salarios Reales (2008 - 2021)"
+)%>%
+  kable_styling(latex_options = "hold_position")
+```
+```{r echo=T}
+#Volatilidad
+Serie_1 <- salr$Serie_1
+vol_s1 <- sd(Serie_1, na.rm = T)
+vol_s1
+```
+
+
+  + Obtenga del INEGI una serie anual del empleo total en México, calcule la 
+  serie de su tasa de cambio anual, calcule la volatilidad de dicha serie. (Serie 2)
+  
+Cambio Porcentual y Volatilidad de Serie 2
+
+```{r} 
+# Cambio Porcentual
+
+empleo <- read_excel("Empleo.xls",
+                     sheet = 1) 
+
+empleo$Periodos <- year(parse_date_time(empleo$Periodos, orders = "%Y/%q"))
+
+empleo <- empleo %>% group_by(Periodos) %>% summarise(`PEA Ocupada`, PEA_Ocup_anualizado = mean(`PEA Ocupada`, na.rm=T), .groups = 'drop')
+
+empleo <- empleo[!duplicated(empleo[c('PEA_Ocup_anualizado')]),]
+
+empleo <- empleo %>% mutate(Serie_2 = (PEA_Ocup_anualizado/lag(PEA_Ocup_anualizado)-1)*100) 
+
+empleo <- empleo[,c(1,3,4)]
+
+empleo <- na.omit(empleo)
+
+knitr::kable(
+  empleo, booktabs = TRUE, format = 'latex', col.names = c("Año", "Población Ocupada","Variación %"),
+  caption = "Variación Porcentual de la Población Ocupada (2006 - 2021)", longtable = F
+)%>%
+  kable_styling(latex_options = "hold_position")
+```
+Volatilidad
+
+```{r echo=T}
+# Volatilidad
+Serie_2 <- empleo$Serie_2
+
+vol_s2 <- sd(Serie_2, na.rm = T)
+
+vol_s2
+```
+  
+  + Obtenga del INEGI una serie anual del producto interno bruto en términos 
+  reales, calcule su tasa de cambio anual, calcule su volatilidad. (Serie 3)
+  
+
+Cambio Porcentual y Volatilidad de Serie 3
+
+```{r} 
+#Cambio Porcentual
+
+datos <- read_excel("PIB_K.xls",
+                     sheet = 1) 
+
+names(datos) = c('Periodo', 'Inversión', 'Indice K','PIB')
+
+datos <- datos[-c(1:200),-c(2,3)]
+
+datos$Periodo <- year(parse_date_time(datos$Periodo, orders = "%Y%q"))
+
+datos <- na.omit(datos)
+  
+datos$PIB <- as.numeric(as.character(datos$PIB)) 
+
+datos <- datos %>% group_by(Periodo) %>% summarise(PIB, PIB_an = mean(PIB), .groups = 'drop')
+
+datos <- datos[!duplicated(datos[c('PIB_an')]),] 
+
+datos <- datos[,-2]
+
+datos_pib <- datos %>% mutate(Serie_3 = (PIB_an/lag(PIB_an)-1)*100) 
+
+datos_pib <- na.omit(datos_pib)
+
+knitr::kable(
+  datos_pib, booktabs = TRUE, format = 'latex', col.names = c("Año", "Producto Interno Bruto","Variación %"),
+  caption = "Variación Porcentual de los Salarios Reales (2008 - 2021)", longtable = F
+)%>%
+  kable_styling(latex_options = "hold_position")
+```
+Volatilidad
+
+```{r echo=T}
+#Volatilidad
+Serie_3 <- datos_pib$Serie_3
+vol_s3 <- sd(Serie_3, na.rm = T)
+vol_s3
+
+```
+  
+  + Grafique las tres series de tasas de cambios de forma que se puedan comparar.
+  
+```{r fig.cap='Comparación de Variación Porcentual entre Series\\label{graf1}'}
+Series <- datos_pib[,c(1,3)]
+
+year <- datos_pib$Periodo
+year <- year[-c(1,2)]
+Serie1 <- salr$Serie_1
+Serie2 <- empleo$Serie_2
+Serie2 <- Serie2[-c(1,2)]
+Serie3 <- datos_pib$Serie_3
+Serie3 <- Serie3[-c(1,2)]
+
+
+Series <- data.frame(year, Serie1, Serie2, Serie3)
+
+pacman::p_load(extrafont)
+
+meltdf <- melt(Series,id="year")
+gg <- ggplot(meltdf,aes(x=year,y=value,colour=variable,group=variable)) + geom_line() + 
+  labs(title = "Comparación de Variación Porcentual entre Series", x="Año",y='Variación Porcentual', 
+      colour = " ") + theme_bw() +  theme(text=element_text(size=12,  family="serif"))
+
+plot(gg) 
+
+```
+  
+  + Calcule la covarianza de la serie 1 con la 3 y de la 2 con la 3.
+
+Covarianza entre Serie 1 y Serie 3
+
+$$ Cov(Serie_1, Serie_3) = $$
+```{r}
+cov(Serie1[-1], Serie3[-1])
+```
+
+Covarianza entre Serie 2 y Serie 3
+
+$$ Cov(Serie_2, Serie_3) = $$
+  
+```{r}
+cov(Serie_2, Serie_3)
+```
+
+
+  + Explique si sus resultados son o no consistentes con los hechos estilizados
+  para EEUU que se discutieron en clase.
+
+El primer hecho estilizado es que el desempleo parece ser el mismo a lo largo de la historia. La tasa de desempleo no fue requerida en algún inciso del ejercicio, pero una [sencilla búsqueda en internet](https://www.proyectosmexico.gob.mx/por-que-invertir-en-mexico/mercado-potencial/sd_historico-tasa-de-desempleo-en-mexico/), puede confirmar este hecho estilizado. Históricamente, tasa de desempleo fluctúa alrededor de 3.5\%. 
+
+El segundo hecho estilizado nos dice que el nivel de empleo fluctúa con el ciclo económico, pero los salarios parecen tener nada que ver con tal ciclo. Como puede observarse en la gráfica (y como bien lo enfatiza las respectivas varianzas), México cumple con este segundo hecho estilizado con respecto a el salario real. Además, puede observarse que los cambios en el mercado laboral sí fluctúan muy similar al ciclo económico. 
+
+
