@@ -47,7 +47,10 @@ Consider a firm with profits given by $\pi=[\frac{(eL)^{\alpha}}{\alpha}]-wL$, $
 a) Suppose that e is fixed at 1, so that the effiency-wage considerations are absent.
 
   - What value of L does the firm choose, given w$?$ what is the resulting level of profits$?$ 
+
+Si e está fijado en 1 y w está dado, el problema de la firma es elegir L para maximizar sus beneficios:
 $$ \max\limits_{L}\pi=  \frac{L^{\alpha}}{\alpha}-wL  $$
+
 CPO:
 
 $$ \frac{\partial \pi}{\partial L}: \alpha \frac{L^{\alpha -1}}{\alpha}-w =0  $$
@@ -62,7 +65,9 @@ $$  \Rightarrow \pi^*= \left (\frac{1- \alpha}{\alpha} \right )w^{\frac{1}{\alph
 
   - Suppose that the firm and the union choose w to maximize ${U}^{\gamma}{\pi}^{1- \gamma}$ , where $0 <{\gamma} <  {\alpha }$ indexes the union’s power in the bargaining. What level of w do they choose$?$
   
+
 $$\max\limits_{w}{U}^{\gamma}{\pi^*}^{1- \gamma} $$
+Sustituyendo el nivel de L en la función objetivo del sindicato, $(w-x)L^*$:
 $$\max\limits_{w} [(w-x)L^*]^{\gamma} \left[ \left (\frac{1- \alpha}{\alpha} \right)w^{\frac{1}{\alpha-1}} \right]^{1- \gamma}$$
 Tomando el logaritmo natural tenemos:
 
@@ -83,14 +88,15 @@ $$
 $$
 \Rightarrow \frac{x( \alpha + \gamma (1- \alpha))}{w(\alpha -1)} = \gamma +\frac{ \alpha +\gamma (1- \alpha)}{ \alpha -1}= \frac{\alpha}{\alpha -1}
 $$
+Por tanto, el salario escogido durante el proceso de negociación es:
 $$
 \Rightarrow w^*=\frac{x( \alpha + \gamma (1- \alpha))}{\alpha}
 $$  
   
 
-b) Suppose that e is given by equation (11.12) in the text: $e=[\frac{(w-x}{x}]^{\beta}$ for  $w>x$
+b) Suppose that e is given by equation (11.12) in the text: $e=[\frac{(w-x}{x}]^{\beta}$ for  $w>x$.
 
- - What value of L does the firm choose, given w$?$, What is the resulting level of profits$?$
+    b.1 What value of L does the firm choose, given w$?$, What is the resulting level of profits$?$
 
 $$
 \max\limits_{L}\pi= \frac{ \left ( \left ( \frac{w-x}{x} \right )^ \beta L \right )^{\alpha}}{\alpha}-wL
@@ -116,6 +122,12 @@ $$
 \Rightarrow \pi^*= \frac{ \left[  \left( \frac{w-x}{x} \right )^{\frac{\alpha \beta}{1- \alpha}}w^{\frac{\alpha}{\alpha -1}} \right ]}{\alpha}- \left( \frac{w-x}{x} \right )^{\frac{\alpha \beta}{1- \alpha}}w^{\frac{\alpha}{\alpha -1}}=\left( \frac{1- \alpha}{\alpha} \right ) w^{\frac{\alpha}{\alpha -1}} \left( \frac{w-x}{x} \right )^{\frac{\alpha \beta}{1- \alpha}} 
 $$
 
+   b.2  Suppose that the firm and the union choose w to maximize ${U}^{\gamma}{\pi}^{1- \gamma}$ , where $0 <{\gamma} <  {\alpha }$ What level of w do they choose $?$ (Hint: For the case of ${\beta}=0$, your answer should simplify to your answer in part [a][ii].)
+
+Sustituyendo el nivel de L obtenido en el inciso anterior en la función objetivo del sindicato, $(w-x)L^*$:  
+    
+\clearpage
+
 # Ejercicios prácticos
 
 ```{r}
@@ -130,7 +142,7 @@ pacman::p_load(tidyverse,
 
 **2. Estudie el mercado laboral en México siguiendo estos pasos:**
 
-  + Obtenga del INEGI una serie anual de los salarios (en términos reales) en México, 
+  a. Obtenga del INEGI una serie anual de los salarios (en términos reales) en México, 
   calcule la serie de su tasa de cambio anual, calcule la volatilidad de dicha serie. (Serie 1)
 
 Cambio porcentual y Volatilidad de Serie 1
@@ -189,15 +201,17 @@ knitr::kable(
 )%>%
   kable_styling(latex_options = "hold_position")
 ```
-```{r echo=T}
+```{r eval=TRUE, echo=FALSE}
 #Volatilidad
 Serie_1 <- salr$Serie_1
 vol_s1 <- sd(Serie_1, na.rm = T)
-vol_s1
+
 ```
+La volatilidad de esta tasa de crecimiento, medido por la desviación estándar es de `r vol_s1`
 
+\clearpage
 
-  + Obtenga del INEGI una serie anual del empleo total en México, calcule la 
+  b. Obtenga del INEGI una serie anual del empleo total en México, calcule la 
   serie de su tasa de cambio anual, calcule la volatilidad de dicha serie. (Serie 2)
   
 Cambio Porcentual y Volatilidad de Serie 2
@@ -228,16 +242,17 @@ knitr::kable(
 ```
 Volatilidad
 
-```{r echo=T}
+```{r eval=TRUE, echo=FALSE}
 # Volatilidad
 Serie_2 <- empleo$Serie_2
 
 vol_s2 <- sd(Serie_2, na.rm = T)
 
-vol_s2
 ```
+La volatilidad de esta tasa de crecimiento, medido por la desviación estándar es de `r vol_s2`
   
-  + Obtenga del INEGI una serie anual del producto interno bruto en términos 
+\clearpage
+  c. Obtenga del INEGI una serie anual del producto interno bruto en términos 
   reales, calcule su tasa de cambio anual, calcule su volatilidad. (Serie 3)
   
 
@@ -285,7 +300,7 @@ vol_s3
 
 ```
   
-  + Grafique las tres series de tasas de cambios de forma que se puedan comparar.
+  d. Grafique las tres series de tasas de cambios de forma que se puedan comparar.
   
 ```{r fig.cap='Comparación de Variación Porcentual entre Series\\label{graf1}'}
 Series <- datos_pib[,c(1,3)]
@@ -312,7 +327,7 @@ plot(gg)
 
 ```
   
-  + Calcule la covarianza de la serie 1 con la 3 y de la 2 con la 3.
+  e. Calcule la covarianza de la serie 1 con la 3 y de la 2 con la 3.
 
 Covarianza entre Serie 1 y Serie 3
 
@@ -330,7 +345,7 @@ cov(Serie_2, Serie_3)
 ```
 
 
-  + Explique si sus resultados son o no consistentes con los hechos estilizados
+  f. Explique si sus resultados son o no consistentes con los hechos estilizados
   para EEUU que se discutieron en clase.
 
 El primer hecho estilizado es que el desempleo parece ser el mismo a lo largo de la historia. La tasa de desempleo no fue requerida en algún inciso del ejercicio, pero una [sencilla búsqueda en internet](https://www.proyectosmexico.gob.mx/por-que-invertir-en-mexico/mercado-potencial/sd_historico-tasa-de-desempleo-en-mexico/), puede confirmar este hecho estilizado. Históricamente, tasa de desempleo fluctúa alrededor de 3.5\%. 
