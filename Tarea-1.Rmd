@@ -20,7 +20,6 @@ header-includes:
   - \usepackage[spanish]{babel}
   - \usepackage{graphicx}
   - \usepackage{float}
-
 ---
 
 
@@ -36,20 +35,20 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.align=
 
 \newpage
 
-
 # Preguntas teóricas
 
 **1. Resuelva los ejercicios 11.2 y 11.9 (5a Ed.). Realice estos con ayuda de su 
 laboratorista y entregue las soluciones a máquina, utilizando LaTeX.**
 
-**11.2.-** Efficiency wages and bargaining. (Garino and Martin, 2000.)Summers (1988), p.386) states, "In an effiency wage environment, firms that are forced to pay their workers preminum wages suffer only second-order losses. In almost any plausible bargaining framework, this makes it easier for workers to extract concessions." This problem asks you to investigate this claim.
+**11.2.-** Efficiency wages and bargaining. (Garino and Martin, 2000). Summers (1988), p.386) states, "In an effiency wage environment, firms that are forced to pay their workers preminum wages suffer only second-order losses. In almost any plausible bargaining framework, this makes it easier for workers to extract concessions." This problem asks you to investigate this claim.
 
 Consider a firm with profits given by $\pi=[\frac{(eL)^{\alpha}}{\alpha}]-wL$, $0<\alpha<1$, and a union with objective function $U=(w-x)L$, where x is an index of its workers'outside opportunities. Assume that the firm and the union bargain over the wage, and that the firm then chooses L taking w as given.
 
 a) Suppose that e is fixed at 1, so that the effiency-wage considerations are absent.
 
-  - What value of L does the firm choose, given w$?$ what is the resulting level of profits$?$ 
-
+  - What value of L does the firm choose, given w$?$ what is the resulting level of profits$?$.
+  
+Si e está fijado en 1 y w está dado, el problema de la firma es elegir L para maximizar sus beneficios:
 $$ \max\limits_{L}\pi=  \frac{L^{\alpha}}{\alpha}-wL  $$
 CPO:
 
@@ -65,6 +64,7 @@ $$  \Rightarrow \pi^*= \left (\frac{1- \alpha}{\alpha} \right )w^{\frac{1}{\alph
   - Suppose that the firm and the union choose w to maximize ${U}^{\gamma}{\pi}^{1- \gamma}$ , where $0 <{\gamma} <  {\alpha }$ indexes the union’s power in the bargaining. What level of w do they choose$?$
 
 $$\max\limits_{w}{U}^{\gamma}{\pi^*}^{1- \gamma} $$
+Sustituyendo el nivel de L en la función objetivo del sindicato, $(w-x)L^*$:
 $$\max\limits_{w} [(w-x)L^*]^{\gamma} \left[ \left (\frac{1- \alpha}{\alpha} \right)w^{\frac{1}{\alpha-1}} \right]^{1- \gamma}$$
 Tomando el logaritmo natural tenemos:
 
@@ -85,6 +85,7 @@ $$
 $$
 \Rightarrow \frac{x( \alpha + \gamma (1- \alpha))}{w(\alpha -1)} = \gamma +\frac{ \alpha +\gamma (1- \alpha)}{ \alpha -1}= \frac{\alpha}{\alpha -1}
 $$
+Por tanto, el salario escogido durante el proceso de negociación es:
 $$
 \Rightarrow w^*=\frac{x( \alpha + \gamma (1- \alpha))}{\alpha}
 $$
@@ -117,6 +118,7 @@ $$
 $$
   - Suppose that the firm and the union choose w to maximize ${U}^{\gamma}{\pi}^{1- \gamma}$, $0<{\gamma} < {\alpha}$ What level of w do they choose? (Hint: For the case of $\beta =0$, your answer should simplify to your answer in part [a][ii].)
   
+Sustituyendo el nivel de L obtenido en el inciso anterior en la función objetivo del sindicato, $(w-x)L^*$: 
 $$\max\limits_{w}{U}^{\gamma}{\pi^*}^{1- \gamma} $$
 
 $$
@@ -150,6 +152,7 @@ Lo cual es igual al resultado obtenido en la segunda parte del inciso a).
 
   -  Is the proportional impact of workers’ bargaining power on wages greater with efficiency wages than without, as Summers implies? Is it greater when efficiency-wage effects, $\beta$, are greater?
 
+\clearpage
   
 # Ejercicios prácticos
 
@@ -165,7 +168,7 @@ pacman::p_load(tidyverse,
 
 **2. Estudie el mercado laboral en México siguiendo estos pasos:**
 
-  + Obtenga del INEGI una serie anual de los salarios (en términos reales) en México, 
+  a. Obtenga del INEGI una serie anual de los salarios (en términos reales) en México, 
   calcule la serie de su tasa de cambio anual, calcule la volatilidad de dicha serie. (Serie 1)
 
 Cambio porcentual y Volatilidad de Serie 1
@@ -224,13 +227,13 @@ knitr::kable(
 )%>%
   kable_styling(latex_options = "hold_position")
 ```
-```{r echo=T}
+```{r eval=TRUE, echo=FALSE}
 #Volatilidad
 Serie_1 <- salr$Serie_1
 vol_s1 <- sd(Serie_1, na.rm = T)
-vol_s1
 ```
-
+La volatilidad de esta tasa de crecimiento, medido por la desviación estándar es de `r vol_s1`
+\clearpage
 
   + Obtenga del INEGI una serie anual del empleo total en México, calcule la 
   serie de su tasa de cambio anual, calcule la volatilidad de dicha serie. (Serie 2)
@@ -263,15 +266,17 @@ knitr::kable(
 ```
 Volatilidad
 
-```{r echo=T}
+```{r eval=TRUE, echo=FALSE}
 # Volatilidad
 Serie_2 <- empleo$Serie_2
 
 vol_s2 <- sd(Serie_2, na.rm = T)
 
-vol_s2
 ```
-  
+La volatilidad de esta tasa de crecimiento, medido por la desviación estándar es de `r vol_s2`
+
+\clearpage
+
   + Obtenga del INEGI una serie anual del producto interno bruto en términos 
   reales, calcule su tasa de cambio anual, calcule su volatilidad. (Serie 3)
   
@@ -312,13 +317,14 @@ knitr::kable(
 ```
 Volatilidad
 
-```{r echo=T}
+```{r eval=TRUE, echo=FALSE}
 #Volatilidad
 Serie_3 <- datos_pib$Serie_3
 vol_s3 <- sd(Serie_3, na.rm = T)
-vol_s3
 
 ```
+La volatilidad de esta tasa de crecimiento, medido por la desviación estándar es de `r vol_s3`
+\clearpage
   
   + Grafique las tres series de tasas de cambios de forma que se puedan comparar.
   
@@ -346,22 +352,26 @@ gg <- ggplot(meltdf,aes(x=year,y=value,colour=variable,group=variable)) + geom_l
 plot(gg) 
 
 ```
-  
+ \clearpage 
   + Calcule la covarianza de la serie 1 con la 3 y de la 2 con la 3.
 
-Covarianza entre Serie 1 y Serie 3
-
-$$ Cov(Serie_1, Serie_3) = $$
-```{r}
-cov(Serie1[-1], Serie3[-1])
+La covarianza entre Serie 1 y Serie 3 es:
+```{r eval=TRUE, echo=FALSE}
+# cov(Serie1[-1], Serie3[-1])
 ```
+\begin{center}
+$Cov(Serie_1, Serie_3) =$ `r cov(Serie1[-1], Serie3[-1])`
+\end{center}
 
-Covarianza entre Serie 2 y Serie 3
+La covarianza entre Serie 2 y Serie 3 es :
 
-$$ Cov(Serie_2, Serie_3) = $$
+\begin{center}
+$ Cov(Serie_2, Serie_3) = $ `r cov(Serie_2, Serie_3)`
+\end{center}
+
   
-```{r}
-cov(Serie_2, Serie_3)
+```{r eval=TRUE, echo=FALSE}
+# cov(Serie_2, Serie_3)
 ```
 
 
@@ -372,9 +382,11 @@ El primer hecho estilizado es que el desempleo parece ser el mismo a lo largo de
 
 El segundo hecho estilizado nos dice que el nivel de empleo fluctúa con el ciclo económico, pero los salarios parecen tener nada que ver con tal ciclo. Como puede observarse en la gráfica (y como bien lo enfatiza las respectivas varianzas), México cumple con este segundo hecho estilizado con respecto a el salario real. Además, puede observarse que los cambios en el mercado laboral sí fluctúan muy similar al ciclo económico.
 
+\clearpage
 **3. Contraste un modelo trivial de la determinación del salario con los datos siguiendo estos pasos:**
 
-  +Obtenga una serie del PIB $Y_t$ de la economía.
+
+    +Obtenga una serie del PIB $Y_t$ de la economía.
 
 ```{r} 
 #Cambio Porcentual
@@ -393,7 +405,7 @@ PIB <- PIB[!duplicated(PIB[c('PIB_an')]),]
 PIB <- PIB[,-2]
 
 ```
-  + Obtenga una serie del capital $K_t$ de la economía (``Indice de Volumen físico acumulado´´).
+   + Obtenga una serie del capital $K_t$ de la economía (``Indice de Volumen físico acumulado´´).
 
 ```{r}
 K <- datos[,-3]
@@ -405,7 +417,7 @@ K <- na.omit(K)
 K <- K[,-2]
 
 ```
-  +Obtenga una serie del empleo $L_t$ de la economía.
+      +Obtenga una serie del empleo $L_t$ de la economía.
 ```{r}
 
 empleo <- read_excel("Empleo.xls",
@@ -419,7 +431,7 @@ empleo <- empleo
 
 
 ```
-  +Cree una serie de la productividad $A_t$ de la economía a partir de asumir una función de producción $Y_t=A_tF(K,L)$, con $F(K,L)=K^{0.3}L^{0.7}$.
+     + Cree una serie de la productividad $A_t$ de la economía a partir de asumir una función de producción $Y_t=A_tF(K,L)$, con $F(K,L)=K^{0.3}L^{0.7}$.
 
 $$
 productivadad=A_t=\frac{Y_t}{F(K,L)}=\frac{Y_t}{K^{0.3}L^{0.7}}
