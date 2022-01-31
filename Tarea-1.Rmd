@@ -446,7 +446,7 @@ productividad <- productividad %>% add_column(A_t=A$A)
    +Cree una serie contrafactual del salario que se debió de haber observado si el salario fuera el ingreso marginal del trabajo $A_tF_L(K_t,L_t)$.
 
 $$
-w= \frac{\partial Y_t}{\partial L}= \frac{\partial A_tF_L(K_t,L_t)}{\partial L}=0.7(A_tK^{0.3}L^{0.3})
+w_t= \frac{\partial Y_t}{\partial L}= \frac{\partial A_tF_L(K_t,L_t)}{\partial L}=0.7(A_tK^{0.3}L^{0.3})
 $$
 ```{r, echo=TRUE}
 salario <- empleo[,-2]
