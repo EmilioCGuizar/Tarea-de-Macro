@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.1.24)  30 JAN 2022 22:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.1.24)  30 JAN 2022 22:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -620,12 +620,12 @@ LaTeX Info: Redefining \% on input line 1.
 \openout7 = `Tarea-1.lot'.
 
 [2] [3]
-Overfull \hbox (62.33778pt too wide) detected at line 274
+Overfull \hbox (62.33778pt too wide) detected at line 277
 [] \OML/lmm/m/it/10 ^^M [] \OT1/lmr/m/n/10 + (1 \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 ^^M\OT1/lmr/m/n/10 ) []
  []
 
 [4]
-Overfull \hbox (42.81784pt too wide) detected at line 276
+Overfull \hbox (42.81784pt too wide) detected at line 279
 [] \OT1/lmr/m/n/10 : \OML/lmm/m/it/10 ^^M [] \OT1/lmr/m/n/10 + (1 \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 ^^M\OT1/lmr/m/n/10 ) [] = 0
  []
 
@@ -634,39 +634,39 @@ Overfull \hbox (42.81784pt too wide) detected at line 276
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.344 estándar es de 1.1104929 \clearpage
+l.347 estándar es de 1.1104929 \clearpage
                                           ] [7
 
 pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.392 \clearpage
+l.395 \clearpage
                 ] [8
 
 pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.438 estándar es de 3.610715 \clearpage
+l.441 estándar es de 3.610715 \clearpage
                                          ]
 <Tarea-1_files/figure-latex/unnamed-chunk-8-1.pdf, id=91, 505.89pt x 216.81pt>
 File: Tarea-1_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (type pdf)
 <use Tarea-1_files/figure-latex/unnamed-chunk-8-1.pdf>
-Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-8-1.pdf  used on input line 449.
+Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-8-1.pdf  used on input line 452.
 (pdftex.def)             Requested size: 469.76265pt x 201.32684pt.
 [9
 
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.455  \clearpage
+l.458  \clearpage
                   <./Tarea-1_files/figure-latex/unnamed-chunk-8-1.pdf>] [10
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 501.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 504.
 (/Users/emilio/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 508.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 511.
 (/Users/emilio/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [11
@@ -679,15 +679,15 @@ Package rerunfilecheck Info: File `Tarea-1.out' has not changed.
 (rerunfilecheck)             Checksum: C0DBEEFBDFC56D391A99A5DCA90D523D;566.
  ) 
 Here is how much of TeX's memory you used:
- 14692 strings out of 480247
- 232763 string characters out of 5895047
- 569328 words of memory out of 5000000
- 32328 multiletter control sequences out of 15000+600000
+ 14695 strings out of 480247
+ 232812 string characters out of 5895047
+ 569320 words of memory out of 5000000
+ 32331 multiletter control sequences out of 15000+600000
  518316 words of font info for 70 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  60i,12n,63p,466b,381s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/emilio/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/Users/emilio/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Users/emilio/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/Users/emilio/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/emilio/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/Users/emilio/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr5.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on Tarea-1.pdf (11 pages, 301414 bytes).
+Output written on Tarea-1.pdf (11 pages, 301884 bytes).
 PDF statistics:
  202 PDF objects out of 1000 (max. 8388607)
  149 compressed objects within 2 object streams
