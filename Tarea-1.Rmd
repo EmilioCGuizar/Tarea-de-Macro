@@ -25,6 +25,8 @@ header-includes:
 
 \newpage
 
+**ME VOY A MATAR**
+
 \listoffigures
 
 \listoftables
@@ -124,7 +126,7 @@ $$\max\limits_{w}{U}^{\gamma}{\pi^*}^{1- \gamma} $$
 $$
 \max\limits_{w} \left[ (w-x) \left (\frac{w-x}{x} \right )^{\frac{\alpha \beta}{1- \alpha}}w^{\frac{-1}{1- \alpha }}\right ]^{\gamma} \left[ \left( \frac{1- \alpha}{\alpha} \right ) w^{\frac{- \alpha}{1- \alpha}} \left( \frac{w-x}{x} \right )^{\frac{\alpha \beta}{1- \alpha}} \right]^{1- \gamma}
 $$
-Aplicando logaitmo natural obtenemos:
+Aplicando logaritmo natural obtenemos:
 $$
 \max\limits_{w} \gamma \left[ \ln(w-x) + \left (\frac{\alpha \beta}{1- \alpha} \right ) \ln \left (\frac{w-x}{x} \right )- \left( \frac{1}{1- \alpha} \right ) w \right ]+ (1- \gamma) \left[\ln \left( \frac{1- \alpha}{\alpha} \right ) - \left (\frac{\alpha}{1- \alpha } \right) \ln( w) + \left (\frac{\alpha \beta}{1- \alpha} \right ) \ln \left( \frac{w-x}{x} \right ) \right]
 $$
