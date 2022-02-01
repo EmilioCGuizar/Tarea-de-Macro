@@ -458,3 +458,129 @@ w <- as.data.frame(w,t(w))
 salario <- salario %>% add_column(w=w$w)
 
 ```
+
+**5. Practique trabajar con datos laborales de México siguiendo estos pasos:**
+
++ Descargue los micro-datos de la ENOE (también del INEGI), correspondientes a los cuatro trimestres de 2019.
+
+Los datos para este ejercicio se recuperaron del [INEGI](https://www.inegi.org.mx/programas/enoe/15ymas/#Microdatos) en formato dta.
+
++ Calcule el desempleo en cada trimestre, explicando cómo lo calculó.
+
+```{r}
+
+t119 <- read_csv("sdemt119.csv")
+t219 <- read_csv("sdemt219.csv")
+
+t319 <- read_csv("sdemt319.csv")
+names(t319) <- tolower(names(t319))
+
+t419 <- read_csv("sdemt419.csv")
+names(t419) <- tolower(names(t419))
+
+#Población Econóicamente Activa 
+PEA1 <- as.numeric(filter(t119, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, clase1 == 1) %>% summarise(sum(fac)))
+
+PEA2 <- as.numeric(filter(t219, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, clase1 == 1) %>% summarise(sum(fac)))
+
+PEA3 <- as.numeric(filter(t319, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, clase1 == 1) %>% summarise(sum(fac)))
+
+PEA4 <- as.numeric(filter(t419, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, clase1 == 1) %>% summarise(sum(fac)))
+
+#Población Ocupada
+PO1 <- as.numeric(filter(t119, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, clase2 == 1) %>% summarise(sum(fac)))
+
+PO2 <- as.numeric(filter(t219, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, clase2 == 1) %>% summarise(sum(fac)))
+
+PO3 <- as.numeric(filter(t319, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, clase2 == 1) %>% summarise(sum(fac)))
+
+PO4 <- as.numeric(filter(t419, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, clase2 == 1) %>% summarise(sum(fac)))
+
+
+#Población Desocupada
+PD1 <- as.numeric(filter(t119, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, clase2 == 2) %>% summarise(sum(fac)))
+
+PD2 <- as.numeric(filter(t219, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, clase2 == 2) %>% summarise(sum(fac)))
+
+PD3 <- as.numeric(filter(t319, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, clase2 == 2) %>% summarise(sum(fac)))
+
+PD4 <- as.numeric(filter(t419, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, clase2 == 2) %>% summarise(sum(fac)))
+
+#Tasa de desempleo
+
+U_1 <- (PD1/PEA1)*100
+U_2 <- (PD2/PEA2)*100
+U_3 <- (PD3/PEA3)*100
+U_4 <- (PD4/PEA4)*100
+
+```
+La tasa de desempleo está dada por la siguiente expresión 
+$$\text{Tasa de desempleo} = \frac{\text{Población Desocupada}}{\text{Población Económicamente Activa}}*100$$
+
+```{r}
+unemp <- data.frame(Desempleo = c(U_1,U_2,U_3,U_4), 
+                    row.names = c('Trimestre I','Trimestre II','Trimestre III','Trimestre IV'))
+knitr::kable(unemp, booktabs = TRUE, format = 'latex', longtable = F
+)%>%
+  kable_styling(latex_options = "hold_position", "center")
+
+unemp_ <- data.frame(Trimestre = c(' I',' II',' III',' IV'),
+                     desmp = c(U_1,U_2,U_3,U_4))
+
+g1 <- ggplot(unemp_, aes(Trimestre,desmp)) + geom_bar(stat = "identity", fill = "darkolivegreen2", color = "black", width = 0.6) + theme_bw() + labs(title = "Tasa de Desempleo 2019", xlab = " Trimestre ", y="Porcentaje") +  theme(text=element_text(size=12,  family="serif"))
+
+g1
+
+```
+
++ Calcule el subempleo en cada trimestre, explicando cómo lo calculó.
+
+El subempleo refiere a la condición de aquellas personas que tienen trabajo pero que no laboran todas las horas que quieren por cuestiones del mercado laboral. La fórmula está dada por: 
+$$
+\text{Tasa de Subocupación} = \frac{\text{Población Subocupada}}{\text{Población Ocupada}}*100
+$$
+
+```{r}
+#Población Subocupada
+
+Sub1 <- as.numeric(filter(t119, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, sub_o==1) %>% summarise(sum(fac)))
+
+Sub2 <- as.numeric(filter(t219, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, sub_o==1) %>% summarise(sum(fac)))
+
+Sub3 <- as.numeric(filter(t319, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, sub_o==1) %>% summarise(sum(fac)))
+
+Sub4 <- as.numeric(filter(t419, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, sub_o==1) %>% summarise(sum(fac)))
+
+#Tasa de Subocupación
+
+Tsub_1 <- (Sub1/PO1)*100
+Tsub_2 <- (Sub2/PO2)*100
+Tsub_3 <- (Sub3/PO3)*100
+Tsub_4 <- (Sub4/PO4)*100
+
+suboc <- data.frame(Subempleo = c(Tsub_1, Tsub_2, Tsub_3, Tsub_4), 
+                    row.names = c('Trimestre I','Trimestre II','Trimestre III','Trimestre IV'))
+knitr::kable(suboc, booktabs = TRUE, format = 'latex', longtable = F
+)%>%
+  kable_styling(latex_options = "hold_position", "center")
+
+suboc_ <- data.frame(Trimestre = c(' I',' II',' III',' IV'),
+                     subOC = c(Tsub_1, Tsub_2, Tsub_3, Tsub_4))
+
+g2 <- ggplot(suboc_, aes(Trimestre,subOC)) + geom_bar(stat = "identity", fill = "darkorange2", color = "black", width = 0.6) + theme_bw() + labs(title = "Tasa de Subempleo 2019", xlab = " Trimestre ", y="Porcentaje") +  theme(text=element_text(size=12,  family="serif"))
+
+g2
+
+
+```
+
+
+```{r}
+
+
+
+```
+
+
+
+
