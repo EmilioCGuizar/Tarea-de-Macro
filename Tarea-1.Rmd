@@ -55,10 +55,9 @@ Consider a firm with profits given by $\pi=[\frac{(eL)^{\alpha}}{\alpha}]-wL$, $
 \item[a.1] What value of L does the firm choose, given w$?$ what is the resulting level of profits$?$.
 \end{enumerate}
   
-Si e está fijado en 1 y w está dado, el problema de la firma es elegir L para maximizar sus beneficios:
+Si $e=1$ y w está dado, el problema de la firma es elegir L para maximizar sus beneficios:
 $$ \max\limits_{L}\pi=  \frac{L^{\alpha}}{\alpha}-wL  $$
 CPO:
-
 $$ \frac{\partial \pi}{\partial L}: \alpha \frac{L^{\alpha -1}}{\alpha}-w =0  $$
 $$ \Rightarrow L^{\alpha -1} = w $$
 $$ \Rightarrow L^*=w^{\frac{1}{\alpha -1}}$$
@@ -166,6 +165,27 @@ Lo cual es igual al resultado obtenido en la segunda parte del inciso a).
 \item[b.3.]Is the proportional impact of workers’ bargaining power on wages greater with efficiency wages than without, as Summers implies? Is it greater when efficiency-wage effects, $\beta$, are greater?
 \end{enumerate}
 \textbf{Solucion}
+Para comprobar en que caso tiene más poder de negociación el sindicato vamos a utilizar los resultados del salario optimo $w^*$ que se encuentra la parte ii de los incisos a) y b), en b hay salarios de eficiencia.
+Donde el subíndice s representa la ausencia de ecuación de esfuerzo y $\beta$ para cuando si hay ecuación de esfuerzo en los salarios.
+$$
+w^*_s= \frac{x( \alpha + \gamma (1- \alpha))}{\alpha} \quad\text{VS}\quad w^*_\beta =\frac{x( \alpha + \gamma (1- \alpha))}{\alpha (1- \beta)}
+
+$$
+Podemos notar fácilmente que el numearador de ambos salarios optimos es igual por lo que lo podemos eliminar para la comparación.
+$$
+w^*_s= \frac{1}{\alpha} \quad\text{VS}\quad w^*_\beta =\frac{1}{\alpha (1- \beta)}
+$$
+Si recordamos $0< \beta <1$ es evidente que $\alpha (1- \beta )< \alpha$ por lo cual tendremos que:
+$$
+w_s^*<w_ \beta ^*
+$$
+Y esto quiere decir que en presencia de salarios de eficiencia el sindicato tiene la posibilidad de negociar un salario optimo más alto que cuando no existen salarios de eficiencia (una ecuación de esfuerzo).
+Ahora pasamos a analizar que sucede a cuando $\beta$ aumenta.
+$$
+\frac{ \partial w_ \beta ^*}{ \partial \beta}=x( \alpha + \gamma (1- \alpha)) \left [ \frac{\alpha}{(\alpha(1- \beta))^2} \right ]
+
+$$
+Claramente podemos ver que entre mayor sea $\beta$ menor sera el denominador lo cual nos entregará un salario más alto; es decir, a mayor $\beta$ será mayor el poder de negociación del sindicato.
 
 \clearpage
   
