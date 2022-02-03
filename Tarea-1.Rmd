@@ -452,9 +452,9 @@ empleo <- empleo
      + Cree una serie de la productividad $A_t$ de la economía a partir de asumir una función de producción $Y_t=A_tF(K,L)$, con $F(K,L)=K^{0.3}L^{0.7}$.
 
 $$
-productivadad=A_t=\frac{Y_t}{F(K,L)}=\frac{Y_t}{K^{0.3}L^{0.7}}
+\text{Productivadad}=A_t=\frac{Y_t}{F(K,L)}=\frac{Y_t}{K^{0.3}L^{0.7}}
 $$
-```{r, echo=TRUE}
+```{r}
 productividad <- empleo[,-2]
 A <- PIB$PIB_an/(((K$K_an)^(0.3))*((empleo$PEA_Ocup_an)^(0.7)))
 A <- as.vector(A, mode = "numeric")
@@ -466,7 +466,7 @@ productividad <- productividad %>% add_column(A_t=A$A)
 $$
 w_t= \frac{\partial Y_t}{\partial L}= \frac{\partial A_tF_L(K_t,L_t)}{\partial L}=0.7(A_tK^{0.3}L^{0.3})
 $$
-```{r, echo=TRUE}
+```{r}
 salario <- empleo[,-2]
 w <- (0.7)*(productividad$A_t)*((K$K_an)^(0.3))*((empleo$PEA_Ocup_an)^(0.3))
 w <- as.vector(w, mode = "numeric")
@@ -482,6 +482,8 @@ salario <- salario %>% add_column(w=w$w)
 Los datos para este ejercicio se recuperaron del [INEGI](https://www.inegi.org.mx/programas/enoe/15ymas/#Microdatos) en formato dta.
 
 + Calcule el desempleo en cada trimestre, explicando cómo lo calculó.
+
+El desempleo se representa mediante la "tasa de desempleo", la cual refiere a la proporción de personas que al momento de responder la encuesta reportó que ha realizado esfuerzos por encontrar trabajo. Así, a esta proporción se le llama Población Desocupada, y es un componente de la Población Económicamente Activa (PEA). A su vez, la PEA es en sí misma una delimitación de la fuerza laboral, y es simplemente la suma de la Población Desocupada y la Ocupada.
 
 ```{r}
 
@@ -536,7 +538,7 @@ $$\text{Tasa de desempleo} = \frac{\text{Población Desocupada}}{\text{Població
 ```{r}
 unemp <- data.frame(Desempleo = c(U_1,U_2,U_3,U_4), 
                     row.names = c('Trimestre I','Trimestre II','Trimestre III','Trimestre IV'))
-knitr::kable(unemp, booktabs = TRUE, format = 'latex', longtable = F
+knitr::kable(unemp, booktabs = TRUE, format = 'latex', longtable = F, caption = "Tasas trimestrales de desempleo 2019"
 )%>%
   kable_styling(latex_options = "hold_position", "center")
 
@@ -551,7 +553,7 @@ g1
 
 + Calcule el subempleo en cada trimestre, explicando cómo lo calculó.
 
-El subempleo refiere a la condición de aquellas personas que tienen trabajo pero que no laboran todas las horas que quieren por cuestiones del mercado laboral. La fórmula está dada por: 
+Es importante mencionar que entre la desocupación y la ocupación existe un matiz interesante: el subempleo. El subempleo refiere a la condición de aquellas personas que tienen trabajo pero que no laboran todas las horas que quieren por cuestiones del mercado laboral. La fórmula está dada por: 
 $$
 \text{Tasa de Subocupación} = \frac{\text{Población Subocupada}}{\text{Población Ocupada}}*100
 $$
@@ -576,7 +578,7 @@ Tsub_4 <- (Sub4/PO4)*100
 
 suboc <- data.frame(Subempleo = c(Tsub_1, Tsub_2, Tsub_3, Tsub_4), 
                     row.names = c('Trimestre I','Trimestre II','Trimestre III','Trimestre IV'))
-knitr::kable(suboc, booktabs = TRUE, format = 'latex', longtable = F
+knitr::kable(suboc, booktabs = TRUE, format = 'latex', longtable = F, caption = "Tasas trimestrales de subempleo 2019"
 )%>%
   kable_styling(latex_options = "hold_position", "center")
 
@@ -587,16 +589,143 @@ g2 <- ggplot(suboc_, aes(Trimestre,subOC)) + geom_bar(stat = "identity", fill = 
 
 g2
 
-
 ```
++ Calcule la fracción de trabajadores fuera de la fuerza laboral, pero disponibles para trabajar, en cada trimestre, explicando cómo lo calculó.
 
+La Población Disponible es un elemento de la Población No Económicamente Activa (PNEA), y representa a aquellas personas que, por alguna razón, no están en búsqueda activa de empleo, pero que si se les presentara la oportunidad de trabajar la tomarían. Esto puede deberse a que, después de cierto tiempo de búsqueda, la persona deja de buscar por resignación.
+
+Llamaremos Tasa de Disponibilidad a la fracción referida en el enunciado del problema, la cual está dada por la siguiente expresión:
+
+$$
+\text{Tasa de Disponibilidad} = \frac{\text{Población Disponible}}{\text{PNEA}}
+$$
+
+La PNEA es simplemente la suma de la Población Disponible y la No Disponible.
+
+Así, tenemos la siguiente tabla que resume esta tasa en los trimestres del 2019:
 
 ```{r}
 
+#Población Disponible
 
+disp1 <- as.numeric(filter(t119, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, clase2 == 3, clase1==2) %>% summarise(sum(fac)))
+
+disp2 <- as.numeric(filter(t219, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98,  clase2 == 3, clase1==2) %>% summarise(sum(fac)))
+
+disp3 <- as.numeric(filter(t319, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98,  clase2 == 3, clase1==2) %>% summarise(sum(fac)))
+
+disp4 <- as.numeric(filter(t419, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98,  clase2 == 3, clase1==2) %>% summarise(sum(fac)))
+
+#Población No Disponible
+
+nd1 <- as.numeric(filter(t119, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, clase2 == 4, clase1==2) %>% summarise(sum(fac)))
+
+nd2 <- as.numeric(filter(t219, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98,  clase2 == 4, clase1==2) %>% summarise(sum(fac)))
+
+nd3 <- as.numeric(filter(t319, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98,  clase2 == 4, clase1==2) %>% summarise(sum(fac)))
+
+nd4 <- as.numeric(filter(t419, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98,  clase2 == 4, clase1==2) %>% summarise(sum(fac)))
+
+#La Población No Económicamente Activa está tada por Pob. Disponible + Pob. No Disponible.
+#Por lo tanto, la fracción de trabajadores disponibles está dada por Pob. Disponible / (Pob. Disponible + Pob. No Disponible)
+
+
+Td1 <- disp1/(disp1 + nd1)*100
+Td2 <- disp2/(disp2 + nd2)*100
+Td3 <- disp3/(disp3 + nd3)*100
+Td4 <- disp4/(disp4 + nd4)*100
+
+disp <- data.frame(Disponibilidad = c(Td1, Td2, Td3, Td4), 
+                    row.names = c('Trimestre I','Trimestre II','Trimestre III','Trimestre IV'))
+knitr::kable(disp, booktabs = TRUE, format = 'latex', longtable = F, caption = "Tasas de disponibilidad 2019"
+)%>%
+  kable_styling(latex_options = "hold_position", "center")
+
+disp_ <- data.frame(Trimestre = c(' I',' II',' III',' IV'),
+                     Dispt = c(Td1, Td2, Td3, Td4))
+
+g3 <- ggplot(disp_, aes(Trimestre,Dispt)) + geom_bar(stat = "identity", fill = "gray", color = "black", width = 0.6) + theme_bw() + labs(title = "Tasa de Disponibilidad 2019", xlab = " Trimestre ", y="Porcentaje") +  theme(text=element_text(size=12,  family="serif"))
+
+g3
 
 ```
++ Calcule qué fracción de los trabajadores trabaja en empresas chicas, medianas y grandes.
 
+Defininamos el total de personas que trabajan en este tipo de empresas, sin considerar micronegocios o personas que laboran en el sector público, como la suma: chicas + medianas + grandes. Así, las tasas (fracciones) estarán dadas por:
 
+$$
+\text{Tasa}_{it} = \frac{\text{Tamaño}_{it}}{\text{Total}_t} ,
+$$
+en donde $i$ denota el tamaño de la empresa y $t$ el trimestre.
 
+Presentamos también los valores absolutos.
+```{r}
+
+#Empleados en establecimientos pequeños
+
+peq1 <- as.numeric(filter(t119, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, pos_ocu==1, ambito2==4 ) %>% summarise(sum(fac)))
+
+peq2<- as.numeric(filter(t219, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, pos_ocu==1, ambito2==4 ) %>% summarise(sum(fac)))
+
+peq3 <- as.numeric(filter(t319, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, pos_ocu==1, ambito2==4) %>% summarise(sum(fac)))
+
+peq4 <- as.numeric(filter(t419, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, pos_ocu==1, ambito2==4) %>% summarise(sum(fac)))
+
+#Empleados en establecimientos medianos
+
+med1 <- as.numeric(filter(t119, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, pos_ocu==1, ambito2==5) %>% summarise(sum(fac)))
+
+med2<- as.numeric(filter(t219, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, pos_ocu==1, ambito2==5) %>% summarise(sum(fac)))
+
+med3 <- as.numeric(filter(t319, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, pos_ocu==1, ambito2==5) %>% summarise(sum(fac)))
+
+med4 <- as.numeric(filter(t419, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, pos_ocu==1, ambito2==5) %>% summarise(sum(fac)))
+
+#Empleados en establecimientos grandes
+
+gra1 <- as.numeric(filter(t119, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, pos_ocu==1, ambito2==6) %>% summarise(sum(fac)))
+
+gra2<- as.numeric(filter(t219, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, pos_ocu==1, ambito2==6) %>% summarise(sum(fac)))
+
+gra3 <- as.numeric(filter(t319, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, pos_ocu==1, ambito2==6) %>% summarise(sum(fac)))
+
+gra4 <- as.numeric(filter(t419, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, pos_ocu==1, ambito2==6) %>% summarise(sum(fac)))
+
+tamano <- data.frame(Pequeña = c(peq1,peq2,peq3,peq4),
+                     Mediana = c(med1,med2,med3,med4),
+                     Grande = c(gra1, gra2, gra3, gra4),
+                     row.names = c('Trimestre I','Trimestre II', 'Trimestre III','Trimestre IV'))
+
+tamano <- tamano %>% mutate(tamano, Total = Pequeña + Mediana + Grande)
+
+knitr::kable(tamano, booktabs = TRUE, format = 'latex', longtable = F, 
+             caption = "Numero de empleados por tamaño de empresa"
+)%>%
+  kable_styling(latex_options = "hold_position", "center")
+
+tit <- data.frame(Pequeña = c(peq1/(peq1+med1+gra1),peq2/(peq2+med2+gra2),peq3/(peq3+med3+gra3),peq4/(peq4+med4+gra4))*100,
+                     Mediana = c(med1/(peq1+med1+gra1),med2/(peq2+med2+gra2),med3/(peq3+med3+gra3),med4/(peq4+med4+gra4))*100,
+                     Grande = c(gra1/(peq1+med1+gra1), gra2/(peq2+med2+gra2), gra3/(peq3+med3+gra3), gra4/(peq4+med4+gra4))*100,
+                     row.names = c('Trimestre I','Trimestre II', 'Trimestre III','Trimestre IV'))
+
+knitr::kable(tit, booktabs = TRUE, format = 'latex', longtable = F, 
+             caption = "Numero de empleados por tamaño de establecimiento"
+)%>%
+  kable_styling(latex_options = "hold_position", "center")
+
+Pequeña <- c(peq1,peq2,peq3,peq4)
+Mediana <- c(med1,med2,med3,med4)
+Grande <- c(gra1,gra2,gra3,gra4)
+tamano2 <- data.frame(Trimestre = c('Trimestre I','Trimestre II', 'Trimestre III','Trimestre IV'),
+                      Tamaño = c(Pequeña,Mediana,Grande),
+                      nombre = c(rep('Pequeña',4), rep('Mediana', 4), rep('Grande',4)))
+
+pacman::p_load(scales)
+
+ggplot(tamano2,aes(x = nombre, y =Tamaño, fill = Trimestre)) +
+geom_bar(stat = "identity", position = "dodge" ) +
+  scale_y_continuous() + 
+  labs(title = "Número de empleados por tamaño de empresas (2019)", x="Tamaño de Empresa",y='Número de Empleados') + theme_bw() +  theme(text=element_text(size=12,  family="serif")) + scale_y_continuous(labels = comma)
+
+```
 
