@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.27)  3 FEB 2022 21:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.27)  3 FEB 2022 21:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -610,74 +610,74 @@ LaTeX Info: Redefining \% on input line 1.
 \tf@lot=\write7
 \openout7 = `Tarea-1.lot'.
 
-[2] [3]
-Overfull \hbox (62.33778pt too wide) detected at line 260
+[2] [3] [4]
+Overfull \hbox (62.33778pt too wide) detected at line 266
 [] \OML/lmm/m/it/10 ^^M [] \OT1/lmr/m/n/10 + (1 \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 ^^M\OT1/lmr/m/n/10 ) []
  []
 
-[4]
-Overfull \hbox (42.81784pt too wide) detected at line 262
+
+Overfull \hbox (42.81784pt too wide) detected at line 268
 [] \OT1/lmr/m/n/10 : \OML/lmm/m/it/10 ^^M [] \OT1/lmr/m/n/10 + (1 \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 ^^M\OT1/lmr/m/n/10 ) [] = 0
  []
 
-[5] [6
+[5] [6] [7
 
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.345 estándar es de 1.1104929 \clearpage
-                                          ] [7
+l.352 estándar es de 1.1104929 \clearpage
+                                          ] [8
 
 pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.393 \clearpage
-                ] [8
+l.400 \clearpage
+                ] [9
 
 pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.439 estándar es de 3.610715 \clearpage
+l.446 estándar es de 3.610715 \clearpage
                                          ]
-<Tarea-1_files/figure-latex/unnamed-chunk-8-1.pdf, id=89, 505.89pt x 216.81pt>
+<Tarea-1_files/figure-latex/unnamed-chunk-8-1.pdf, id=93, 505.89pt x 216.81pt>
 File: Tarea-1_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (type pdf)
 <use Tarea-1_files/figure-latex/unnamed-chunk-8-1.pdf>
-Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-8-1.pdf  used on input line 450.
+Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-8-1.pdf  used on input line 457.
 (pdftex.def)             Requested size: 469.76265pt x 201.32684pt.
-[9
+[10
 
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.456  \clearpage
-                  <./Tarea-1_files/figure-latex/unnamed-chunk-8-1.pdf>] [10
+l.463  \clearpage
+                  <./Tarea-1_files/figure-latex/unnamed-chunk-8-1.pdf>] [11
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 502.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 509.
 (c:/Users/hgoma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 509.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 516.
 (c:/Users/hgoma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Tarea-1_files/figure-latex/unnamed-chunk-17-1.pdf, id=105, 505.89pt x 216.81pt>
+<Tarea-1_files/figure-latex/unnamed-chunk-17-1.pdf, id=109, 505.89pt x 216.81pt>
 File: Tarea-1_files/figure-latex/unnamed-chunk-17-1.pdf Graphic file (type pdf)
 <use Tarea-1_files/figure-latex/unnamed-chunk-17-1.pdf>
-Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-17-1.pdf  used on input line 591.
+Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-17-1.pdf  used on input line 598.
 (pdftex.def)             Requested size: 469.76265pt x 201.32684pt.
-[11
+[12
 
 ]
-<Tarea-1_files/figure-latex/unnamed-chunk-18-1.pdf, id=112, 505.89pt x 216.81pt>
+<Tarea-1_files/figure-latex/unnamed-chunk-18-1.pdf, id=116, 505.89pt x 216.81pt>
 File: Tarea-1_files/figure-latex/unnamed-chunk-18-1.pdf Graphic file (type pdf)
 <use Tarea-1_files/figure-latex/unnamed-chunk-18-1.pdf>
-Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-18-1.pdf  used on input line 619.
+Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-18-1.pdf  used on input line 626.
 (pdftex.def)             Requested size: 469.76265pt x 201.32684pt.
-[12 <./Tarea-1_files/figure-latex/unnamed-chunk-17-1.pdf>] [13 <./Tarea-1_files/figure-latex/unnamed-chunk-18-1.pdf>] (./Tarea-1.aux
+[13 <./Tarea-1_files/figure-latex/unnamed-chunk-17-1.pdf>] [14 <./Tarea-1_files/figure-latex/unnamed-chunk-18-1.pdf>] (./Tarea-1.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
@@ -685,18 +685,18 @@ Package rerunfilecheck Info: File `Tarea-1.out' has not changed.
 (rerunfilecheck)             Checksum: C0DBEEFBDFC56D391A99A5DCA90D523D;566.
  ) 
 Here is how much of TeX's memory you used:
- 14719 strings out of 480229
- 235717 string characters out of 5893539
- 569363 words of memory out of 5000000
+ 14720 strings out of 480229
+ 235724 string characters out of 5893539
+ 569365 words of memory out of 5000000
  32360 multiletter control sequences out of 15000+600000
  524289 words of font info for 72 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  60i,12n,63p,466b,414s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Users/hgoma/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:/Users/hgoma/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/Users/hgoma/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/Users/hgoma/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/Users/hgoma/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/Users/hgoma/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}<c:/Users/hgoma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/hgoma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/hgoma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/Users/hgoma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/Users/hgoma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi5.pfb><c:/Users/hgoma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb><c:/Users/hgoma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/hgoma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/hgoma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/hgoma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr5.pfb><c:/Users/hgoma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/hgoma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/hgoma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/hgoma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/hgoma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy5.pfb><c:/Users/hgoma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><c:/Users/hgoma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on Tarea-1.pdf (13 pages, 313772 bytes).
+Output written on Tarea-1.pdf (14 pages, 315290 bytes).
 PDF statistics:
- 222 PDF objects out of 1000 (max. 8388607)
- 163 compressed objects within 2 object streams
- 25 named destinations out of 1000 (max. 500000)
+ 226 PDF objects out of 1000 (max. 8388607)
+ 166 compressed objects within 2 object streams
+ 26 named destinations out of 1000 (max. 500000)
  48 words of extra memory for PDF output out of 10000 (max. 10000000)
 

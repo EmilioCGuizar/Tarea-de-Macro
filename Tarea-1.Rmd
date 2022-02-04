@@ -61,7 +61,7 @@ CPO:
 $$ \frac{\partial \pi}{\partial L}: \alpha \frac{L^{\alpha -1}}{\alpha}-w =0  $$
 $$ \Rightarrow L^{\alpha -1} = w $$
 $$ \Rightarrow L^*=w^{\frac{1}{\alpha -1}}$$
-Sustituyendo L* en $\pi$ obtenemos $\pi^*$, donde la empresa maximiza el beneficio dado $w$
+Sustituimos L* en $\pi$ obtenemos $\pi^*$, donde la empresa maximiza el beneficio dado $w$
 
 $$ \pi^*= \frac{{\left(w^{\frac{1}{\alpha-1}} \right)}^{\alpha}}{\alpha} - w \left (w^{\frac{1}{\alpha-1}} \right )= \frac{w^{\frac{\alpha}{\alpha-1}}-\alpha w^{\frac{\alpha}{\alpha-1}}}{\alpha}$$
 
@@ -72,9 +72,9 @@ $$  \Rightarrow \pi^*= \left (\frac{1- \alpha}{\alpha} \right )w^{\frac{1}{\alph
 \end{enumerate}
 
 $$\max\limits_{w}{U}^{\gamma}{\pi^*}^{1- \gamma} $$
-Sustituyendo el nivel de L en la función objetivo del sindicato, $(w-x)L^*$:
+Sustiuimos el nivel de $L^*$ en la función objetivo del sindicato, $(w-x)L^*$:
 $$\max\limits_{w} [(w-x)L^*]^{\gamma} \left[ \left (\frac{1- \alpha}{\alpha} \right)w^{\frac{1}{\alpha-1}} \right]^{1- \gamma}$$
-Tomando el logaritmo natural tenemos:
+Tomamos el logaritmo natural de ${U}^{\gamma}{\pi}^{1- \gamma}$ y derivamos con respecto a este, con la finalidad de simplificar los cálculos, tenemos entonces:
 
 $$\max\limits_{w} \gamma \left[\ln(w-x)+\frac{1}{\alpha -1} \ln(w) \right]
 + (1- \gamma)\left[ \ln \left( \frac{1- \alpha}{\alpha} \right) + \left (\frac{\alpha}{\alpha-1} \right )ln(w) \right]
@@ -103,6 +103,7 @@ $$
 \begin{enumerate}
 \item[b.1.] What value of L does the firm choose, given w$?$, What is the resulting level of profits$?$
 \end{enumerate}
+Ahora vamos a encontrar $L^*$ que maximiza $\pi$ en presencia de una ecuación de esfuerzo.
 $$
 \max\limits_{L}\pi= \frac{ \left ( \left ( \frac{w-x}{x} \right )^ \beta L \right )^{\alpha}}{\alpha}-wL
 $$
@@ -119,26 +120,29 @@ $$
 $$
 \Rightarrow L^*= \left ( w \left( \frac{x}{w-x} \right )^{\alpha \beta} \right)^{\frac{1}{\alpha -1}}= \left(\frac{w-x}{x} \right)^{\frac{\alpha \beta}{1- \alpha}}w^{\frac{1}{\alpha -1}}
 $$
-Sustituyendo L* en $\pi$ obtenemos $\pi^*$, donde la empresa maximiza el beneficio dado $w$
+Sustituimos L* en $\pi$, así como hicimos en pasos anteriors, y obtenemos $\pi^*$, donde la empresa maximiza el beneficio dado $w$
 $$
 \pi^*= \frac{ \left[ \left (\frac{w-x}{x} \right )^\beta \left( \frac{w-x}{x} \right )^{\frac{\alpha \beta}{1- \alpha}}w^{\frac{1}{\alpha -1}} \right ]^\alpha}{\alpha}-w \left( \frac{w-x}{x} \right )^{\frac{\alpha \beta}{1- \alpha}}w^{\frac{1}{\alpha -1}}
 $$
+De tal modo que este es el beneficio óptimo al nivel dado de salarios en presencia de una ecuación de esfuerzo.
 $$
 \Rightarrow \pi^*= \frac{ \left[  \left( \frac{w-x}{x} \right )^{\frac{\alpha \beta}{1- \alpha}}w^{\frac{\alpha}{\alpha -1}} \right ]}{\alpha}- \left( \frac{w-x}{x} \right )^{\frac{\alpha \beta}{1- \alpha}}w^{\frac{\alpha}{\alpha -1}}=\left( \frac{1- \alpha}{\alpha} \right ) w^{\frac{\alpha}{\alpha -1}} \left( \frac{w-x}{x} \right )^{\frac{\alpha \beta}{1- \alpha}} 
 $$
  \begin{enumerate}
 \item[b.2.] Suppose that the firm and the union choose w to maximize ${U}^{\gamma}{\pi}^{1- \gamma}$, $0<{\gamma} < {\alpha}$ What level of w do they choose? (Hint: For the case of $\beta =0$, your answer should simplify to your answer in part [a][ii].)
 \end{enumerate}
-Sustituyendo el nivel de L obtenido en el inciso anterior en la función objetivo del sindicato, $(w-x)L^*$: 
+Vamos a sustituir el nivel de $L^* $obtenido en el inciso anterior en la función objetivo del sindicato, $(w-x)L^*$: 
 $$\max\limits_{w}{U}^{\gamma}{\pi^*}^{1- \gamma} $$
-
 $$
 \max\limits_{w} \left[ (w-x) \left (\frac{w-x}{x} \right )^{\frac{\alpha \beta}{1- \alpha}}w^{\frac{-1}{1- \alpha }}\right ]^{\gamma} \left[ \left( \frac{1- \alpha}{\alpha} \right ) w^{\frac{- \alpha}{1- \alpha}} \left( \frac{w-x}{x} \right )^{\frac{\alpha \beta}{1- \alpha}} \right]^{1- \gamma}
 $$
-Aplicando logaritmo natural obtenemos:
+
+Aplicamos logaritmo natural y derivando como en el inciso anterior, obtenemos:
+
 $$
 \max\limits_{w} \gamma \left[ \ln(w-x) + \left (\frac{\alpha \beta}{1- \alpha} \right ) \ln \left (\frac{w-x}{x} \right )- \left( \frac{1}{1- \alpha} \right ) w \right ]+ (1- \gamma) \left[\ln \left( \frac{1- \alpha}{\alpha} \right ) - \left (\frac{\alpha}{1- \alpha } \right) \ln( w) + \left (\frac{\alpha \beta}{1- \alpha} \right ) \ln \left( \frac{w-x}{x} \right ) \right]
 $$
+
 CPO:
 $$
 \frac{\partial \ln U^{\gamma}{\pi^*}^{1- \gamma}}{\partial w}: \gamma \left[ \left(\frac{1- \alpha + \alpha \beta}{1- \alpha}\right ) \left (\frac{1}{w-x} \right )- \left( \frac{1}{1- \alpha}\right ) \left( \frac{1}{w}\right) \right]+(1- \gamma) \left[ - \left ( \frac{\alpha}{1- \alpha} \right ) \left( \frac{1}{w} \right ) + \left( \frac{ \alpha \beta}{1- \alpha} \right ) \left (\frac{1}{w-x} \right ) \right]=0
@@ -152,9 +156,12 @@ $$
 $$
 \Rightarrow \alpha \beta w - \alpha w= \alpha \gamma x - \gamma x - \alpha x
 $$
+
+Así encontramos el salario óptimo fijado por la empresa y el sindicato cuando existe una ecuación de esfuerzo.
 $$
 \Rightarrow w^*= \frac{x( \alpha \gamma -\gamma - \alpha )}{\alpha \beta- \alpha}=\frac{x( \alpha + \gamma (1- \alpha))}{\alpha (1- \beta)}
 $$
+
 Cuando evaluamos $w^*$ en $\beta =0$ obtenemos:
 $$
  w^* \rvert_{\beta=0}=\frac{x( \alpha + \gamma (1- \alpha))}{\alpha (1- 0)}=\frac{x( \alpha + \gamma (1- \alpha))}{\alpha}
@@ -170,7 +177,7 @@ Donde el subíndice s representa la ausencia de ecuación de esfuerzo y $\beta$ 
 $$
 w^*_s= \frac{x( \alpha + \gamma (1- \alpha))}{\alpha} \quad\textrm{VS}\quad w^*_\beta =\frac{x( \alpha + \gamma (1- \alpha))}{\alpha (1- \beta)}
 $$
-Podemos notar fácilmente que el numearador de ambos salarios optimos es igual por lo que lo podemos eliminar para la comparación.
+Podemos notar fácilmente que el numerador de ambos salarios óptimos es igual por lo que lo podemos eliminar para la comparación.
 $$
 w^*_s= \frac{1}{\alpha} \quad\text{VS}\quad w^*_\beta =\frac{1}{\alpha (1- \beta)}
 $$
@@ -178,11 +185,14 @@ Si recordamos $0< \beta <1$ es evidente que $\alpha (1- \beta )< \alpha$ por lo 
 $$
 w_s^*<w_ \beta ^*
 $$
-Y esto quiere decir que en presencia de salarios de eficiencia el sindicato tiene la posibilidad de negociar un salario optimo más alto que cuando no existen salarios de eficiencia (una ecuación de esfuerzo).
+
+Y esto quiere decir que en presencia de salarios de eficiencia el sindicato tiene la posibilidad de negociar un salario óptimo más alto que cuando no existen salarios de eficiencia (una ecuación de esfuerzo).
 Ahora pasamos a analizar que sucede a cuando $\beta$ aumenta.
+
 $$
 \frac{ \partial w_ \beta ^*}{ \partial \beta}=x( \alpha + \gamma (1- \alpha)) \left [ \frac{\alpha}{(\alpha(1- \beta))^2} \right ]
 $$
+
 Claramente podemos ver que entre mayor sea $\beta$ menor sera el denominador lo cual nos entregará un salario más alto; es decir, a mayor $\beta$ será mayor el poder de negociación del sindicato.
 
 \clearpage
