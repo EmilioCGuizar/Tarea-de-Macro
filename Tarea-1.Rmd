@@ -25,8 +25,6 @@ header-includes:
 
 \newpage
 
-**ME VOY A MATAR**
-
 \listoffigures
 
 \listoftables
@@ -39,6 +37,7 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.align=
 
 # Preguntas teóricas
 
+## Ejercicio 11.2, Romer (5ta Edicion)
 **1. Resuelva los ejercicios 11.2 y 11.9 (5a Ed.). Realice estos con ayuda de su 
 laboratorista y entregue las soluciones a máquina, utilizando LaTeX.**
 
@@ -196,6 +195,8 @@ $$
 Claramente podemos ver que entre mayor sea $\beta$ menor sera el denominador lo cual nos entregará un salario más alto; es decir, a mayor $\beta$ será mayor el poder de negociación del sindicato.
 
 \clearpage
+
+## Ejercicio 11.9, Romer (5ta Edicion)
   
 # Ejercicios prácticos
 
@@ -208,7 +209,7 @@ pacman::p_load(tidyverse,
                knitr, tinytex, reshape, lubridate, scales, reshape2)
 ```
 
-
+## Ejercicio 2
 \begin{enumerate}
 \item[] \textbf{2. Estudie el mercado laboral en México siguiendo estos pasos:}
 \end{enumerate}
@@ -429,10 +430,11 @@ El primer hecho estilizado es que el desempleo parece ser el mismo a lo largo de
 El segundo hecho estilizado nos dice que el nivel de empleo fluctúa con el ciclo económico, pero los salarios parecen tener nada que ver con tal ciclo. Como puede observarse en la gráfica (y como bien lo enfatiza las respectivas varianzas), México cumple con este segundo hecho estilizado con respecto a el salario real. Además, puede observarse que los cambios en el mercado laboral sí fluctúan muy similar al ciclo económico.
 
 \clearpage
+
 **3. Contraste un modelo trivial de la determinación del salario con los datos siguiendo estos pasos:**
 
 
-    +Obtenga una serie del PIB $Y_t$ de la economía.
++ Obtenga una serie del PIB $Y_t$ de la economía.
 
 ```{r} 
 #Cambio Porcentual
@@ -451,7 +453,7 @@ PIB <- PIB[!duplicated(PIB[c('PIB_an')]),]
 PIB <- PIB[,-2]
 
 ```
-   + Obtenga una serie del capital $K_t$ de la economía (``Indice de Volumen físico acumulado´´).
++ Obtenga una serie del capital $K_t$ de la economía (``Indice de Volumen físico acumulado´´).
 
 ```{r}
 K <- datos[,-3]
@@ -463,7 +465,7 @@ K <- na.omit(K)
 K <- K[,-2]
 
 ```
-      +Obtenga una serie del empleo $L_t$ de la economía.
++ Obtenga una serie del empleo $L_t$ de la economía.
 ```{r}
 
 empleo <- read_excel("Empleo.xls",
@@ -477,24 +479,24 @@ empleo <- empleo
 
 
 ```
-     + Cree una serie de la productividad $A_t$ de la economía a partir de asumir una función de producción $Y_t=A_tF(K,L)$, con $F(K,L)=K^{0.3}L^{0.7}$.
++ Cree una serie de la productividad $A_t$ de la economía a partir de asumir una función de producción $Y_t=A_tF(K,L)$, con $F(K,L)=K^{0.3}L^{0.7}$.
 
 $$
-productivadad=A_t=\frac{Y_t}{F(K,L)}=\frac{Y_t}{K^{0.3}L^{0.7}}
+\text{Productivadad}=A_t=\frac{Y_t}{F(K,L)}=\frac{Y_t}{K^{0.3}L^{0.7}}
 $$
-```{r, echo=TRUE}
+```{r}
 productividad <- empleo[,-2]
 A <- PIB$PIB_an/(((K$K_an)^(0.3))*((empleo$PEA_Ocup_an)^(0.7)))
 A <- as.vector(A, mode = "numeric")
 A <- as.data.frame(A,t(A))
 productividad <- productividad %>% add_column(A_t=A$A)
 ```
-   +Cree una serie contrafactual del salario que se debió de haber observado si el salario fuera el ingreso marginal del trabajo $A_tF_L(K_t,L_t)$.
++ Cree una serie contrafactual del salario que se debió de haber observado si el salario fuera el ingreso marginal del trabajo $A_tF_L(K_t,L_t)$.
 
 $$
 w_t= \frac{\partial Y_t}{\partial L}= \frac{\partial A_tF_L(K_t,L_t)}{\partial L}=0.7(A_tK^{0.3}L^{0.3})
 $$
-```{r, echo=TRUE}
+```{r}
 salario <- empleo[,-2]
 w <- (0.7)*(productividad$A_t)*((K$K_an)^(0.3))*((empleo$PEA_Ocup_an)^(0.3))
 w <- as.vector(w, mode = "numeric")
@@ -503,6 +505,7 @@ salario <- salario %>% add_column(w=w$w)
 
 ```
 
+## Ejercicio 5
 **5. Practique trabajar con datos laborales de México siguiendo estos pasos:**
 
 + Descargue los micro-datos de la ENOE (también del INEGI), correspondientes a los cuatro trimestres de 2019.
@@ -627,7 +630,7 @@ La Población Disponible es un elemento de la Población No Económicamente Acti
 Llamaremos Tasa de Disponibilidad a la fracción referida en el enunciado del problema, la cual está dada por la siguiente expresión:
 
 $$
-\text{Tasa de Disponibilidad} = \frac{\text{Población Disponible}}{\text{PNEA}}
+\text{Tasa de Disponibilidad} = \frac{\text{Población Disponible}}{\text{PNEA}}*100
 $$
 
 La PNEA es simplemente la suma de la Población Disponible y la No Disponible.
@@ -658,7 +661,7 @@ knitr::kable(disp, booktabs = TRUE, format = 'latex', longtable = F, caption = "
   kable_styling(latex_options = "hold_position", "center")
 disp_ <- data.frame(Trimestre = c(' I',' II',' III',' IV'),
                      Dispt = c(Td1, Td2, Td3, Td4))
-g3 <- ggplot(disp_, aes(Trimestre,Dispt)) + geom_bar(stat = "identity", fill = "gray", color = "black", width = 0.6) + theme_bw() + labs(title = "Tasa de Disponibilidad 2019", xlab = " Trimestre ", y="Porcentaje") +  theme(text=element_text(size=12,  family="serif"))
+g3 <- ggplot(disp_, aes(Trimestre,Dispt)) + geom_bar(stat = "identity", fill = "lightblue", color = "black", width = 0.6) + theme_bw() + labs(title = "Tasa de Disponibilidad 2019", xlab = " Trimestre ", y="Porcentaje") +  theme(text=element_text(size=12,  family="serif"))
 g3
 ```
 + Calcule qué fracción de los trabajadores trabaja en empresas chicas, medianas y grandes.
@@ -666,7 +669,7 @@ g3
 Defininamos el total de personas que trabajan en este tipo de empresas, sin considerar micronegocios o personas que laboran en el sector público, como la suma: chicas + medianas + grandes. Así, las tasas (fracciones) estarán dadas por:
 
 $$
-\text{Tasa}_{it} = \frac{\text{Tamaño}_{it}}{\text{Total}_t} ,
+\text{Tasa}_{it} = \frac{\text{Tamaño}_{it}}{\text{Total}_t}*100 ,
 $$
 en donde $i$ denota el tamaño de la empresa y $t$ el trimestre.
 
@@ -711,13 +714,136 @@ tamano2 <- data.frame(Trimestre = c('Trimestre I','Trimestre II', 'Trimestre III
                       Tamaño = c(Pequeña,Mediana,Grande),
                       nombre = c(rep('Pequeña',4), rep('Mediana', 4), rep('Grande',4)))
 pacman::p_load(scales)
+
 ggplot(tamano2,aes(x = nombre, y =Tamaño, fill = Trimestre)) +
 geom_bar(stat = "identity", position = "dodge" ) +
-  scale_y_continuous() + 
   labs(title = "Número de empleados por tamaño de empresas (2019)", x="Tamaño de Empresa",y='Número de Empleados') + theme_bw() +  theme(text=element_text(size=12,  family="serif")) + scale_y_continuous(labels = comma)
 ```
 
++ Calcule qué fracción de los trabajadores está buscando otro empleo.
 
+Resulta interesante conocer estas cifras, ya que el mercado laboral experimenta "presiones" que provienen de aquellos individuos en situación de búsqueda de trabajo. En este rubro no sólo entran las personas desocupadas, sino también las que ya tienen trabajo pero por alguna razón quieren encontrar otro.
+
+```{r}
+busq1 <- as.numeric(filter(t119, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, tpg_p8a == 1) %>% summarise(sum(fac)))
+
+busq2 <- as.numeric(filter(t219, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98,  tpg_p8a == 1) %>% summarise(sum(fac)))
+
+busq3 <- as.numeric(filter(t319, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98,  tpg_p8a == 1) %>% summarise(sum(fac)))
+
+busq4 <- as.numeric(filter(t419, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98,  tpg_p8a == 1) %>% summarise(sum(fac)))
+
+busq <- data.frame(Busqueda = c(busq1, busq2, busq3, busq4), 
+                    row.names = c('Trimestre I','Trimestre II','Trimestre III','Trimestre IV'))
+knitr::kable(busq, booktabs = TRUE, format = 'latex', longtable = F, caption = "Empleados en búsqueda de otro empleo 2019"
+)%>%
+  kable_styling(latex_options = "hold_position", "center")
+
+busq_ <- data.frame(Trimestre = c(' I',' II',' III',' IV'),
+                     busqu = c(busq1, busq2, busq3, busq4))
+
+g3 <- ggplot(busq_, aes(Trimestre,busqu)) + geom_bar(stat = "identity", fill = "blue", color = "black", width = 0.6) + theme_bw() + labs(title = "Número de empleados en búsqueda de otro trabajo 2019", xlab = " Trimestre ", y="Porcentaje") +  theme(text=element_text(size=12,  family="serif")) +  scale_y_continuous(label = comma)
+g3
+
+```
+
+
++ Grafique la relación entre el ingreso promedio y la edad de los trabajadores.
+
+
+```{r echo = FALSE, fig.cap = "Relación entre Edad e Ingreso"}
+
+a <- t119 %>%
+           filter(clase1 == 1, eda == 15)%>%
+          summarise(avg_ing= mean(ing_x_hrs))
+a <- as.numeric(a)
+
+b <- t119 %>%
+           filter(clase1 == 1, eda == 20)%>%
+          summarise(avg_ing= mean(ing_x_hrs))
+b <- as.numeric(b)
+
+c <- t119 %>%
+           filter(clase1 == 1, eda == 25)%>%
+          summarise(avg_ing= mean(ing_x_hrs))
+c <- as.numeric(c)
+
+d <- t119 %>%
+           filter(clase1 == 1, eda == 30)%>%
+          summarise(avg_ing= mean(ing_x_hrs))
+d <- as.numeric(d)
+
+e <- t119 %>%
+           filter(clase1 == 1, eda == 35)%>%
+          summarise(avg_ing= mean(ing_x_hrs))
+e <- as.numeric(e)
+
+f <- t119 %>%
+           filter(clase1 == 1, eda == 40)%>%
+          summarise(avg_ing= mean(ing_x_hrs))
+f <- as.numeric(f)
+
+g <- t119 %>%
+           filter(clase1 == 1, eda == 45)%>%
+          summarise(avg_ing= mean(ing_x_hrs))
+g <- as.numeric(g)
+
+h <- t119 %>%
+           filter(clase1 == 1, eda == 50)%>%
+          summarise(avg_ing= mean(ing_x_hrs))
+h <- as.numeric(h)
+
+i <- t119 %>%
+           filter(clase1 == 1, eda == 55)%>%
+          summarise(avg_ing= mean(ing_x_hrs))
+i <- as.numeric(i)
+
+j <- t119 %>%
+           filter(clase1 == 1, eda == 60)%>%
+          summarise(avg_ing= mean(ing_x_hrs))
+j <- as.numeric(j)
+
+k <- t119 %>%
+           filter(clase1 == 1, eda == 65)%>%
+          summarise(avg_ing= mean(ing_x_hrs))
+k <- as.numeric(k)
+
+l <- t119 %>%
+           filter(clase1 == 1, eda == 70)%>%
+          summarise(avg_ing= mean(ing_x_hrs))
+l <- as.numeric(l)
+
+m <- t119 %>%
+           filter(clase1 == 1, eda == 75)%>%
+          summarise(avg_ing= mean(ing_x_hrs))
+m <- as.numeric(m)
+
+n <- t119 %>%
+           filter(clase1 == 1, eda == 80)%>%
+          summarise(avg_ing= mean(ing_x_hrs))
+n <- as.numeric(n)
+
+o <- t119 %>%
+           filter(clase1 == 1, eda == 85)%>%
+          summarise(avg_ing= mean(ing_x_hrs))
+o <- as.numeric(o)
+
+p <- t119 %>%
+           filter(clase1 == 1, eda == 90)%>%
+          summarise(avg_ing= mean(ing_x_hrs))
+p <- as.numeric(p)
+
+
+Ingreso <- c(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p)
+
+Edad <- c(15,20,25,30,25,40,45,50,55,60,65,70,75,80,85,90)
+df <- data.frame(Edd = Edad, ing = Ingreso)
+
+ggplot(df, aes(Edd,ing)) + geom_point(colour="brown", size=2.5) + labs(title = "Relación entre Edad e Ingreso (2019)", x="Edad",y="Ingreso por hora") + theme_bw() +  theme(text=element_text(size=12,  family="serif"))
+
+
+
+```
 
 
 
