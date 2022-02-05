@@ -20,6 +20,7 @@ header-includes:
   - \usepackage[spanish]{babel}
   - \usepackage{graphicx}
   - \usepackage{float}
+  - \usepackage{lscape}
 ---
 
 
@@ -504,6 +505,29 @@ w <- as.data.frame(w,t(w))
 salario <- salario %>% add_column(w=w$w)
 
 ```
+## Ejercicio 4
+osdifjdsoi
+
+
+\newpage
+\begin{landscape}
+```{r}
+matriz_hus <- read_excel("matriz.xlsx", sheet = 2)
+names(matriz_hus) <- c("Tipo de unidad \n económica empleadora", "Informal", "Formal",
+                       "Informal", "Formal","Informal", "Formal","Informal", "Formal","Informal", "Formal",
+                       "Informal", "Formal", "Total")
+
+knitr::kable(matriz_hus, booktabs = TRUE, format = 'latex', caption = "Matriz Hussmanns para México, 4º Trimestre de 2019", longtable = F)%>%
+    add_header_above(c(" ", "Asalariados" = 2, "Con percepciones \n no salariales" = 2,
+                       "Empleadores" = 2, "Trabajadores por \n cuenta propia" = 2,
+                       "Trabajadores \n no remunerados" = 2, "Subtotal por perspectiva de la \n unidad económica y/o laboral" = 2))%>%
+  add_header_above(c(" ", "Posición en la ocupación y condición de informalidad" = 12), bold = T, italic = T) %>%
+  kable_styling(latex_options = "scale_down", "center")
+
+
+```
+\end{landscape}
+
 
 ## Ejercicio 5
 **5. Practique trabajar con datos laborales de México siguiendo estos pasos:**
