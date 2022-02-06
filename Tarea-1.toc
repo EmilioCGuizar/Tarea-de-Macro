@@ -1,0 +1,17 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\'{I}ndice de figuras}{2}{section*.2}%
+\contentsline {section}{\'{I}ndice de cuadros}{2}{section*.3}%
+\contentsline {section}{Preguntas teóricas}{3}{section*.4}%
+\contentsline {subsection}{Ejercicio 11.2, Romer (5ta Edicion)}{3}{section*.5}%
+\contentsline {subsubsection}{Ejercicio (a)}{3}{section*.6}%
+\contentsline {subsubsection}{Ejercicio (b)}{4}{section*.7}%
+\contentsline {subsection}{Ejercicio 11.9, Romer (5ta Edicion)}{6}{section*.8}%
+\contentsline {subsubsection}{Ejercicio (a)}{6}{section*.9}%
+\contentsline {subsubsection}{Ejercicio (b)}{7}{section*.10}%
+\contentsline {subsubsection}{Ejercicio (c)}{7}{section*.11}%
+\contentsline {section}{Ejercicios prácticos}{8}{section*.12}%
+\contentsline {subsection}{Ejercicio 2}{8}{section*.13}%
+\contentsline {subsubsection}{a)}{8}{section*.14}%
+\contentsline {subsubsection}{b)}{9}{section*.15}%
+\contentsline {subsection}{Ejercicio 4}{13}{section*.16}%
+\contentsline {subsection}{Ejercicio 5}{15}{section*.17}%
