@@ -341,19 +341,21 @@ knitr::kable(
   salr, booktabs = TRUE, format = 'latex', col.names = c("Año", "Remuneración Media Real (Índice)","Variación %"),
   caption = "Variación Porcentual de los Salarios Reales (2008 - 2021)"
 )%>%
-  kable_styling(latex_options = "hold_position")
+  kable_styling(latex_options = "HOLD_position",position="center")
 ```
+
+
 ```{r eval=TRUE, echo=FALSE}
 #Volatilidad
 Serie_1 <- salr$Serie_1
 vol_s1 <- sd(Serie_1, na.rm = T)
 ```
 La volatilidad de esta tasa de crecimiento, medido por la desviación estándar es de `r vol_s1`
-\clearpage
+
 
 ### b)
 \begin{enumerate}
-\item[] \textit{Obtenga del INEGI una serie anual del empleo total en México, calcule la 
+\item[] \textit{Obtenga del INEGI una serie anual del empleo total en México, calcule la
   serie de su tasa de cambio anual, calcule la volatilidad de dicha serie. (Serie 2)}
 \end{enumerate}
 \textbf{Solucion: }
@@ -381,7 +383,7 @@ knitr::kable(
   empleo, booktabs = TRUE, format = 'latex', col.names = c("Año", "Población Ocupada","Variación %"),
   caption = "Variación Porcentual de la Población Ocupada (2006 - 2021)", longtable = F
 )%>%
-  kable_styling(latex_options = "hold_position")
+  kable_styling(latex_options = "HOLD_position",position="center")
 ```
 
 
@@ -395,12 +397,12 @@ vol_s2 <- sd(Serie_2, na.rm = T)
 ```
 La volatilidad de esta tasa de crecimiento, medido por la desviación estándar es de `r vol_s2`
 
-\clearpage
+### c)
 
-  + Obtenga del INEGI una serie anual del producto interno bruto en términos 
-  reales, calcule su tasa de cambio anual, calcule su volatilidad. (Serie 3)
-  
-
+\begin{enumerate}
+\item[] \textit{ Obtenga del INEGI una serie anual del producto interno bruto en términos reales, calcule su tasa de cambio anual, calcule su volatilidad. (Serie 3)}
+\end{enumerate}
+\textbf{Solucion: }
 Cambio Porcentual y Volatilidad de Serie 3
 
 ```{r} 
@@ -433,7 +435,7 @@ knitr::kable(
   datos_pib, booktabs = TRUE, format = 'latex', col.names = c("Año", "Producto Interno Bruto","Variación %"),
   caption = "Variación Porcentual de los Salarios Reales (2008 - 2021)", longtable = F
 )%>%
-  kable_styling(latex_options = "hold_position")
+  kable_styling(latex_options = "HOLD_position",position="center")
 ```
 Volatilidad
 
@@ -504,7 +506,10 @@ El segundo hecho estilizado nos dice que el nivel de empleo fluctúa con el cicl
 
 \clearpage
 
-**3. Contraste un modelo trivial de la determinación del salario con los datos siguiendo estos pasos:**
+## Ejercicio 3
+\begin{enumerate}
+\item[] \textbf{3. Contraste un modelo trivial de la determinación del salario con los datos siguiendo estos pasos:}
+\end{enumerate}
 
 
 + Obtenga una serie del PIB $Y_t$ de la economía.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.27)  6 FEB 2022 14:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.27)  6 FEB 2022 15:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -615,31 +615,27 @@ Overfull \hbox (42.81784pt too wide) detected at line 239
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.421 estándar es de 1.1104929 \clearpage
-                                          ] [9
-
-pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
+l.463 
+      ] [9pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.467 \clearpage
-                ] [10
-
-pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
+l.509 L
+       a volatilidad de esta tasa de crecimiento, medido por la desviaciónpdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.513 estándar es de 3.610715 \clearpage
-                                         ]
-<Tarea-1_files/figure-latex/unnamed-chunk-8-1.pdf, id=182, 505.89pt x 216.81pt>
+l.509 L
+       a volatilidad de esta tasa de crecimiento, medido por la desviación] [10]
+<Tarea-1_files/figure-latex/unnamed-chunk-8-1.pdf, id=193, 505.89pt x 216.81pt>
 File: Tarea-1_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (type pdf)
 <use Tarea-1_files/figure-latex/unnamed-chunk-8-1.pdf>
-Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-8-1.pdf  used on input line 524.
+Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-8-1.pdf  used on input line 521.
 (pdftex.def)             Requested size: 469.76265pt x 201.32684pt.
 [11
 
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.530  \clearpage
+l.527  \clearpage
                   <./Tarea-1_files/figure-latex/unnamed-chunk-8-1.pdf>] [12
 
 ] [13
@@ -647,67 +643,67 @@ l.530  \clearpage
 ] [14pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.637 \end{landscape}
+l.638 \end{landscape}
                      ]
-<Tarea-1_files/figure-latex/unnamed-chunk-18-1.pdf, id=209, 505.89pt x 216.81pt>
+<Tarea-1_files/figure-latex/unnamed-chunk-18-1.pdf, id=221, 505.89pt x 216.81pt>
 File: Tarea-1_files/figure-latex/unnamed-chunk-18-1.pdf Graphic file (type pdf)
 <use Tarea-1_files/figure-latex/unnamed-chunk-18-1.pdf>
-Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-18-1.pdf  used on input line 679.
+Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-18-1.pdf  used on input line 680.
 (pdftex.def)             Requested size: 469.76265pt x 201.32684pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Tarea-1_files/figure-latex/unnamed-chunk-19-1.pdf, id=210, 505.89pt x 216.81pt>
+<Tarea-1_files/figure-latex/unnamed-chunk-19-1.pdf, id=222, 505.89pt x 216.81pt>
 File: Tarea-1_files/figure-latex/unnamed-chunk-19-1.pdf Graphic file (type pdf)
 <use Tarea-1_files/figure-latex/unnamed-chunk-19-1.pdf>
-Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-19-1.pdf  used on input line 707.
+Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-19-1.pdf  used on input line 708.
 (pdftex.def)             Requested size: 469.76265pt x 201.32684pt.
 [15
 
 
  <./Tarea-1_files/figure-latex/unnamed-chunk-18-1.pdf>]
-<Tarea-1_files/figure-latex/unnamed-chunk-20-1.pdf, id=221, 505.89pt x 216.81pt>
+<Tarea-1_files/figure-latex/unnamed-chunk-20-1.pdf, id=233, 505.89pt x 216.81pt>
 File: Tarea-1_files/figure-latex/unnamed-chunk-20-1.pdf Graphic file (type pdf)
 <use Tarea-1_files/figure-latex/unnamed-chunk-20-1.pdf>
-Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-20-1.pdf  used on input line 752.
+Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-20-1.pdf  used on input line 753.
 (pdftex.def)             Requested size: 469.76265pt x 201.32684pt.
 [16pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.752 ...re-latex/unnamed-chunk-20-1} \end{center}
+l.753 ...re-latex/unnamed-chunk-20-1} \end{center}
                                                    <./Tarea-1_files/figure-latex/unnamed-chunk-19-1.pdf>]
-<Tarea-1_files/figure-latex/unnamed-chunk-21-1.pdf, id=231, 505.89pt x 216.81pt>
+<Tarea-1_files/figure-latex/unnamed-chunk-21-1.pdf, id=243, 505.89pt x 216.81pt>
 File: Tarea-1_files/figure-latex/unnamed-chunk-21-1.pdf Graphic file (type pdf)
 <use Tarea-1_files/figure-latex/unnamed-chunk-21-1.pdf>
-Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-21-1.pdf  used on input line 804.
+Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-21-1.pdf  used on input line 805.
 (pdftex.def)             Requested size: 469.76265pt x 201.32684pt.
 [17pdfTeX warning (ext4): destination with the same identifier (name{table.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.804 ...re-latex/unnamed-chunk-21-1} \end{center}
+l.805 ...re-latex/unnamed-chunk-21-1} \end{center}
                                                   pdfTeX warning (ext4): destination with the same identifier (name{table.7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.804 ...re-latex/unnamed-chunk-21-1} \end{center}
+l.805 ...re-latex/unnamed-chunk-21-1} \end{center}
                                                    <./Tarea-1_files/figure-latex/unnamed-chunk-20-1.pdf>]
-<Tarea-1_files/figure-latex/unnamed-chunk-22-1.pdf, id=241, 505.89pt x 216.81pt>
+<Tarea-1_files/figure-latex/unnamed-chunk-22-1.pdf, id=253, 505.89pt x 216.81pt>
 File: Tarea-1_files/figure-latex/unnamed-chunk-22-1.pdf Graphic file (type pdf)
 <use Tarea-1_files/figure-latex/unnamed-chunk-22-1.pdf>
-Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-22-1.pdf  used on input line 834.
+Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-22-1.pdf  used on input line 835.
 (pdftex.def)             Requested size: 469.76265pt x 201.32684pt.
-<Tarea-1_files/figure-latex/unnamed-chunk-23-1.pdf, id=242, 505.89pt x 216.81pt>
+<Tarea-1_files/figure-latex/unnamed-chunk-23-1.pdf, id=254, 505.89pt x 216.81pt>
 File: Tarea-1_files/figure-latex/unnamed-chunk-23-1.pdf Graphic file (type pdf)
 <use Tarea-1_files/figure-latex/unnamed-chunk-23-1.pdf>
-Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-23-1.pdf  used on input line 845.
+Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-23-1.pdf  used on input line 846.
 (pdftex.def)             Requested size: 469.76265pt x 201.32684pt.
 [18pdfTeX warning (ext4): destination with the same identifier (name{table.8}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.851 
+l.852 
        <./Tarea-1_files/figure-latex/unnamed-chunk-21-1.pdf> <./Tarea-1_files/figure-latex/unnamed-chunk-22-1.pdf>] [19pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.852 \end{document}
+l.853 \end{document}
                      <./Tarea-1_files/figure-latex/unnamed-chunk-23-1.pdf>] (./Tarea-1.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
@@ -716,21 +712,21 @@ LaTeX Info: Redefining \% on input line 25.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Tarea-1.out' has not changed.
-(rerunfilecheck)             Checksum: 25F5ADE631D70C458406B770EDDB74AA;2190.
+(rerunfilecheck)             Checksum: 6BFB0A54143E4BDC35325B64642537CC;2375.
  ) 
 Here is how much of TeX's memory you used:
- 14296 strings out of 480229
- 229888 string characters out of 5893539
- 559171 words of memory out of 5000000
- 31907 multiletter control sequences out of 15000+600000
+ 14305 strings out of 480229
+ 229973 string characters out of 5893539
+ 559232 words of memory out of 5000000
+ 31912 multiletter control sequences out of 15000+600000
  535502 words of font info for 74 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  60i,18n,63p,821b,421s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Users/lamen/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/Users/lamen/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/Users/lamen/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/Users/lamen/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/Users/lamen/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/Users/lamen/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/Users/lamen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/lamen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/lamen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb><c:/Users/lamen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/Users/lamen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/Users/lamen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi5.pfb><c:/Users/lamen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb><c:/Users/lamen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/lamen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/lamen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/lamen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr5.pfb><c:/Users/lamen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/lamen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/lamen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/lamen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/lamen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/lamen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy5.pfb><c:/Users/lamen/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
-Output written on Tarea-1.pdf (19 pages, 358041 bytes).
+Output written on Tarea-1.pdf (19 pages, 358747 bytes).
 PDF statistics:
- 369 PDF objects out of 1000 (max. 8388607)
- 293 compressed objects within 3 object streams
- 61 named destinations out of 1000 (max. 500000)
- 164 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 382 PDF objects out of 1000 (max. 8388607)
+ 305 compressed objects within 4 object streams
+ 65 named destinations out of 1000 (max. 500000)
+ 180 words of extra memory for PDF output out of 10000 (max. 10000000)
 

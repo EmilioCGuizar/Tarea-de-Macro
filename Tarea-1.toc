@@ -12,6 +12,8 @@
 \contentsline {section}{Ejercicios prácticos}{8}{section*.12}%
 \contentsline {subsection}{Ejercicio 2}{8}{section*.13}%
 \contentsline {subsubsection}{a)}{8}{section*.14}%
-\contentsline {subsubsection}{b)}{9}{section*.15}%
-\contentsline {subsection}{Ejercicio 4}{13}{section*.16}%
-\contentsline {subsection}{Ejercicio 5}{15}{section*.17}%
+\contentsline {subsubsection}{b)}{8}{section*.15}%
+\contentsline {subsubsection}{c)}{9}{section*.16}%
+\contentsline {subsection}{Ejercicio 3}{13}{section*.17}%
+\contentsline {subsection}{Ejercicio 4}{13}{section*.18}%
+\contentsline {subsection}{Ejercicio 5}{15}{section*.19}%
