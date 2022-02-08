@@ -281,7 +281,7 @@ pacman::p_load(tidyverse,
 \item[] \textbf{2. Estudie el mercado laboral en México siguiendo estos pasos:}
 \end{enumerate}
 
-### a) 
+### (a) 
 \begin{enumerate}
 \item[] \textit{Obtenga del INEGI una serie anual de los salarios (en términos reales) en México, 
   calcule la serie de su tasa de cambio anual, calcule la volatilidad de dicha serie. (Serie 1).}
@@ -353,7 +353,7 @@ vol_s1 <- sd(Serie_1, na.rm = T)
 La volatilidad de esta tasa de crecimiento, medido por la desviación estándar es de `r vol_s1`
 
 
-### b)
+### (b)
 \begin{enumerate}
 \item[] \textit{Obtenga del INEGI una serie anual del empleo total en México, calcule la
   serie de su tasa de cambio anual, calcule la volatilidad de dicha serie. (Serie 2)}
@@ -397,7 +397,7 @@ vol_s2 <- sd(Serie_2, na.rm = T)
 ```
 La volatilidad de esta tasa de crecimiento, medido por la desviación estándar es de `r vol_s2`
 
-### c)
+### (c)
 
 \begin{enumerate}
 \item[] \textit{ Obtenga del INEGI una serie anual del producto interno bruto en términos reales, calcule su tasa de cambio anual, calcule su volatilidad. (Serie 3)}
@@ -507,10 +507,7 @@ El segundo hecho estilizado nos dice que el nivel de empleo fluctúa con el cicl
 \clearpage
 
 ## Ejercicio 3
-\begin{enumerate}
-\item[] \textbf{3. Contraste un modelo trivial de la determinación del salario con los datos siguiendo estos pasos:}
-\end{enumerate}
-
+\textbf{3. Contraste un modelo trivial de la determinación del salario con los datos siguiendo estos pasos:}
 
 + Obtenga una serie del PIB $Y_t$ de la economía.
 
@@ -583,8 +580,20 @@ salario <- salario %>% add_column(w=w$w)
 
 ```
 ## Ejercicio 4
-osdifjdsoi
 
+### (a) 
+
+**Obtenga la “Matriz Hussmans” para México, del INEGI, para algún trimestre de 2019.**
+
+La Matriz Hussmanns es un esquema integrador que implica un algoritmo, en el cual el enfoque de unidad económica aplica a las modalidades de trabajo independiente (i.e. empleadores y trabajadores por cuenta propia), mientras que el enfoque laboral aplica a modalidades de trabajo dependiente, como es el trabajo asalariado.
+
+Este esquema contempla ambas dimensiones de la informalidad:
+
+1. La primera definición alude al tipo o naturaleza de la Unidad Económica: cuando ésta produce bienes y servicios operando a partir de los recursos del hogar y sin llevar los registros contables básicos, se habla de Sector Informal y, por tanto, de empleo vinculado a tal sector.
+
+2. La segunda definición es una perspectiva laboral, y abarca a todo trabajo que se esté realizando sin contar con el amparo de un marco institucional o legal, sin importar que la unidad económica esté registrada y constituida formalmente o no. De esta manera, se habla de "empleo informal".
+
+Para realizar este ejercicio, se obtuvo de la página del INEGI el documento "enoe_informalidad_15ymas_2019", el cual cuenta con las matrices de los cuatro trimestres e información detallada sobre la informalidad. En particular, se utilizará el último trimestre del 2019.
 
 \newpage
 \begin{landscape}
@@ -606,14 +615,106 @@ knitr::kable(matriz_hus, booktabs = TRUE, format = 'latex', caption = "Matriz Hu
 \end{landscape}
 
 
+### (b) 
+**A partir de la tabla, averigüe qué proporción de los trabajadores trabaja en el “sector informal” de la economía.**
+
+En la primera fila de la matriz se encuentra la información sobre el sector laboral, en donde el total es la suma de varios componentes de un desglose importante, personas ocupadas que están en el sector informal según ciertas condiciones:
+
+ + Trabajadores subordinados y remunerados
+ + Empleadores
+ + Trabajadores por cuenta propia
+ + Trabajadores no remunerados
+
+Esta suma asciende a 15,172,271 personas en el cuarto trimestre del 2019, el cual representa el 27.41% de la población ocupada.
+
+### (c)
+**A partir de la tabla, averigüe qué proporción de los trabajadores del sector formal son informales.**
+
+### (d)
+
+**Averigüe con datos del INEGI cuáles son las industrias formales con mayor proporción de trabajadores informales y los estados de la república con mayor proporción de trabajadores informales.**
+
+Del documento "Nacional_IE_ForInf_Total_419" extraemos la información concerniente a la informalidad por sector económico, el cual incluye datos sobre los sectores primario, secundario y terciario.
+
+```{r fig.pos= 'H'}
+sectores <- read_excel("Nacional_IE_ForInf_Total_419.xlsx", sheet = 2)
+
+names(sectores) <- c("Indicador","Población Ocupada", "Ocupación Formal", "Subtotal", "Sector Informal", "Subtotal", "Ambito no agropecuario", "Ambito agropecuario")
+
+sectores_tab <- sectores[-c(2,4,8),]
+
+View(sectores)
+
+knitr::kable(sectores_tab, booktabs = TRUE, format = 'latex', caption = "Informalidad Laboral por Sectores", longtable = F)%>%
+    add_header_above(c(" ", " ", " ", " ", " ", "Fuera del Sector Informal" = 3))%>%
+  add_header_above(c(" "," ", " ", "Ocupación Informal" = 5)) %>%
+  add_header_above(c(" ", "Estimaciones" = 7), bold = T)%>%
+  kable_styling(latex_options = "scale_down", "center") %>% pack_rows("Primario", 2, 2) %>% pack_rows("Secundario", 3, 5) %>%
+    pack_rows("Terciario", 6, 12) 
+
+```
+\clearpage
+
+Nótese que el sector terciario es en donde se presenta más informalidad, con una proporción de alrededor del 65\% del total. Por otro lado, el sector secundario sólo representa el 35\% del sector informal. 
+
+Dentro del apartado "Fuera del Sector Informal", el sector primario asciende a 5,881,455 personas ocupadas que, a pesar de no considerarse del sector informal, se encuentran en condición de "Ocupación Informal", por lo que puede inferirse que carecen de acceso a instituciones de salud y no tienen el amparo del marco legal. En el caso del sector secundario, en este triemstre había 1,426,732 personas ocupadas en la informalidad, consideradas "fuera del sector informal". Y para el sector terciario, son 8,280,701 de personas en esta situación.
+
+Resulta ilustrativo representar estas cifras por medio de gráficas. En cuanto al sector primario, dado que su desglose consiste en un elemento, no resulta muy útil. Sin embargo, para los sectores secundario y terciario existen más detalles:
+
+```{r fig.pos = 'H', fig.width=5, fig.height=5, fig.cap= "Empleo Informal en Sector Formal"}
+sec <- data.frame(ramo1 =c("Industria ext./electricidad", "Industria manufacturera", "Construcción") ,
+                   cant = c(31961,1131086,263685))
+                 
+terc <- data.frame(ramo2 = c("Comercio", "Restaurantes", "Transportes y comunicaciones", "Servicios profesionales", "Servicios sociales", "Servicios diversos", "Gobierno y organismos intls."),
+                  cant2 = c(1950962, 963599, 424041, 640510, 735899, 3120229, 445461))
+
+
+sec1 <- ggplot(sec, aes(x=ramo1, y=cant)) + geom_bar(stat='identity', width = 0.3, fill = "orange") + scale_y_continuous(labels = comma) + scale_x_discrete(guide = guide_axis(angle = 90)) +  labs(title = "Sector Secundario", x = " ", y= " ") + theme_bw() + theme(text=element_text(size=12,  family="serif"))
+
+terc1 <- ggplot(terc, aes(x=ramo2, y=cant2)) + geom_bar(stat='identity', width = 0.3, fill = "olivedrab3") + scale_y_continuous(labels = comma) + scale_x_discrete(guide = guide_axis(angle = 90))  + theme_bw() + labs(title = "Sector Terciario", x = " ", y= " ") + theme(text=element_text(size=12,  family="serif"))
+
+plot_grid(sec1, terc1)
+```
+En este par de gráficas se puede observar que, dentro del sector secundario, la industria que menos presenta niveles de empleo informal es el de la extracción y electricidad, mientras que la industria manufacturera emplea 1,300,000 de personas en informalmente.
+
+Por otra parte, el rubro de "Servicios diversos" es el que presenta más empleo informal, ascendiendo a 3,120,000 empleos de este tipo. El menor nivel se encuentra en servicios de gobierno y organismos internacionales. Pese a ser una cifra pequeña, esto último llama la atención, pues se esperaría que el estado, como ente empleador, se apegara al marco legal y dotara de prestaciones a todos sus trabajadores.
+
+
+El desglose de la informalidad por entidad federativa se ilustra por medio de la siguiente gráfica:
+
+```{r, fig.height= 4.5, fig.pos='H', fig.cap="Informalidad por Entidad Federativa"}
+
+compara <- read_excel("ComparativoENOE.xlsx")
+
+
+comparaent <- compara[-1,] %>% arrange(desc(Informalidad))
+
+
+ggplot(comparaent, aes(x = reorder(Entidad, -Informalidad), y = Informalidad)) + geom_bar(stat='identity', fill = 'purple') +
+  scale_x_discrete(guide = guide_axis(angle = 90)) + theme_bw() + labs(title = "Informalidad por Entidad Federativa (Trim. IV, 2019)", x = " ", y = "Número de personas en \n condición de informalidad") + theme(text=element_text(size=12,  family="serif")) + scale_y_continuous(labels = comma)
+
+```
+
+Naturalmente, aquellos estados en donde haya mayor población, puede esperarse que exista mayor informalidad. Entre los primeros tres, el Estado de México se encuentra a la delantera, con casi 2,500,000 de personas en condición de informalidad. Luego la gráfica disminuye drásticamente, donde le Ciudad de México se encuentra en niveles de alrededor de 1,300,000 en tal situación. Después, el estado con mayor informalidad es Veracruz, con aproximadamente 900,000 personas informales.
+
+En cambio, los estados que presentan menor informalidad son Campeche, Baja California (Sur) y Colima, en donde este último no llega ni a 70,000 personas en esta condición.
+
+### (e)
+**Obtenga una medida de salario por industria y grafique el nivel de informalidad contra el salario.**
+
+### (f)  Enuncie algunas conclusiones tentativas sobre los resultados que obtuvo, relacionándolas con los modelos discutidos en clase.
+
+
 ## Ejercicio 5
 **5. Practique trabajar con datos laborales de México siguiendo estos pasos:**
 
-+ Descargue los micro-datos de la ENOE (también del INEGI), correspondientes a los cuatro trimestres de 2019.
+### (a) 
+**Descargue los micro-datos de la ENOE (también del INEGI), correspondientes a los cuatro trimestres de 2019.**
 
 Los datos para este ejercicio se recuperaron del [INEGI](https://www.inegi.org.mx/programas/enoe/15ymas/#Microdatos) en formato dta.
 
-+ Calcule el desempleo en cada trimestre, explicando cómo lo calculó.
+### (b) 
+**Calcule el desempleo en cada trimestre, explicando cómo lo calculó.**
 
 ```{r}
 
@@ -665,7 +766,7 @@ U_4 <- (PD4/PEA4)*100
 La tasa de desempleo está dada por la siguiente expresión 
 $$\text{Tasa de desempleo} = \frac{\text{Población Desocupada}}{\text{Población Económicamente Activa}}*100$$
 
-```{r}
+```{r, fig.cap="Tasa de Desempleo, T4 2019"}
 unemp <- data.frame(Desempleo = c(U_1,U_2,U_3,U_4), 
                     row.names = c('Trimestre I','Trimestre II','Trimestre III','Trimestre IV'))
 knitr::kable(unemp, booktabs = TRUE, format = 'latex', longtable = F
@@ -688,7 +789,7 @@ $$
 \text{Tasa de Subocupación} = \frac{\text{Población Subocupada}}{\text{Población Ocupada}}*100
 $$
 
-```{r}
+```{r fig.cap="Tasa de Subocupación, T4 2019"}
 #Población Subocupada
 
 Sub1 <- as.numeric(filter(t119, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, sub_o==1) %>% summarise(sum(fac)))
@@ -724,7 +825,9 @@ g2
 
 
 
-+ Calcule la fracción de trabajadores fuera de la fuerza laboral, pero disponibles para trabajar, en cada trimestre, explicando cómo lo calculó.
+### (d)
+
+**Calcule la fracción de trabajadores fuera de la fuerza laboral, pero disponibles para trabajar, en cada trimestre, explicando cómo lo calculó.**
 
 La Población Disponible es un elemento de la Población No Económicamente Activa (PNEA), y representa a aquellas personas que, por alguna razón, no están en búsqueda activa de empleo, pero que si se les presentara la oportunidad de trabajar la tomarían. Esto puede deberse a que, después de cierto tiempo de búsqueda, la persona deja de buscar por resignación.
 
@@ -738,7 +841,7 @@ La PNEA es simplemente la suma de la Población Disponible y la No Disponible.
 
 Así, tenemos la siguiente tabla que resume esta tasa en los trimestres del 2019:
 
-```{r}
+```{r fig.cap="Tasa de Disponibilidad, T4 2019"}
 #Población Disponible
 disp1 <- as.numeric(filter(t119, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, clase2 == 3, clase1==2) %>% summarise(sum(fac)))
 disp2 <- as.numeric(filter(t219, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98,  clase2 == 3, clase1==2) %>% summarise(sum(fac)))
@@ -765,7 +868,8 @@ disp_ <- data.frame(Trimestre = c(' I',' II',' III',' IV'),
 g3 <- ggplot(disp_, aes(Trimestre,Dispt)) + geom_bar(stat = "identity", fill = "lightblue", color = "black", width = 0.6) + theme_bw() + labs(title = "Tasa de Disponibilidad 2019", xlab = " Trimestre ", y="Porcentaje") +  theme(text=element_text(size=12,  family="serif"))
 g3
 ```
-+ Calcule qué fracción de los trabajadores trabaja en empresas chicas, medianas y grandes.
+### (f)
+**Calcule qué fracción de los trabajadores trabaja en empresas chicas, medianas y grandes.**
 
 Defininamos el total de personas que trabajan en este tipo de empresas, sin considerar micronegocios o personas que laboran en el sector público, como la suma: chicas + medianas + grandes. Así, las tasas (fracciones) estarán dadas por:
 
@@ -775,7 +879,7 @@ $$
 en donde $i$ denota el tamaño de la empresa y $t$ el trimestre.
 
 Presentamos también los valores absolutos.
-```{r}
+```{r fig.cap="Trabajadores por Tamaño de Empresa, 2019"}
 #Empleados en establecimientos pequeños
 peq1 <- as.numeric(filter(t119, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, pos_ocu==1, ambito2==4 ) %>% summarise(sum(fac)))
 peq2<- as.numeric(filter(t219, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, pos_ocu==1, ambito2==4 ) %>% summarise(sum(fac)))
@@ -797,7 +901,7 @@ tamano <- data.frame(Pequeña = c(peq1,peq2,peq3,peq4),
                      row.names = c('Trimestre I','Trimestre II', 'Trimestre III','Trimestre IV'))
 tamano <- tamano %>% mutate(tamano, Total = Pequeña + Mediana + Grande)
 knitr::kable(tamano, booktabs = TRUE, format = 'latex', longtable = F, 
-             caption = "Numero de empleados por tamaño de empresa"
+             caption = "Absoluto de empleados por tamaño de empresa"
 )%>%
   kable_styling(latex_options = "hold_position", "center")
 tit <- data.frame(Pequeña = c(peq1/(peq1+med1+gra1),peq2/(peq2+med2+gra2),peq3/(peq3+med3+gra3),peq4/(peq4+med4+gra4))*100,
@@ -805,7 +909,7 @@ tit <- data.frame(Pequeña = c(peq1/(peq1+med1+gra1),peq2/(peq2+med2+gra2),peq3/
                      Grande = c(gra1/(peq1+med1+gra1), gra2/(peq2+med2+gra2), gra3/(peq3+med3+gra3), gra4/(peq4+med4+gra4))*100,
                      row.names = c('Trimestre I','Trimestre II', 'Trimestre III','Trimestre IV'))
 knitr::kable(tit, booktabs = TRUE, format = 'latex', longtable = F, 
-             caption = "Numero de empleados por tamaño de establecimiento"
+             caption = "Relativo de empleados por tamaño de empresa"
 )%>%
   kable_styling(latex_options = "hold_position", "center")
 Pequeña <- c(peq1,peq2,peq3,peq4)
@@ -821,11 +925,12 @@ geom_bar(stat = "identity", position = "dodge" ) +
   labs(title = "Número de empleados por tamaño de empresas (2019)", x="Tamaño de Empresa",y='Número de Empleados') + theme_bw() +  theme(text=element_text(size=12,  family="serif")) + scale_y_continuous(labels = comma)
 ```
 
-+ Calcule qué fracción de los trabajadores está buscando otro empleo.
+### (g) 
+**Calcule qué fracción de los trabajadores está buscando otro empleo.**
 
 Resulta interesante conocer estas cifras, ya que el mercado laboral experimenta "presiones" que provienen de aquellos individuos en situación de búsqueda de trabajo. En este rubro no sólo entran las personas desocupadas, sino también las que ya tienen trabajo pero por alguna razón quieren encontrar otro.
 
-```{r}
+```{r fig.cap="Búsqueda de otro Empleo, T4 2019"}
 busq1 <- as.numeric(filter(t119, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, tpg_p8a == 1) %>% summarise(sum(fac)))
 
 busq2 <- as.numeric(filter(t219, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98,  tpg_p8a == 1) %>% summarise(sum(fac)))
@@ -834,7 +939,7 @@ busq3 <- as.numeric(filter(t319, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 
 
 busq4 <- as.numeric(filter(t419, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98,  tpg_p8a == 1) %>% summarise(sum(fac)))
 
-busq <- data.frame(Busqueda = c(busq1, busq2, busq3, busq4), 
+busq <- data.frame(Búsqueda = c(busq1, busq2, busq3, busq4), 
                     row.names = c('Trimestre I','Trimestre II','Trimestre III','Trimestre IV'))
 knitr::kable(busq, booktabs = TRUE, format = 'latex', longtable = F, caption = "Empleados en búsqueda de otro empleo 2019"
 )%>%
@@ -846,10 +951,12 @@ busq_ <- data.frame(Trimestre = c(' I',' II',' III',' IV'),
 g3 <- ggplot(busq_, aes(Trimestre,busqu)) + geom_bar(stat = "identity", fill = "blue", color = "black", width = 0.6) + theme_bw() + labs(title = "Número de empleados en búsqueda de otro trabajo 2019", xlab = " Trimestre ", y="Porcentaje") +  theme(text=element_text(size=12,  family="serif")) +  scale_y_continuous(label = comma)
 g3
 
+
 ```
 
 
-+ Grafique la relación entre el ingreso promedio y la edad de los trabajadores.
+### (h)
+**Grafique la relación entre el ingreso promedio y la edad de los trabajadores.**
 
 
 ```{r echo = FALSE, fig.cap = "Relación entre Edad e Ingreso"}
