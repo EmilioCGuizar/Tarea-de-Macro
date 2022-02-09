@@ -700,9 +700,20 @@ Naturalmente, aquellos estados en donde haya mayor población, puede esperarse q
 En cambio, los estados que presentan menor informalidad son Campeche, Baja California (Sur) y Colima, en donde este último no llega ni a 70,000 personas en esta condición.
 
 ### (e)
+
 **Obtenga una medida de salario por industria y grafique el nivel de informalidad contra el salario.**
 
-### (f)  Enuncie algunas conclusiones tentativas sobre los resultados que obtuvo, relacionándolas con los modelos discutidos en clase.
+Los datos sobre el salario por sector pueden consultarse a través del portal de la Secretaría del Trabajo y Previsión Social, en el apartado de [estadísticas](http://stps.gob.mx/gobmx/estadisticas/). Aquí, puede ingresarse al polígono de salarios y luego seleccionar, en el apartado "Salario diario asociado a trabajadores asegurados", el documento "Sector de Actividad del 2000 a la fecha". Si el lector está interesado en mayor visualización de estos datos, el IMSS cuenta con un [sitio](https://public.tableau.com/app/profile/imss.cpe/viz/Histrico_4/Empleo_h) para tal propósito.
+
+```{r}
+salsec <- read_excel("302_0121.xls", sheet = 2)
+View(salsec)
+
+```
+
+
+### (f)  
+Enuncie algunas conclusiones tentativas sobre los resultados que obtuvo, relacionándolas con los modelos discutidos en clase.
 
 
 ## Ejercicio 5
@@ -766,7 +777,7 @@ U_4 <- (PD4/PEA4)*100
 La tasa de desempleo está dada por la siguiente expresión 
 $$\text{Tasa de desempleo} = \frac{\text{Población Desocupada}}{\text{Población Económicamente Activa}}*100$$
 
-```{r, fig.cap="Tasa de Desempleo, T4 2019"}
+```{r, fig.cap="Tasa de Desempleo, 2019"}
 unemp <- data.frame(Desempleo = c(U_1,U_2,U_3,U_4), 
                     row.names = c('Trimestre I','Trimestre II','Trimestre III','Trimestre IV'))
 knitr::kable(unemp, booktabs = TRUE, format = 'latex', longtable = F
@@ -789,7 +800,7 @@ $$
 \text{Tasa de Subocupación} = \frac{\text{Población Subocupada}}{\text{Población Ocupada}}*100
 $$
 
-```{r fig.cap="Tasa de Subocupación, T4 2019"}
+```{r fig.cap="Tasa de Subocupación, 2019"}
 #Población Subocupada
 
 Sub1 <- as.numeric(filter(t119, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, sub_o==1) %>% summarise(sum(fac)))
@@ -841,7 +852,7 @@ La PNEA es simplemente la suma de la Población Disponible y la No Disponible.
 
 Así, tenemos la siguiente tabla que resume esta tasa en los trimestres del 2019:
 
-```{r fig.cap="Tasa de Disponibilidad, T4 2019"}
+```{r fig.cap="Tasa de Disponibilidad, 2019"}
 #Población Disponible
 disp1 <- as.numeric(filter(t119, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, clase2 == 3, clase1==2) %>% summarise(sum(fac)))
 disp2 <- as.numeric(filter(t219, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98,  clase2 == 3, clase1==2) %>% summarise(sum(fac)))
@@ -930,7 +941,7 @@ geom_bar(stat = "identity", position = "dodge" ) +
 
 Resulta interesante conocer estas cifras, ya que el mercado laboral experimenta "presiones" que provienen de aquellos individuos en situación de búsqueda de trabajo. En este rubro no sólo entran las personas desocupadas, sino también las que ya tienen trabajo pero por alguna razón quieren encontrar otro.
 
-```{r fig.cap="Búsqueda de otro Empleo, T4 2019"}
+```{r fig.cap="Búsqueda de otro Empleo, 2019"}
 busq1 <- as.numeric(filter(t119, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, tpg_p8a == 1) %>% summarise(sum(fac)))
 
 busq2 <- as.numeric(filter(t219, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98,  tpg_p8a == 1) %>% summarise(sum(fac)))

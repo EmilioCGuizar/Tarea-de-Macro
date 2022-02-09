@@ -21,8 +21,8 @@
 \contentsline {subsubsection}{(c)}{16}{section*.21}%
 \contentsline {subsubsection}{(d)}{16}{section*.22}%
 \contentsline {subsubsection}{(e)}{18}{section*.23}%
-\contentsline {subsubsection}{(f) Enuncie algunas conclusiones tentativas sobre los resultados que obtuvo, relacionándolas con los modelos discutidos en clase.}{18}{section*.24}%
-\contentsline {subsection}{Ejercicio 5}{18}{section*.25}%
+\contentsline {subsubsection}{(f)}{18}{section*.24}%
+\contentsline {subsection}{Ejercicio 5}{19}{section*.25}%
 \contentsline {subsubsection}{(a)}{19}{section*.26}%
 \contentsline {subsubsection}{(b)}{19}{section*.27}%
 \contentsline {subsubsection}{(d)}{20}{section*.28}%
