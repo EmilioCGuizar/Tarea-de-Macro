@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.2.5)  8 FEB 2022 19:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.2.5)  8 FEB 2022 22:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -757,20 +757,20 @@ l.1068
                                                   \__shipout_drop_firstpage_...
 l.1068 
         <./Tarea-1_files/figure-latex/unnamed-chunk-25-1.pdf>]
-<Tarea-1_files/figure-latex/unnamed-chunk-27-1.pdf, id=384, 505.89pt x 216.81pt>
+<Tarea-1_files/figure-latex/unnamed-chunk-27-1.pdf, id=384, 505.89pt x 361.35pt>
 File: Tarea-1_files/figure-latex/unnamed-chunk-27-1.pdf Graphic file (type pdf)
 <use Tarea-1_files/figure-latex/unnamed-chunk-27-1.pdf>
-Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-27-1.pdf  used on input line 1077.
-(pdftex.def)             Requested size: 469.76265pt x 201.32684pt.
+Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-27-1.pdf  used on input line 1083.
+(pdftex.def)             Requested size: 469.76265pt x 335.54477pt.
 [23pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1084 \end{document}
-                     pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) has been already used, duplicate ignored
+l.1089 
+        <./Tarea-1_files/figure-latex/unnamed-chunk-26-1.pdf>] [24pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1084 \end{document}
-                      <./Tarea-1_files/figure-latex/unnamed-chunk-26-1.pdf> <./Tarea-1_files/figure-latex/unnamed-chunk-27-1.pdf>] (./Tarea-1.aux
+l.1098 \end{document}
+                      <./Tarea-1_files/figure-latex/unnamed-chunk-27-1.pdf>] (./Tarea-1.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
@@ -781,18 +781,18 @@ Package rerunfilecheck Info: File `Tarea-1.out' has not changed.
 (rerunfilecheck)             Checksum: 51C6F39B5AD85E6F38F10FECC7EB9D09;3335.
  ) 
 Here is how much of TeX's memory you used:
- 14398 strings out of 480247
- 229667 string characters out of 5895212
+ 14399 strings out of 480247
+ 229674 string characters out of 5895212
  561963 words of memory out of 5000000
  31959 multiletter control sequences out of 15000+600000
  535502 words of font info for 74 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  60i,18n,63p,821b,668s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/emilio/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Users/emilio/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/Users/emilio/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/emilio/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/Users/emilio/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/emilio/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr5.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
-Output written on Tarea-1.pdf (23 pages, 380745 bytes).
+Output written on Tarea-1.pdf (24 pages, 407353 bytes).
 PDF statistics:
- 511 PDF objects out of 1000 (max. 8388607)
- 425 compressed objects within 5 object streams
- 103 named destinations out of 1000 (max. 500000)
+ 518 PDF objects out of 1000 (max. 8388607)
+ 431 compressed objects within 5 object streams
+ 104 named destinations out of 1000 (max. 500000)
  286 words of extra memory for PDF output out of 10000 (max. 10000000)
 

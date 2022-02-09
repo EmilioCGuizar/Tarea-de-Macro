@@ -968,101 +968,33 @@ g3
 
 ### (h)
 **Grafique la relación entre el ingreso promedio y la edad de los trabajadores.**
+En las siguientes figuras se muestra la relación que existe entre la edad y el ingreso para los cuatro trimestres del 2019. Es de recalcar que, a grandes rasgos, se tiene mayor ingreso en una edad adulta, antes de envejecer. Esto resulta lógico, pues se percibe mayor ingreso en la etapa más productiva de la vida. Resulta interesante, también, que en los cuatro trimestres el promedio es bastante alto para algunas edades rondando los 85 años.
 
 
-```{r echo = FALSE, fig.cap = "Relación entre Edad e Ingreso"}
-
-a <- t119 %>%
-           filter(clase1 == 1, eda == 15)%>%
-          summarise(avg_ing= mean(ing_x_hrs))
-a <- as.numeric(a)
-
-b <- t119 %>%
-           filter(clase1 == 1, eda == 20)%>%
-          summarise(avg_ing= mean(ing_x_hrs))
-b <- as.numeric(b)
-
-c <- t119 %>%
-           filter(clase1 == 1, eda == 25)%>%
-          summarise(avg_ing= mean(ing_x_hrs))
-c <- as.numeric(c)
-
-d <- t119 %>%
-           filter(clase1 == 1, eda == 30)%>%
-          summarise(avg_ing= mean(ing_x_hrs))
-d <- as.numeric(d)
-
-e <- t119 %>%
-           filter(clase1 == 1, eda == 35)%>%
-          summarise(avg_ing= mean(ing_x_hrs))
-e <- as.numeric(e)
-
-f <- t119 %>%
-           filter(clase1 == 1, eda == 40)%>%
-          summarise(avg_ing= mean(ing_x_hrs))
-f <- as.numeric(f)
-
-g <- t119 %>%
-           filter(clase1 == 1, eda == 45)%>%
-          summarise(avg_ing= mean(ing_x_hrs))
-g <- as.numeric(g)
-
-h <- t119 %>%
-           filter(clase1 == 1, eda == 50)%>%
-          summarise(avg_ing= mean(ing_x_hrs))
-h <- as.numeric(h)
-
-i <- t119 %>%
-           filter(clase1 == 1, eda == 55)%>%
-          summarise(avg_ing= mean(ing_x_hrs))
-i <- as.numeric(i)
-
-j <- t119 %>%
-           filter(clase1 == 1, eda == 60)%>%
-          summarise(avg_ing= mean(ing_x_hrs))
-j <- as.numeric(j)
-
-k <- t119 %>%
-           filter(clase1 == 1, eda == 65)%>%
-          summarise(avg_ing= mean(ing_x_hrs))
-k <- as.numeric(k)
-
-l <- t119 %>%
-           filter(clase1 == 1, eda == 70)%>%
-          summarise(avg_ing= mean(ing_x_hrs))
-l <- as.numeric(l)
-
-m <- t119 %>%
-           filter(clase1 == 1, eda == 75)%>%
-          summarise(avg_ing= mean(ing_x_hrs))
-m <- as.numeric(m)
-
-n <- t119 %>%
-           filter(clase1 == 1, eda == 80)%>%
-          summarise(avg_ing= mean(ing_x_hrs))
-n <- as.numeric(n)
-
-o <- t119 %>%
-           filter(clase1 == 1, eda == 85)%>%
-          summarise(avg_ing= mean(ing_x_hrs))
-o <- as.numeric(o)
-
-p <- t119 %>%
-           filter(clase1 == 1, eda == 90)%>%
-          summarise(avg_ing= mean(ing_x_hrs))
-p <- as.numeric(p)
+```{r echo = FALSE, fig.cap = "Relación entre Edad e Ingreso", fig.pos='H', fig.height=5}
 
 
-Ingreso <- c(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p)
+ingprom1 <- t119 %>% group_by(eda) %>% filter(clase1 == 1, eda >= 15) %>% summarise(avg_ing1= mean(ing_x_hrs))
+ingprom2 <- t219 %>% group_by(eda) %>% filter(clase1 == 1, eda >= 15) %>% summarise(avg_ing2= mean(ing_x_hrs))
+ingprom3 <- t319 %>% group_by(eda) %>% filter(clase1 == 1, eda >= 15) %>% summarise(avg_ing3= mean(ing_x_hrs))
+ingprom4 <- t419 %>% group_by(eda) %>% filter(clase1 == 1, eda >= 15) %>% summarise(avg_ing4= mean(ing_x_hrs))
 
-Edad <- c(15,20,25,30,25,40,45,50,55,60,65,70,75,80,85,90)
-df <- data.frame(Edd = Edad, ing = Ingreso)
-
-ggplot(df, aes(Edd,ing)) + geom_point(colour="brown", size=2.5) + labs(title = "Relación entre Edad e Ingreso (2019)", x="Edad",y="Ingreso por hora") + theme_bw() +  theme(text=element_text(size=12,  family="serif"))
+ingprom <- data.frame(c(ingprom1, ingprom2, ingprom3, ingprom4))
+ingprom <- ingprom[,-c(3,5,7)]
 
 
+
+p1 <- ggplot(ingprom, aes(eda,avg_ing1)) + geom_point(colour="brown", size=1) + labs(title = "Edad vs Ingreso 1T 2019", x="Edad",y="Ingreso por hora") + theme_bw() +  theme(text=element_text(size=12,  family="serif")) + geom_smooth(method = 'lm')
+
+p2 <- ggplot(ingprom, aes(eda,avg_ing2)) + geom_point(colour="blue", size=1) + labs(title = "Edad vs Ingreso 2T 2019", x="Edad",y="Ingreso por hora") + theme_bw() +  theme(text=element_text(size=12,  family="serif")) + geom_smooth(method = 'lm', colour = "brown")
+
+p3 <- ggplot(ingprom, aes(eda,avg_ing3)) + geom_point(colour="blue", size=1) + labs(title = "Edad vs Ingreso 3T 2019", x="Edad",y="Ingreso por hora") + theme_bw() +  theme(text=element_text(size=12,  family="serif")) + geom_smooth(method = 'lm', colour = "brown")
+
+p4 <- ggplot(ingprom, aes(eda,avg_ing4)) + geom_point(colour="brown", size=1) + labs(title = "Edad vs Ingreso 4T 2019", x="Edad",y="Ingreso por hora") + theme_bw() +  theme(text=element_text(size=12,  family="serif")) + geom_smooth(method = 'lm')
+
+plot_grid(p1,p2,p3,p4, ncol= 2 , nrow = 2)
 
 ```
 
-
+Además, se agregó el comando *geom_smooth(method = 'lm') (lm: least square method)*, con el objetivo de de observar, en una primera instancia, la tendencia general de esta relación. Como puede verse, en todos los periodos contemplados la tendencia es a la baja: a mayor edad se percibe menor salario (bajo este método). Por otra parte, los dos trimestres de en medio son los que tienen más marcada esta tendencia hacia la baja.
 
