@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.2.9)  9 FEB 2022 18:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.2.9)  9 FEB 2022 18:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -624,166 +624,164 @@ Overfull \hbox (42.81784pt too wide) detected at line 239
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.463 
+l.459 
       ] [10pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.509 L
+l.505 L
        a volatilidad de esta tasa de crecimiento, medido por la desviaciónpdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.509 L
-       a volatilidad de esta tasa de crecimiento, medido por la desviación] [11]
-<Tarea-1_files/figure-latex/unnamed-chunk-8-1.pdf, id=277, 505.89pt x 216.81pt>
+l.505 L
+       a volatilidad de esta tasa de crecimiento, medido por la desviación]
+<Tarea-1_files/figure-latex/unnamed-chunk-8-1.pdf, id=298, 505.89pt x 216.81pt>
 File: Tarea-1_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (type pdf)
 <use Tarea-1_files/figure-latex/unnamed-chunk-8-1.pdf>
-Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-8-1.pdf  used on input line 521.
+Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-8-1.pdf  used on input line 516.
 (pdftex.def)             Requested size: 469.76265pt x 201.32684pt.
-[12
-
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
+[11pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.527  \clearpage
-                  <./Tarea-1_files/figure-latex/unnamed-chunk-8-1.pdf>] [13
+l.561 \clearpage
+                 <./Tarea-1_files/figure-latex/unnamed-chunk-8-1.pdf>] [12
 
 ]
-Overfull \hbox (11.17009pt too wide) in paragraph at lines 638--642
+Overfull \hbox (11.17009pt too wide) in paragraph at lines 646--650
 []\T1/lmr/m/n/10 Para re-alizar este ejer-ci-cio, se ob-tu-vo de la p�gi-na del IN-E-GI el doc-u-men-to ``enoe_informalidad_15ymas_2019'',
  []
 
-[14
+[13
 
-] [15pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has been already used, duplicate ignored
+] [14pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.669 \end{landscape}
-                     ] [16pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has been already used, duplicate ignored
+l.677 \end{landscape}
+                     ] [15
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.758 \clearpage
-                
-
-
-]
-<Tarea-1_files/figure-latex/unnamed-chunk-18-1.pdf, id=315, 361.35pt x 361.35pt>
+l.766 \clearpage
+                ]
+<Tarea-1_files/figure-latex/unnamed-chunk-18-1.pdf, id=341, 361.35pt x 361.35pt>
 File: Tarea-1_files/figure-latex/unnamed-chunk-18-1.pdf Graphic file (type pdf)
 <use Tarea-1_files/figure-latex/unnamed-chunk-18-1.pdf>
-Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-18-1.pdf  used on input line 780.
+Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-18-1.pdf  used on input line 788.
 (pdftex.def)             Requested size: 361.34912pt x 361.34912pt.
-<Tarea-1_files/figure-latex/unnamed-chunk-19-1.pdf, id=316, 505.89pt x 325.215pt>
+<Tarea-1_files/figure-latex/unnamed-chunk-19-1.pdf, id=342, 505.89pt x 325.215pt>
 File: Tarea-1_files/figure-latex/unnamed-chunk-19-1.pdf Graphic file (type pdf)
 <use Tarea-1_files/figure-latex/unnamed-chunk-19-1.pdf>
-Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-19-1.pdf  used on input line 805.
+Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-19-1.pdf  used on input line 813.
 (pdftex.def)             Requested size: 469.76265pt x 301.99028pt.
-[17
+[16
 
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.811 
-       <./Tarea-1_files/figure-latex/unnamed-chunk-18-1.pdf>] [18pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+l.819 
+       <./Tarea-1_files/figure-latex/unnamed-chunk-18-1.pdf>] [17pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.861 
+l.869 
        <./Tarea-1_files/figure-latex/unnamed-chunk-19-1.pdf>]
-<Tarea-1_files/figure-latex/unnamed-chunk-21-1.pdf, id=338, 505.89pt x 216.81pt>
+<Tarea-1_files/figure-latex/unnamed-chunk-21-1.pdf, id=364, 505.89pt x 216.81pt>
 File: Tarea-1_files/figure-latex/unnamed-chunk-21-1.pdf Graphic file (type pdf)
 <use Tarea-1_files/figure-latex/unnamed-chunk-21-1.pdf>
-Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-21-1.pdf  used on input line 873.
+Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-21-1.pdf  used on input line 881.
 (pdftex.def)             Requested size: 469.76265pt x 201.32684pt.
-[19pdfTeX warning (ext4): destination with the same identifier (name{table.6}) has been already used, duplicate ignored
+[18pdfTeX warning (ext4): destination with the same identifier (name{table.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.902 L
+l.910 L
        os datos para este ejercicio se recuperaron delpdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.902 L
+l.910 L
        os datos para este ejercicio se recuperaron del <./Tarea-1_files/figure-latex/unnamed-chunk-21-1.pdf>]
-<Tarea-1_files/figure-latex/unnamed-chunk-23-1.pdf, id=353, 505.89pt x 216.81pt>
+<Tarea-1_files/figure-latex/unnamed-chunk-23-1.pdf, id=378, 505.89pt x 216.81pt>
 File: Tarea-1_files/figure-latex/unnamed-chunk-23-1.pdf Graphic file (type pdf)
 <use Tarea-1_files/figure-latex/unnamed-chunk-23-1.pdf>
-Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-23-1.pdf  used on input line 931.
+Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-23-1.pdf  used on input line 939.
 (pdftex.def)             Requested size: 469.76265pt x 201.32684pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Tarea-1_files/figure-latex/unnamed-chunk-24-1.pdf, id=354, 505.89pt x 216.81pt>
+<Tarea-1_files/figure-latex/unnamed-chunk-24-1.pdf, id=379, 505.89pt x 216.81pt>
 File: Tarea-1_files/figure-latex/unnamed-chunk-24-1.pdf Graphic file (type pdf)
 <use Tarea-1_files/figure-latex/unnamed-chunk-24-1.pdf>
-Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-24-1.pdf  used on input line 966.
+Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-24-1.pdf  used on input line 974.
 (pdftex.def)             Requested size: 469.76265pt x 201.32684pt.
-[20pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
+[19pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.972 
+l.980 
        <./Tarea-1_files/figure-latex/unnamed-chunk-23-1.pdf>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Tarea-1_files/figure-latex/unnamed-chunk-25-1.pdf, id=365, 505.89pt x 216.81pt>
+<Tarea-1_files/figure-latex/unnamed-chunk-25-1.pdf, id=391, 505.89pt x 216.81pt>
 File: Tarea-1_files/figure-latex/unnamed-chunk-25-1.pdf Graphic file (type pdf)
 <use Tarea-1_files/figure-latex/unnamed-chunk-25-1.pdf>
-Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-25-1.pdf  used on input line 1017.
+Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-25-1.pdf  used on input line 1025.
 (pdftex.def)             Requested size: 469.76265pt x 201.32684pt.
-[21pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
+[20pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1023 
+l.1031 
         <./Tarea-1_files/figure-latex/unnamed-chunk-24-1.pdf>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Tarea-1_files/figure-latex/unnamed-chunk-26-1.pdf, id=376, 505.89pt x 216.81pt>
+<Tarea-1_files/figure-latex/unnamed-chunk-26-1.pdf, id=402, 505.89pt x 216.81pt>
 File: Tarea-1_files/figure-latex/unnamed-chunk-26-1.pdf Graphic file (type pdf)
 <use Tarea-1_files/figure-latex/unnamed-chunk-26-1.pdf>
-Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-26-1.pdf  used on input line 1075.
+Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-26-1.pdf  used on input line 1083.
 (pdftex.def)             Requested size: 469.76265pt x 201.32684pt.
-[22pdfTeX warning (ext4): destination with the same identifier (name{table.7}) has been already used, duplicate ignored
+[21pdfTeX warning (ext4): destination with the same identifier (name{table.7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1081 
+l.1089 
        pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1081 
+l.1089 
        pdfTeX warning (ext4): destination with the same identifier (name{table.8}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1081 
+l.1089 
         <./Tarea-1_files/figure-latex/unnamed-chunk-25-1.pdf>]
-<Tarea-1_files/figure-latex/unnamed-chunk-27-1.pdf, id=387, 505.89pt x 216.81pt>
+<Tarea-1_files/figure-latex/unnamed-chunk-27-1.pdf, id=414, 505.89pt x 216.81pt>
 File: Tarea-1_files/figure-latex/unnamed-chunk-27-1.pdf Graphic file (type pdf)
 <use Tarea-1_files/figure-latex/unnamed-chunk-27-1.pdf>
-Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-27-1.pdf  used on input line 1112.
+Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-27-1.pdf  used on input line 1120.
 (pdftex.def)             Requested size: 469.76265pt x 201.32684pt.
-[23pdfTeX warning (ext4): destination with the same identifier (name{table.9}) has been already used, duplicate ignored
+[22pdfTeX warning (ext4): destination with the same identifier (name{table.9}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1118 
+l.1126 
        pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1118 
+l.1126 
        pdfTeX warning (ext4): destination with the same identifier (name{table.10}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1118 
+l.1126 
         <./Tarea-1_files/figure-latex/unnamed-chunk-26-1.pdf>]
-<Tarea-1_files/figure-latex/unnamed-chunk-28-1.pdf, id=398, 505.89pt x 361.35pt>
+<Tarea-1_files/figure-latex/unnamed-chunk-28-1.pdf, id=425, 505.89pt x 361.35pt>
 File: Tarea-1_files/figure-latex/unnamed-chunk-28-1.pdf Graphic file (type pdf)
 <use Tarea-1_files/figure-latex/unnamed-chunk-28-1.pdf>
-Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-28-1.pdf  used on input line 1133.
+Package pdftex.def Info: Tarea-1_files/figure-latex/unnamed-chunk-28-1.pdf  used on input line 1143.
 (pdftex.def)             Requested size: 469.76265pt x 335.54477pt.
-[24pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) has been already used, duplicate ignored
+[23pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1139 
-        <./Tarea-1_files/figure-latex/unnamed-chunk-27-1.pdf>] [25pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) has been already used, duplicate ignored
+l.1149 
+        <./Tarea-1_files/figure-latex/unnamed-chunk-27-1.pdf>] [24pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1148 \end{document}
+l.1158 \end{document}
                       <./Tarea-1_files/figure-latex/unnamed-chunk-28-1.pdf>] (./Tarea-1.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
@@ -792,21 +790,21 @@ LaTeX Info: Redefining \% on input line 25.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Tarea-1.out' has not changed.
-(rerunfilecheck)             Checksum: 51C6F39B5AD85E6F38F10FECC7EB9D09;3335.
+(rerunfilecheck)             Checksum: 9F2E64A917911148BB271C60245A6558;3725.
  ) 
 Here is how much of TeX's memory you used:
- 14421 strings out of 480238
- 230300 string characters out of 5895009
- 563401 words of memory out of 5000000
- 31986 multiletter control sequences out of 15000+600000
+ 14440 strings out of 480238
+ 230453 string characters out of 5895009
+ 563544 words of memory out of 5000000
+ 31996 multiletter control sequences out of 15000+600000
  535502 words of font info for 74 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  60i,18n,63p,821b,668s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/emilio/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Users/emilio/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/Users/emilio/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/emilio/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/Users/emilio/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/emilio/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr5.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></Users/emilio/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
-Output written on Tarea-1.pdf (25 pages, 414959 bytes).
+Output written on Tarea-1.pdf (24 pages, 414480 bytes).
 PDF statistics:
- 533 PDF objects out of 1000 (max. 8388607)
- 443 compressed objects within 5 object streams
- 107 named destinations out of 1000 (max. 500000)
- 291 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 561 PDF objects out of 1000 (max. 8388607)
+ 472 compressed objects within 5 object streams
+ 116 named destinations out of 1000 (max. 500000)
+ 331 words of extra memory for PDF output out of 10000 (max. 10000000)
 
