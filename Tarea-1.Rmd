@@ -1,5 +1,5 @@
 ---
-title: "Mercados Laborales: Tarea 1 (Equipo 4)"
+title: "Macroeconomía II: Mercados Laborales (Tarea #1)"
 author: 
   - José Emilio Cendejas Guízar^[El Colegio de México, jcendejas@colmex.mx]
   - Héctor González Magaña^[El Colegio de México, hgonzalez@colmex.mx]
@@ -21,9 +21,8 @@ header-includes:
   - \usepackage{graphicx}
   - \usepackage{float}
   - \usepackage{lscape}
+  
 ---
-
-
 \newpage
 
 \listoffigures
@@ -630,6 +629,8 @@ Esta suma asciende a 15,172,271 personas en el cuarto trimestre del 2019, el cua
 ### (c)
 **A partir de la tabla, averigüe qué proporción de los trabajadores del sector formal son informales.**
 
+Como se mencionó, puede hablarse de una situación de "empleo informal", la cual tiene que ver con empleados en el sector formal que no cuentan con prestaciones básicas ni acceso a instituciones de salud. En el cuadro 5, el número de empleados en estas condiciones asciende a 15,869,947. Esta cifra es espectacular, puesto que se ubica por encima del propio sector informal.
+
 ### (d)
 
 **Averigüe con datos del INEGI cuáles son las industrias formales con mayor proporción de trabajadores informales y los estados de la república con mayor proporción de trabajadores informales.**
@@ -705,15 +706,37 @@ En cambio, los estados que presentan menor informalidad son Campeche, Baja Calif
 
 Los datos sobre el salario por sector pueden consultarse a través del portal de la Secretaría del Trabajo y Previsión Social, en el apartado de [estadísticas](http://stps.gob.mx/gobmx/estadisticas/). Aquí, puede ingresarse al polígono de salarios y luego seleccionar, en el apartado "Salario diario asociado a trabajadores asegurados", el documento "Sector de Actividad del 2000 a la fecha". Si el lector está interesado en mayor visualización de estos datos, el IMSS cuenta con un [sitio](https://public.tableau.com/app/profile/imss.cpe/viz/Histrico_4/Empleo_h) para tal propósito.
 
-```{r}
+```{r fig.pos = 'H'}
 salsec <- read_excel("302_0121.xls", sheet = 2)
+
 View(salsec)
+salsec <- salsec[-c(1,6),]
+
+names(salsec) <- c("Rubro", "Octubre","Noviembre","Diciembre", "Promedio") 
+
+knitr::kable(salsec, booktabs = TRUE, format = 'latex', caption = "Salario (pesos por día) por Sector de Actividad Econímica, 4T 2019",longtable = F
+)%>%
+  kable_styling(latex_options = "HOLD_position", "center") 
 
 ```
 
+Como podrá darse cuenta el lector, este cuadro no contempla todos los rubros que se mostraron en el Cuadro 5. Resulta útil e interesante utilizar otra fuente de datos de una institución igualmente importante que el INEGI. Sin embargo, se prescindirá del rubro de suministro de agua potable y electricidad, de manera que podamos conciliar este conjunto de datos con los proporcionados del INEGI. Para la siguiente gráfica se utilizará la proporción de cada rubro con respecto al total de la informalidad que estos rubros representan. 
+
+```{r, fig.pos='H', fig.cap = "Relación entre Salario e Informalidad"}
+
+plotsal <- mutate(salsec, infm = c(5881455,51391,3371447,3277344,6436881,1501398,1190268,872624))
+plotsal <- mutate(plotsal, propr = infm/sum(infm))
+View(plotsal)
+
+ggplot(plotsal, aes(x = propr, Promedio)) + geom_point(aes(colour = Rubro), size=2) + labs(title = "Salario diario vs Informalidad \npor Sector 4T 2019", x="Proporción de Informalidad",y="Pesos por día") + theme_bw() +  theme(text=element_text(size=12,  family="serif")) 
+
+```
+
+En un primer acercamiento, esta gráfica sugiera una relación clara entre el salario y el nivel de informalidad por sector: a menor nivel de informalidad, mayor nivel de salario diario.
 
 ### (f)  
-Enuncie algunas conclusiones tentativas sobre los resultados que obtuvo, relacionándolas con los modelos discutidos en clase.
+
+**Enuncie algunas conclusiones tentativas sobre los resultados que obtuvo, relacionándolas con los modelos discutidos en clase.**
 
 
 ## Ejercicio 5
