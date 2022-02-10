@@ -31,7 +31,7 @@
 \contentsline {subsubsection}{(d)}{18}{section*.31}%
 \contentsline {subsubsection}{(e)}{20}{section*.32}%
 \contentsline {subsubsection}{(f)}{21}{section*.33}%
-\contentsline {subsection}{Ejercicio 5}{21}{section*.34}%
+\contentsline {subsection}{Ejercicio 5}{22}{section*.34}%
 \contentsline {subsubsection}{(a)}{22}{section*.35}%
 \contentsline {subsubsection}{(b)}{22}{section*.36}%
 \contentsline {subsubsection}{(d)}{23}{section*.37}%

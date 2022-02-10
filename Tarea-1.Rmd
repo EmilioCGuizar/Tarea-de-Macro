@@ -815,11 +815,14 @@ ggplot(plotsal, aes(x = propr, Promedio)) + geom_point(aes(colour = Rubro), size
 
 ```
 
-En un primer acercamiento, esta gráfica sugiera una relación clara entre el salario y el nivel de informalidad por sector: a menor nivel de informalidad, mayor nivel de salario diario.
-
 ### (f)  
 
 **Enuncie algunas conclusiones tentativas sobre los resultados que obtuvo, relacionándolas con los modelos discutidos en clase.**
+
+En un primer acercamiento, esta gráfica sugiere una relación clara entre el salario y el nivel de informalidad por sector: a mayor nivel de informalidad, menor salario diario. Como se discutió en clase, esto puede deberse a distintas razones. Entre ellas, destaca el hecho en que el trabajo informal suele ser menos productivo que el formal, por lo que el pago que reciben estos trabajadores es menor cuando la informalidad tiene mucha presencia. 
+
+Además, contar con un alto porcentje de la informalidad respecto al total de población ocupada tiene otros efectos perjudiciales, como el peso de la tasa impositiva que recae en el sector formal -reduciéndolo en tamaño y en productividad-. En consecuencia, los ingresos gubernamentales también se ven afectados y el margen de acción para la política fiscal (y social) se reduce.
+
 
 
 ## Ejercicio 5
@@ -828,7 +831,9 @@ En un primer acercamiento, esta gráfica sugiera una relación clara entre el sa
 ### (a) 
 **Descargue los micro-datos de la ENOE (también del INEGI), correspondientes a los cuatro trimestres de 2019.**
 
-Los datos para este ejercicio se recuperaron del [INEGI](https://www.inegi.org.mx/programas/enoe/15ymas/#Microdatos) en formato dta.
+De acuerdo con el Instituto Nacional de Estadística y Geografía (INEGI), la Encuensta Nacional de Ocupación y Empleo [(ENOE)](http://internet.contenidos.inegi.org.mx/contenidos/Productos/prod_serv/contenidos/espanol/bvinegi/productos/metodologias/est/702825000987.pdf) es "un procedimiento estadístico de recolección de iformación en una muestra representativa de viviendas, cuyo objetivo es cuantificar y caracterizar a la población en edad de trabajar que participa en la generación de bienes y servicios económicos."
+
+Los datos para este ejercicio se recuperaron del [INEGI](https://www.inegi.org.mx/programas/enoe/15ymas/#Microdatos) en formato csv.
 
 ### (b) 
 **Calcule el desempleo en cada trimestre, explicando cómo lo calculó.**
