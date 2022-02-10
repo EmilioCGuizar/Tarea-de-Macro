@@ -501,80 +501,175 @@ El segundo hecho estilizado nos dice que el nivel de empleo fluctúa con el cicl
 \clearpage
 
 ## Ejercicio 3
-**3.Contraste un modelo trivial de la determinación del salario con los datos siguiendo estos pasos:}**
+\begin{enumerate}
+\item[] \textbf{3. Contraste un modelo trivial de la determinación del salario con los datos siguiendo estos pasos:}
+\end{enumerate}
 
-### (a) 
-**Obtenga una serie del PIB $Y_t$ de la economía.**
-
+### a)
+\begin{enumerate}
+\item[] \textit{Obtenga una serie del PIB $Y_t$ de la economía.}
+\end{enumerate}
+\textbf{Solucion: }
+Lo obtuvimos de INEGI, de Indicadores económicos de coyuntura > Producto interno bruto trimestral, base 2013 > Series desestacionalizadas y tendencia-ciclo > A precios de 2013 > Total > Serie desestacionalizada > Valores absolutos, es el mismo utilizado en el ejercicio anterior, solo que para este lo dejaremos en trimestres y se obtendrá un indice del mismo con base 2013 para tener unidades homogéneas y facilitar el trabajo de los datos.
 ```{r} 
 #Cambio Porcentual
 
 datos <- read_excel("PIB_K.xls",
                      sheet = 1) 
 
+
 names(datos) = c('Periodo', 'Inversión', 'Indice_K','PIB')
-datos <- datos[-c(1:200),-2]
+
+datos <- datos[-c(1:236),-2]
 PIB <- datos[,-2]
-PIB$Periodo <- year(parse_date_time(datos$Periodo, orders = "%Y%q"))
+PIB$Periodo <- quarter(parse_date_time(datos$Periodo, orders = "%Y%q"), with_year = TRUE)
 PIB <- na.omit(PIB)
 PIB$PIB <- as.numeric(as.character(PIB$PIB)) 
-PIB <- PIB %>% group_by(Periodo) %>% summarise(PIB, PIB_an = mean(PIB), .groups = 'drop')
-PIB <- PIB[!duplicated(PIB[c('PIB_an')]),] 
-PIB <- PIB[,-2]
+ano_base <- as.numeric(PIB[21,2])
+PIB$Y <- ((PIB[,2]/ano_base)*100)
 
 ```
-+ Obtenga una serie del capital $K_t$ de la economía (``Indice de Volumen físico acumulado´´).
+### b)
+\begin{enumerate}
+\item[] \textit{Obtenga una serie del capital $K_t$ de la economía (``Indice de Volumen físico acumulado´´).}
+\end{enumerate}
+\textbf{Solucion: }
+La obtuvimos de INEGI,Indicadores económicos de coyuntura > Inversión fija bruta, base 2013 > Series Originales > Índice de volumen físico acumulado > Total, como es una serie en meses sacamos el promedio para cada trismestre y que así coincida con el PIB.
+
 
 ```{r}
 K <- datos[,-3]
-K$Periodo <- year(parse_date_time(K$Periodo, orders = "%Y%m"))
+K$Periodo <- quarter(parse_date_time(K$Periodo, orders = "%Y%m"), with_year = TRUE)
 K$Indice_K <- as.numeric(as.character(K$Indice_K)) 
-K <- K %>% group_by(Periodo) %>% summarise(Indice_K, K_an = mean(Indice_K), .groups = 'drop')
-K <- K[!duplicated(K[c('K_an')]),]
+K <- K %>% group_by(Periodo) %>% summarise(Indice_K, K_q = mean(Indice_K), .groups = 'drop')
+K <- K[!duplicated(K[c('K_q')]),]
 K <- na.omit(K)
 K <- K[,-2]
-
+K <- K[-56,]
 ```
-### (b)
-**Obtenga una serie del empleo $L_t$ de la economía.**
+
+### c)
+\begin{enumerate}
+\item[] \textit{Obtenga una serie del empleo $L_t$ de la economía.}
+\end{enumerate}
+\textbf{Solucion: }
+Usaremos el mismo que en el inciso anterior, como nuestros datos son mensuales sacaremos el promedio para cada trimestre. Además al ser en valores absolutos esta información haremos lo mismo que en el inciso a) de este ejercicio, obtener un índice con base 2013 para facilitar el trabajo de los datos.
+
 ```{r}
 
 empleo <- read_excel("Empleo.xls",
                      sheet = 1) 
-
-empleo$Periodos <- year(parse_date_time(empleo$Periodos, orders = "%Y/%q"))
-empleo <- empleo %>% group_by(Periodos) %>% summarise(`PEA Ocupada`, PEA_Ocup_an = mean(`PEA Ocupada`, na.rm=T), .groups = 'drop')
-
-empleo <- empleo[!duplicated(empleo[c('PEA_Ocup_an')]),]
-empleo <- empleo
-
+empleo <- empleo[-c(1:12),]
+empleo$Periodos <- quarter(parse_date_time(empleo$Periodos, orders = "%Y/%q"), with_year = TRUE)
+empleo <- empleo[,c(1,5)]
+ano_base2 <- as.numeric(empleo[21,2])
+empleo$L <- ((empleo[,2]/ano_base2)*100)
 
 ```
-+ Cree una serie de la productividad $A_t$ de la economía a partir de asumir una función de producción $Y_t=A_tF(K,L)$, con $F(K,L)=K^{0.3}L^{0.7}$.
+En la siguiente figura se puede apreciar los cambios en el tiempo de las tres variables de los incisos a), b) y c).
+
+```{r fig.cap='Procuto, Capital y Trabajo (2008-2021)', fig.pos = 'H'}
+datos_grafica1 <- data.frame(PIB$Periodo,PIB$Y, K$K_q, empleo$L)
+names(datos_grafica1) = c('Periodo','Y','K','L')
+mdatos_grafica1 <- melt(datos_grafica1, id.vars = "Periodo")
+grafica1 <- ggplot(mdatos_grafica1, aes(x=Periodo, y=value ,colour=variable,group=variable))+geom_line() + 
+  labs(title = "Producto, Capital y Trabajo (2008-2021)", x="Año",y='Porcentaje', 
+      colour = " ") + theme_bw() +  theme(text=element_text(size=12,  family="serif"))
+plot(grafica1)
+```
+### d)
+\begin{enumerate}
+\item[] \textit{Cree una serie de la productividad $A_t$ de la economía a partir de asumir una función de producción $Y_t=A_tF(K,L)$, con $F(K,L)=K^{0.3}L^{0.7}$.}
+\end{enumerate}
+\textbf{Solucion: }
+La calcularemos siguiendo el despeje de la función de producción tipo Cobb-Douglas, sustituyendo los valores de $Y_t$, $L_t$ y $K_t$ obtenidos en los incisos anterios de este mismo ejercicio.
 
 $$
 \text{Productivadad}=A_t=\frac{Y_t}{F(K,L)}=\frac{Y_t}{K^{0.3}L^{0.7}}
 $$
-```{r}
-productividad <- empleo[,-2]
-A <- PIB$PIB_an/(((K$K_an)^(0.3))*((empleo$PEA_Ocup_an)^(0.7)))
-A <- as.vector(A, mode = "numeric")
-A <- as.data.frame(A,t(A))
-productividad <- productividad %>% add_column(A_t=A$A)
-```
-+ Cree una serie contrafactual del salario que se debió de haber observado si el salario fuera el ingreso marginal del trabajo $A_tF_L(K_t,L_t)$.
 
-$$
-w_t= \frac{\partial Y_t}{\partial L}= \frac{\partial A_tF_L(K_t,L_t)}{\partial L}=0.7(A_tK^{0.3}L^{0.3})
-$$
-```{r}
-salario <- empleo[,-2]
-w <- (0.7)*(productividad$A_t)*((K$K_an)^(0.3))*((empleo$PEA_Ocup_an)^(0.3))
-w <- as.vector(w, mode = "numeric")
-w <- as.data.frame(w,t(w))
-salario <- salario %>% add_column(w=w$w)
+```{r fig.cap='Productividad', fig.pos = 'H'}
+productividad <- PIB[,1]
+productividad$A <- as.numeric(unlist((PIB$Y/(((K$K_q)^(0.3))*((empleo$L)^(0.7))))))
+
+grafica2 <- ggplot(productividad, aes(x=Periodo, y=A))+geom_line(colour = "orange") + 
+  labs(title = "Productividad (2008-2021)", x="Año",y='Valor', 
+      colour = " ") + theme_bw() +  theme(text=element_text(size=12,  family="serif"))
+plot(grafica2)
 
 ```
+
+### e)
+\begin{enumerate}
+\item[] \textit{Cree una serie contrafactual del salario que se debió de haber observado si el salario fuera el ingreso marginal del trabajo $A_tF_L(K_t,L_t)$.}
+\end{enumerate}
+\textbf{Solucion: }
+$$
+w_t= \frac{\partial Y_t}{\partial L}= \frac{\partial A_tF_L(K_t,L_t)}{\partial L}= \frac{0.7A_tK^{0.3}}{L^{0.3}}
+$$
+```{r fig.cap='Salario Contrafactual', fig.pos = 'H'}
+salario <- PIB[,1]
+salario$w <- as.numeric(unlist((100)*(0.7)*(productividad$A)*((K$K_q)^(0.3))*((empleo$L)^(-0.3))))
+
+grafica3 <- ggplot(salario, aes(x=Periodo, y=w))+geom_line(colour = "red") + 
+  labs(title = "Salario contrafactual", x="Año",y='Valor', 
+      colour = " ") + theme_bw() +  theme(text=element_text(size=12,  family="serif"))
+plot(grafica3)
+
+```
+
+### f) 
+\begin{enumerate}
+\item[] \textit{Compare el salario observado con el salario contrafactual a la luz de los hechos estilizados y las teorías descritas en clase.}
+\end{enumerate}
+\textbf{Solucion: }
+Utilizaremos el mismo salario que usó en el ejercicio 2, ya era un índice del salario medio real con base en el 2013, de modo que solo obtendremos su promedio trimestral para que coincida con el resto de la información.
+
+```{r fig.cap='Comparación de los salarios', fig.pos = 'H'}
+salarios <- read.csv(file = "Salarios.csv", sep = ",")
+
+salarios <- salarios[,-c(3,4)]
+
+fecha <- datos[-c(166:173),1]
+
+sal08 <- salarios[2:13,-1]
+sal09 <- salarios[15:26,-1]
+sal10 <- salarios[28:39,-1]
+sal11 <- salarios[41:52,-1]
+sal12 <- salarios[54:65,-1]
+sal13 <- salarios[67:78,-1]
+sal14 <- salarios[80:91,-1]
+sal15 <- salarios[93:104,-1]
+sal16 <- salarios[106:117,-1]
+sal17 <- salarios[119:130,-1]
+sal18 <- salarios[132:143,-1]
+sal19 <- salarios[145:156,-1]
+sal20 <- salarios[158:169,-1]
+sal21 <- salarios[171:179,-1]
+
+sal_mensual <- c(sal08, sal09, sal10, sal11, sal12, sal13, sal14, sal15, sal16, sal17,
+           sal18, sal19, sal20, sal21)
+sal <- data.frame(fecha, sal_mensual)
+sal$Periodo <- quarter(parse_date_time(sal$Periodo, orders = "%Y/%m"), with_year = TRUE)
+sal <- sal %>% group_by(Periodo) %>% summarise(sal_mensual, sal_q = mean(sal_mensual), .groups = 'drop')
+sal <- sal[!duplicated(sal[c('sal_q')]),]
+datos_grafica4 <- data.frame(PIB$Periodo,salario$w, sal$sal_q)
+names(datos_grafica4) <- c("Periodo", "Salario_contrafactual", "Salario_observado")
+mdatos_grafica4 <- melt(datos_grafica4, id.vars = "Periodo")
+grafica4 <- ggplot(mdatos_grafica4, aes(x=Periodo, y=value ,colour=variable,group=variable))+geom_line() + 
+  labs(title = "Comparación de los salarios", x="Año",y='Porcentaje', 
+      colour = " ") + theme_bw() +  theme(text=element_text(size=12,  family="serif"))
+plot(grafica4)
+```
+Es sencillo que notemos que el salario calculado (contrafactual) es mucho más bajo que el salario observado en el mismo periodo, esta diferencia la podemos explicar dentro de los temas vistos en clase. Asumimos a la hora de calcular el salario contrafacutal una función de producción Cobb-Douglas con parámetros dados, además de considerar que el mercado de laboral sería walrasiano, es decir, que la productividad marginal del trabajo equivale al salario ($\frac{ \partial Y_t}{ \partial L_t}$).
+
+De entrada podemos atribuir esta diferencia a que existen salarios de eficiencia, es decir las empresas ven una mejora en sus beneficios si se paga más por el esfuerzo extra. Esta explicación nos hace sentido, ya que, en México gran parte de la población vive en condiciones precarias, lo cual propicia que se esfuercen más cuando su salario es mayor que la productividad marginal, en el contexto Shapiro-Stiglitz la utilidad de esforzarse y estar empleado es mucho mayor a la desutilidad del trabajo, y volviendo a la precariedad un aumento al salario significa una mejora en la calidad de vida significativa.
+
+Otras posibles explicaciones están relacionadas con el tema de la informalidad(tratado en clase), en México existen dos mercados de trabajo con distintas condiciones: uno formal y uno informal.
+La primera explicación usando estos dos mercados laborales es que en el salario observado llega a faltar información del mercado laboral informal, lo cual genera discrepancia entre los datos calculados y los observados.
+Otra explicación que podemos obtener es que si asumimos que el mercado laboral informal es walrasiano (que el salario de este coincide al contrafactual que calculamos) encontraremos que la explicación de los salarios de eficiencia reaparece. Las empresas formales pagan más porque buscan tener a los mejores trabajadores, ya que al ser formales también tienen mayores costos (pago de impuestos, indemnizaciones, etc... ), entonces podemos esperar que las empresas quieran pagar un mejor salario para compensar o no tener que pagar estos costos adicionales.
+Otra explicación ligada a la informalidad la encontramos en las rigideces de los contratos, por regulaciones legales, una vez fijados los salarios estos no pueden disminuir o bajar, y existen topes como el salario mínimo que se puede llegar a encontrar por encima del nivel de la productividad marginal del trabajo.
+Las explicaciones que dimos referentes a la informalidad no son excluyentes entre si, sería muy factible que se dieran ambas situaciones, incluso podríamos sumar que si el tamaño de el mercado formal es menor en comparación a la oferta de mano, el salario de eficiencia va a ser menor a que si todo el mercado laboral mexicano fuera formal.
 \clearpage
 
 ## Ejercicio 4
