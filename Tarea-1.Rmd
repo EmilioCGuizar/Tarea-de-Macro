@@ -501,15 +501,15 @@ El segundo hecho estilizado nos dice que el nivel de empleo fluctúa con el cicl
 \clearpage
 
 ## Ejercicio 3
-\begin{enumerate}
-\item[] \textbf{3. Contraste un modelo trivial de la determinación del salario con los datos siguiendo estos pasos:}
-\end{enumerate}
+**3. Contraste un modelo trivial de la determinación del salario con los datos siguiendo estos pasos:**
 
-### a)
-\begin{enumerate}
-\item[] \textit{Obtenga una serie del PIB $Y_t$ de la economía.}
-\end{enumerate}
-\textbf{Solucion: }
+
+### (a)
+**Obtenga una serie del PIB $Y_t$ de la economía.**
+
+
+**Solución**
+
 Lo obtuvimos de INEGI, de Indicadores económicos de coyuntura > Producto interno bruto trimestral, base 2013 > Series desestacionalizadas y tendencia-ciclo > A precios de 2013 > Total > Serie desestacionalizada > Valores absolutos, es el mismo utilizado en el ejercicio anterior, solo que para este lo dejaremos en trimestres y se obtendrá un indice del mismo con base 2013 para tener unidades homogéneas y facilitar el trabajo de los datos.
 ```{r} 
 #Cambio Porcentual
@@ -529,11 +529,9 @@ ano_base <- as.numeric(PIB[21,2])
 PIB$Y <- ((PIB[,2]/ano_base)*100)
 
 ```
-### b)
-\begin{enumerate}
-\item[] \textit{Obtenga una serie del capital $K_t$ de la economía (``Indice de Volumen físico acumulado´´).}
-\end{enumerate}
-\textbf{Solucion: }
+### (b)
+**Obtenga una serie del capital $K_t$ de la economía ("Indice de Volumen físico acumulado")**
+
 La obtuvimos de INEGI,Indicadores económicos de coyuntura > Inversión fija bruta, base 2013 > Series Originales > Índice de volumen físico acumulado > Total, como es una serie en meses sacamos el promedio para cada trismestre y que así coincida con el PIB.
 
 
@@ -548,11 +546,9 @@ K <- K[,-2]
 K <- K[-56,]
 ```
 
-### c)
-\begin{enumerate}
-\item[] \textit{Obtenga una serie del empleo $L_t$ de la economía.}
-\end{enumerate}
-\textbf{Solucion: }
+### (c)
+**Obtenga una serie del empleo $L_t$ de la economía.**
+
 Usaremos el mismo que en el inciso anterior, como nuestros datos son mensuales sacaremos el promedio para cada trimestre. Además al ser en valores absolutos esta información haremos lo mismo que en el inciso a) de este ejercicio, obtener un índice con base 2013 para facilitar el trabajo de los datos.
 
 ```{r}
@@ -568,7 +564,7 @@ empleo$L <- ((empleo[,2]/ano_base2)*100)
 ```
 En la siguiente figura se puede apreciar los cambios en el tiempo de las tres variables de los incisos a), b) y c).
 
-```{r fig.cap='Procuto, Capital y Trabajo (2008-2021)', fig.pos = 'H'}
+```{r fig.cap='Producto, Capital y Trabajo (2008-2021)', fig.pos = 'H'}
 datos_grafica1 <- data.frame(PIB$Periodo,PIB$Y, K$K_q, empleo$L)
 names(datos_grafica1) = c('Periodo','Y','K','L')
 mdatos_grafica1 <- melt(datos_grafica1, id.vars = "Periodo")
@@ -577,11 +573,9 @@ grafica1 <- ggplot(mdatos_grafica1, aes(x=Periodo, y=value ,colour=variable,grou
       colour = " ") + theme_bw() +  theme(text=element_text(size=12,  family="serif"))
 plot(grafica1)
 ```
-### d)
-\begin{enumerate}
-\item[] \textit{Cree una serie de la productividad $A_t$ de la economía a partir de asumir una función de producción $Y_t=A_tF(K,L)$, con $F(K,L)=K^{0.3}L^{0.7}$.}
-\end{enumerate}
-\textbf{Solucion: }
+### (d)
+**Cree una serie de la productividad $A_t$ de la economía a partir de asumir una función de producción $Y_t=A_tF(K,L)$, con $F(K,L)=K^{0.3}L^{0.7}$.**
+
 La calcularemos siguiendo el despeje de la función de producción tipo Cobb-Douglas, sustituyendo los valores de $Y_t$, $L_t$ y $K_t$ obtenidos en los incisos anterios de este mismo ejercicio.
 
 $$
@@ -599,11 +593,9 @@ plot(grafica2)
 
 ```
 
-### e)
-\begin{enumerate}
-\item[] \textit{Cree una serie contrafactual del salario que se debió de haber observado si el salario fuera el ingreso marginal del trabajo $A_tF_L(K_t,L_t)$.}
-\end{enumerate}
-\textbf{Solucion: }
+### (e)
+**Cree una serie contrafactual del salario que se debió de haber observado si el salario fuera el ingreso marginal del trabajo $A_tF_L(K_t,L_t)$.**
+
 $$
 w_t= \frac{\partial Y_t}{\partial L}= \frac{\partial A_tF_L(K_t,L_t)}{\partial L}= \frac{0.7A_tK^{0.3}}{L^{0.3}}
 $$
@@ -618,11 +610,9 @@ plot(grafica3)
 
 ```
 
-### f) 
-\begin{enumerate}
-\item[] \textit{Compare el salario observado con el salario contrafactual a la luz de los hechos estilizados y las teorías descritas en clase.}
-\end{enumerate}
-\textbf{Solucion: }
+### (f) 
+**Compare el salario observado con el salario contrafactual a la luz de los hechos estilizados y las teorías descritas en clase.**
+
 Utilizaremos el mismo salario que usó en el ejercicio 2, ya era un índice del salario medio real con base en el 2013, de modo que solo obtendremos su promedio trimestral para que coincida con el resto de la información.
 
 ```{r fig.cap='Comparación de los salarios', fig.pos = 'H'}
