@@ -991,6 +991,7 @@ g3
 
 ### (h)
 **Grafique la relación entre el ingreso promedio y la edad de los trabajadores.**
+
 En las siguientes figuras se muestra la relación que existe entre la edad y el ingreso para los cuatro trimestres del 2019. Es de recalcar que, a grandes rasgos, se tiene mayor ingreso en una edad adulta, antes de envejecer. Esto resulta lógico, pues se percibe mayor ingreso en la etapa más productiva de la vida. Resulta interesante, también, que en los cuatro trimestres el promedio es bastante alto para algunas edades rondando los 85 años.
 
 
