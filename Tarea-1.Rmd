@@ -499,7 +499,7 @@ $ Cov(Serie_2, Serie_3) = $ `r cov(Serie_2, Serie_3)`
 ### (f) 
 **Explique si sus resultados son o no consistentes con los hechos estilizados para EEUU que se discutieron en clase.**
 
-El primer hecho estilizado es que el desempleo parece ser el mismo a lo largo de la historia. La tasa de desempleo no fue requerida en algún inciso del ejercicio, pero una [sencilla búsqueda en internet](https://www.proyectosmexico.gob.mx/por-que-invertir-en-mexico/mercado-potencial/sd_historico-tasa-de-desempleo-en-mexico/), puede confirmar este hecho estilizado. Históricamente, tasa de desempleo fluctúa alrededor de 3.5\%. 
+El primer hecho estilizado es que el desempleo parece ser el mismo a lo largo de la historia. La tasa de desempleo no fue requerida en algún inciso del ejercicio, pero una [sencilla búsqueda en internet](https://www.proyectosmexico.gob.mx/por-que-invertir-en-mexico/mercado-potencial/sd_historico-tasa-de-desempleo-en-mexico/), puede confirmar este hecho estilizado. Históricamente, la tasa de desempleo fluctúa alrededor de 3.5\%. 
 
 El segundo hecho estilizado nos dice que el nivel de empleo fluctúa con el ciclo económico, pero los salarios parecen tener nada que ver con tal ciclo. Como puede observarse en la gráfica (y como bien lo enfatiza las respectivas varianzas), México cumple con este segundo hecho estilizado con respecto a el salario real. Además, puede observarse que los cambios en el mercado laboral sí fluctúan muy similar al ciclo económico.
 
@@ -511,9 +511,6 @@ El segundo hecho estilizado nos dice que el nivel de empleo fluctúa con el cicl
 
 ### (a)
 **Obtenga una serie del PIB $Y_t$ de la economía.**
-
-
-**Solución**
 
 Lo obtuvimos de INEGI, de Indicadores económicos de coyuntura > Producto interno bruto trimestral, base 2013 > Series desestacionalizadas y tendencia-ciclo > A precios de 2013 > Total > Serie desestacionalizada > Valores absolutos, es el mismo utilizado en el ejercicio anterior, solo que para este lo dejaremos en trimestres y se obtendrá un indice del mismo con base 2013 para tener unidades homogéneas y facilitar el trabajo de los datos.
 ```{r} 
