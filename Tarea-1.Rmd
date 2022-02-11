@@ -1,28 +1,27 @@
 ---
-title: "Macroeconomía II: Mercados Laborales (Tarea #1)"
-author: 
-  - José Emilio Cendejas Guízar^[El Colegio de México, jcendejas@colmex.mx]
-  - Héctor González Magaña^[El Colegio de México, hgonzalez@colmex.mx]
-  - Lino Antonio Mendoza Millán^[El Colegio de México, lamendoza@colmex.mx]
-date: \today
 output: 
   pdf_document:
+    includes:
+      before_body: portada.tex
+      in_header: 
     toc: true
     toc_depth: 3
   tables: true
+include-before:
+- '`\newpage{}`{=latex}'
 toc-title: Contenido
 urlcolor: blue
-header-includes: 
-  - \usepackage[nottoc]{tocbibind}
-  - \renewcommand{\listfigurename}{Lista de figuras}
-  - \renewcommand{\listtablename}{Lista de tablas}
-  - \usepackage[utf8]{inputenc}
-  - \usepackage[spanish]{babel}
-  - \usepackage{graphicx}
-  - \usepackage{float}
-  - \usepackage{lscape}
-  
+header-includes:
+- \usepackage[nottoc]{tocbibind}
+- \renewcommand{\listfigurename}{Lista de figuras}
+- \renewcommand{\listtablename}{Lista de tablas}
+- \usepackage[utf8]{inputenc}
+- \usepackage[spanish]{babel}
+- \usepackage{graphicx}
+- \usepackage{float}
+- \usepackage{lscape}
 ---
+
 \newpage
 
 \listoffigures
