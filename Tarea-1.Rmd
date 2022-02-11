@@ -283,6 +283,8 @@ pacman::p_load(tidyverse,
 **Obtenga del INEGI una serie anual de los salarios (en términos reales) en México, calcule la serie de su tasa de cambio anual, calcule la volatilidad de dicha serie. (Serie 1).**
 
 \textbf{Solucion: }
+La obuvimos de [INEGI](https://www.inegi.org.mx/app/tabulados/?nc=100100083&idrt=300&opc=t)
+
 Cambio porcentual y Volatilidad de Serie 1
 
 ```{r}
@@ -353,6 +355,8 @@ La volatilidad de esta tasa de crecimiento, medido por la desviación estándar 
 **Obtenga del INEGI una serie anual del empleo total en México, calcule la serie de su tasa de cambio anual, calcule la volatilidad de dicha serie. (Serie 2)**
 
 \textbf{Solucion: }
+La obtuvimos de INEGi, de Indicadores económicos de coyuntura > Población ocupada, subocupada y desocupada (resultados trimestrales de la ENOE, 15 años y más) > Series desestacionalizadas y tendencia-ciclo.
+
 Cambio Porcentual y Volatilidad de Serie 2
 
 ```{r} 
@@ -395,6 +399,8 @@ La volatilidad de esta tasa de crecimiento, medido por la desviación estándar 
 **Obtenga del INEGI una serie anual del producto interno bruto en términos reales, calcule su tasa de cambio anual, calcule su volatilidad. (Serie 3)}**
 
 \textbf{Solucion: }
+Lo obtuvimos de INEGI, de Indicadores económicos de coyuntura > Producto interno bruto trimestral, base 2013 > Series desestacionalizadas y tendencia-ciclo > A precios de 2013 > Total > Serie desestacionalizada > Valores absolutos. Para que coincida con los demás datos anualizamos el PIB, que estaba en trimestres, esto con un promedio simple, siguiendo lo que menciona Jonathan Heath.
+
 Cambio Porcentual y Volatilidad de Serie 3
 
 ```{r} 
@@ -591,6 +597,7 @@ grafica2 <- ggplot(productividad, aes(x=Periodo, y=A))+geom_line(colour = "orang
 plot(grafica2)
 
 ```
+\clearpage
 
 ### (e)
 **Cree una serie contrafactual del salario que se debió de haber observado si el salario fuera el ingreso marginal del trabajo $A_tF_L(K_t,L_t)$.**
@@ -650,18 +657,22 @@ grafica4 <- ggplot(mdatos_grafica4, aes(x=Periodo, y=value ,colour=variable,grou
       colour = " ") + theme_bw() +  theme(text=element_text(size=12,  family="serif"))
 plot(grafica4)
 ```
-Es sencillo que notemos que el salario calculado (contrafactual) es mucho más bajo que el salario observado en el mismo periodo, esta diferencia la podemos explicar dentro de los temas vistos en clase. Asumimos a la hora de calcular el salario contrafacutal una función de producción Cobb-Douglas con parámetros dados, además de considerar que el mercado de laboral sería walrasiano, es decir, que la productividad marginal del trabajo equivale al salario ($\frac{ \partial Y_t}{ \partial L_t}$).
+Cambio Porcentual y Volatilidad de Serie 3
+Es sencillo que notemos que el salario calculado (contrafactual) es mucho más bajo que el salario observado en el mismo periodo, esta diferencia la podemos explicar dentro de los temas vistos en clase. Asumimos a la hora de calcular el salario contrafacutal una función de producción Cobb-Douglas con parámetros dados, además de considerar que el mercado de laboral sería walrasiano, es decir, que la productividad marginal del trabajo equivale al salario ($\frac{ \partial Y_t}{ \partial L_t}=w$).
 
 De entrada podemos atribuir esta diferencia a que existen salarios de eficiencia, es decir las empresas ven una mejora en sus beneficios si se paga más por el esfuerzo extra. Esta explicación nos hace sentido, ya que, en México gran parte de la población vive en condiciones precarias, lo cual propicia que se esfuercen más cuando su salario es mayor que la productividad marginal, en el contexto Shapiro-Stiglitz la utilidad de esforzarse y estar empleado es mucho mayor a la desutilidad del trabajo, y volviendo a la precariedad un aumento al salario significa una mejora en la calidad de vida significativa.
 
 Otras posibles explicaciones están relacionadas con el tema de la informalidad(tratado en clase), en México existen dos mercados de trabajo con distintas condiciones: uno formal y uno informal.
 La primera explicación usando estos dos mercados laborales es que en el salario observado llega a faltar información del mercado laboral informal, lo cual genera discrepancia entre los datos calculados y los observados.
-Otra explicación que podemos obtener es que si asumimos que el mercado laboral informal es walrasiano (que el salario de este coincide al contrafactual que calculamos) encontraremos que la explicación de los salarios de eficiencia reaparece. Las empresas formales pagan más porque buscan tener a los mejores trabajadores, ya que al ser formales también tienen mayores costos (pago de impuestos, indemnizaciones, etc... ), entonces podemos esperar que las empresas quieran pagar un mejor salario para compensar o no tener que pagar estos costos adicionales.
+Otra explicación que podemos obtener es que si asumimos que el mercado laboral informal es walrasiano (que el salario de este coincide al contrafactual que calculamos) encontraremos que la explicación de los salarios de eficiencia reaparece. Las empresas formales pagan más porque buscan tener a los mejores trabajadores, ya que al ser formales también tienen mayores costos (pago de impuestos, indemnizaciones, etc... ), entonces podemos esperar que las empresas quieran pagar un mejor salario para compensar o no tener que pagar estos costos adicionales, como los que provienen de indemnizar trabajadores despedidos, así que no solo se pueden pagar salarios de eficiencia para tener una mejor producción sino para reducir otros costos.
 Otra explicación ligada a la informalidad la encontramos en las rigideces de los contratos, por regulaciones legales, una vez fijados los salarios estos no pueden disminuir o bajar, y existen topes como el salario mínimo que se puede llegar a encontrar por encima del nivel de la productividad marginal del trabajo.
 Las explicaciones que dimos referentes a la informalidad no son excluyentes entre si, sería muy factible que se dieran ambas situaciones, incluso podríamos sumar que si el tamaño de el mercado formal es menor en comparación a la oferta de mano, el salario de eficiencia va a ser menor a que si todo el mercado laboral mexicano fuera formal.
+
 \clearpage
 
 ## Ejercicio 4
+**4. Desarrolle su intuición cuantitativa sobre la informalidad laboral en México siguiendo estos pasos**
+
 
 ### (a) 
 
@@ -903,8 +914,8 @@ g1
 
 ```
 
-+ Calcule el subempleo en cada trimestre, explicando cómo lo calculó.
-
+### (c)
+**Calcule el subempleo en cada trimestre, explicando cómo lo calculó.**
 El subempleo refiere a la condición de aquellas personas que tienen trabajo pero que no laboran todas las horas que quieren por cuestiones del mercado laboral. La fórmula está dada por: 
 $$
 \text{Tasa de Subocupación} = \frac{\text{Población Subocupada}}{\text{Población Ocupada}}*100
@@ -989,6 +1000,160 @@ disp_ <- data.frame(Trimestre = c(' I',' II',' III',' IV'),
 g3 <- ggplot(disp_, aes(Trimestre,Dispt)) + geom_bar(stat = "identity", fill = "lightblue", color = "black", width = 0.6) + theme_bw() + labs(title = "Tasa de Disponibilidad 2019", xlab = " Trimestre ", y="Porcentaje") +  theme(text=element_text(size=12,  family="serif"))
 g3
 ```
+
+### (e)
+
+**Es muy importante que desarrolle un entendimiento de datos tipo ``panel rotativo'' como los de la ENOE. Para ello, calcule, utilizando a los individuos que aparecen en más de uno de los trimestres, la fracción de trabajadores que pasan del empleo al desempleo y del desempleo al empleo en cada trimestre y la suma de estas dos variables.**
+
+Para este ejercicio generamos una id para cada persona en la ENOE, esto consiste en tomar ciertos identificadores como las etiquetas ("ent" ,"con", "v_sel", "n_hog", "h_mud", "n_ren","r_def", "c_res") y volverlas un código identificador, después hicimos un merge para poder encontrar a las personas que aparecen en los 4 trimestres y poder analizar la información.
+```{r include=FALSE}
+
+t119$trim <-1
+t219$trim <-2
+t319$trim <-3
+t419$trim <-4
+  
+names1 <- c("ent" ,"con", "v_sel", "n_hog", "h_mud", "n_ren","r_def", "c_res")
+t119[,names1] <- lapply(t119[,names1] , as.character)
+str(t119)
+  
+names2 <- c('ent' ,'con', "v_sel", "n_hog", "h_mud", "n_ren","r_def", "c_res")
+t219[,names2] <- lapply(t219[,names2] , as.character)
+str(t219)
+  
+names3 <- c('ent' ,'con', "v_sel", "n_hog", "h_mud", "n_ren","r_def", "c_res")
+t319[,names3] <- lapply(t319[,names3] , as.character)
+str(t319)
+  
+names4 <- c('ent' ,'con', "v_sel", "n_hog", "h_mud", "n_ren","r_def", "c_res")
+t419[,names4] <- lapply(t419[,names4] , as.character)
+str(t419)
+  
+  
+#Creamos el id y verificamos que cada trimestre no tenga duplicados
+t119$id <- base::paste(t119$ent, t119$con, t119$v_sel,
+                           t119$n_hog, t119$h_mud, t119$n_ren, sep = "-")
+anyDuplicated(t119$id)
+
+t219$id <- base::paste(t219$ent, t219$con, t219$v_sel,
+                           t219$n_hog, t219$h_mud, t219$n_ren, sep = "-")
+anyDuplicated(t219$id)
+
+t319$id <- base::paste(t319$ent, t319$con, t319$v_sel,
+                           t319$n_hog, t319$h_mud, t319$n_ren, sep = "-")
+anyDuplicated(t319$id)
+t419$id <- base::paste(t419$ent, t419$con, t419$v_sel,
+                           t419$n_hog, t419$h_mud, t419$n_ren, sep = "-")
+anyDuplicated(t419$id)
+  
+
+```
+
+```{r}
+trim_12 <-  merge(t119, t219, by = "id") %>% 
+   select(id,clase1.x, clase1.y, clase2.x, clase2.y, fac.x, fac.y)
+   
+tabla_12 <- as.data.frame(trim_12 %>%  
+  group_by(clase2.x, clase2.y) %>% 
+   tally(wt = fac.x) %>%
+   spread(clase2.y,n) %>% replace(is.na(.),0))
+
+tabla_12 <- tabla_12[,-1]
+rownames(tabla_12) <- c("No aplica","Población ocupada","Población desocupada","Disponibles", "No disponibles")
+colnames(tabla_12) <- c("No aplica","Población ocupada","Población desocupada","Disponibles", "No disponibles")
+
+knitr::kable(tabla_12, booktabs = TRUE, format = 'latex', longtable = F, caption = "Transición entre trimestre 1 y 2"
+)%>%
+  kable_styling(latex_options = "hold_position", "center")    
+
+```
+
+```{r}
+trim_23 <-  merge(t219, t319, by = "id") %>% 
+   select(id,clase1.x, clase1.y, clase2.x, clase2.y, fac.x, fac.y)
+   
+tabla_23 <- as.data.frame(trim_23 %>%  
+  group_by(clase2.x, clase2.y) %>% 
+   tally(wt = fac.x) %>%
+   spread(clase2.y,n) %>% replace(is.na(.),0))
+
+tabla_23 <- tabla_23[,-1]
+rownames(tabla_23) <- c("No aplica","Población ocupada","Población desocupada","Disponibles", "No disponibles")
+colnames(tabla_23) <- c("No aplica","Población ocupada","Población desocupada","Disponibles", "No disponibles")
+
+knitr::kable(tabla_23, booktabs = TRUE, format = 'latex', longtable = F, caption = "Transición entre trimestre 2 y 3"
+)%>%
+  kable_styling(latex_options = "hold_position", "center")    
+
+```
+
+```{r}
+trim_34 <-  merge(t319, t419, by = "id") %>% 
+   select(id,clase1.x, clase1.y, clase2.x, clase2.y, fac.x, fac.y)
+   
+tabla_34 <- as.data.frame(trim_34 %>%  
+  group_by(clase2.x, clase2.y) %>% 
+   tally(wt = fac.x) %>%
+   spread(clase2.y,n) %>% replace(is.na(.),0))
+
+tabla_34 <- tabla_34[,-1]
+rownames(tabla_34) <- c("No aplica","Población ocupada","Población desocupada","Disponibles", "No disponibles")
+colnames(tabla_34) <- c("No aplica","Población ocupada","Población desocupada","Disponibles", "No disponibles")
+
+knitr::kable(tabla_34, booktabs = TRUE, format = 'latex', longtable = F, caption = "Transición entre trimestre 3 y 4"
+)%>%
+  kable_styling(latex_options = "hold_position", "center")    
+
+```
+Con las matrices anteriores podemos obtener la información que nos interesa, las filas corresponden al periodo 
+$t$ y las columnas al periodo $t+1$:
+\begin{enumerate}
+\item[] \textit{-Perdieron su empleo:Personsas que estaban empleadas en el periodo $t$ y desempleadas en el $t+1$, se puede obtener de [3,2]}
+\item[]\textit{-Encontraron empleo:Personas que estaban desempleadas en el periodo $t$ y empleadas en el $t+1$, se encuentra en [2,3]}
+\end{enumerate}
+
+```{r}
+tt_12 <- c(tabla_12[3,2],tabla_12[2,3])
+tt_23 <- c(tabla_23[3,2],tabla_23[2,3])
+tt_34 <- c(tabla_34[3,2],tabla_34[2,3])
+
+trans_trim <- data.frame(tt_12,tt_23,tt_34)
+trans_trim["Suma",] <- colSums(trans_trim)
+names(trans_trim) <- c( "Trimestre 1-2", "Trimestre 2-3", "Trimestre 3-4")
+rownames(trans_trim) <- c("Perideron empleo","Encontraron empleo", "Suma")
+
+knitr::kable(trans_trim, booktabs = TRUE, format = 'latex', longtable = F, caption = "Transición trimestral"
+)%>%
+  kable_styling(latex_options = "hold_position", "center")    
+
+```
+Con la tabla anterior podemos hacer algo muy interesante,que consiste en calcular la tasa de creación de empleos y de destrucción de empleos, solo tenemos que usar la PEA obtenida en el inicios a) de este ejercicio y la transición entre trimestres:
+$$
+Tasa \; de \; creación \; de \; empleo = \frac{Encontraron \; empleo_{t,t+1}}{PEA_{t+1}}
+$$
+
+$$
+Tasa \; de \; destrucción \; de \; empleo = \frac{Perdieron \; empleo_{t,t+1}}{PEA_{t+1}}
+$$
+
+```{r}
+t_12 <- c(((tabla_12[2,3] / PEA2)*100), ((tabla_12[3,2] / PEA2)*100))
+t_23 <- c(((tabla_23[2,3] / PEA3)*100), ((tabla_23[3,2] / PEA3)*100))
+t_34 <- c(((tabla_34[2,3] / PEA4)*100), ((tabla_34[3,2] / PEA4)*100))
+
+rates <- data.frame(t_12,t_23,t_34)
+names(rates) <- c( "Trimestre 1-2", "Trimestre 2-3", "Trimestre 3-4")
+rownames(rates) <- c("Tasa de creación de empleo","Tasa de destrucción de empleo")
+
+knitr::kable(rates, booktabs = TRUE, format = 'latex', longtable = F, caption = "Tasas"
+)%>%
+  kable_styling(latex_options = "hold_position", "center")    
+
+```
+Esta última tabla nos muestra que durante todo el 2019 se destruyeron más puestos de trabajo de los que se crearon. Durante dicho periodo hubo una contracción del empleo que coincide con la inormación que obtuvimos en el ejercicio 3.
+Podemos ver que el producto, el capital y el empleo se contraen en 2019, pero la caída en el salario observado del ejercico dos refuerza las posibles explicaciones de salarios de eficiencia y de rigideces por contratos laborales, Sufre una caída el salario solo que no es tan dramatica ( naturaleza moderadamente procíclica) y se produce despues del 2019, lo cual puede apuntar a que los salarios fijados por contratos retrasaron dicha caída. También podemos pensar que no caen tan drásticamente por la existencia de salarios de eficiencia y regulaciones legales.
+Sumado a lo anterior podemos pensar en explicaciones del mercado laboral informal, que si suponemos se comportó como el salario contrafactual calculado en el ejercicio 3, entonces sí vío una caída más drámatica.
+
 ### (f)
 **Calcule qué fracción de los trabajadores trabaja en empresas chicas, medianas y grandes.**
 
@@ -1051,7 +1216,7 @@ geom_bar(stat = "identity", position = "dodge" ) +
 
 Resulta interesante conocer estas cifras, ya que el mercado laboral experimenta "presiones" que provienen de aquellos individuos en situación de búsqueda de trabajo. En este rubro no sólo entran las personas desocupadas, sino también las que ya tienen trabajo pero por alguna razón quieren encontrar otro.
 
-```{r fig.cap="Búsqueda de otro Empleo, 2019"}
+```{r fig.cap="Búsqueda de otro Empleo, 2019", fig.height = 2, fig.width = 4}
 busq1 <- as.numeric(filter(t119, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98, tpg_p8a == 1) %>% summarise(sum(fac)))
 
 busq2 <- as.numeric(filter(t219, r_def == 0, c_res == 1 | c_res == 3, eda >= 15 & eda <= 98,  tpg_p8a == 1) %>% summarise(sum(fac)))
@@ -1069,12 +1234,12 @@ knitr::kable(busq, booktabs = TRUE, format = 'latex', longtable = F, caption = "
 busq_ <- data.frame(Trimestre = c(' I',' II',' III',' IV'),
                      busqu = c(busq1, busq2, busq3, busq4))
 
-g3 <- ggplot(busq_, aes(Trimestre,busqu)) + geom_bar(stat = "identity", fill = "blue", color = "black", width = 0.6) + theme_bw() + labs(title = "Número de empleados en búsqueda de otro trabajo 2019", xlab = " Trimestre ", y="Porcentaje") +  theme(text=element_text(size=12,  family="serif")) +  scale_y_continuous(label = comma)
+g3 <- ggplot(busq_, aes(Trimestre,busqu)) + geom_bar(stat = "identity", fill = "blue", color = "black", width = 0.6) + theme_bw() + labs(title = "Número de empleados en búsqueda de otro trabajo 2019", xlab = " Trimestre ", y="Porcentaje") +  theme(text=element_text(size=8,  family="serif")) +  scale_y_continuous(label = comma)
 g3
 
 
 ```
-
+\clearpage
 
 ### (h)
 **Grafique la relación entre el ingreso promedio y la edad de los trabajadores.**

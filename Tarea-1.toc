@@ -16,25 +16,27 @@
 \contentsline {subsubsection}{(c)}{10}{section*.16}%
 \contentsline {subsubsection}{(d)}{11}{section*.17}%
 \contentsline {subsubsection}{(e)}{11}{section*.18}%
-\contentsline {subsubsection}{(f)}{11}{section*.19}%
-\contentsline {subsection}{Ejercicio 3}{12}{section*.20}%
-\contentsline {subsubsection}{(a)}{12}{section*.21}%
-\contentsline {subsubsection}{(b)}{12}{section*.22}%
-\contentsline {subsubsection}{(c)}{12}{section*.23}%
-\contentsline {subsubsection}{(d)}{13}{section*.24}%
-\contentsline {subsubsection}{(e)}{13}{section*.25}%
-\contentsline {subsubsection}{(f)}{14}{section*.26}%
-\contentsline {subsection}{Ejercicio 4}{16}{section*.27}%
-\contentsline {subsubsection}{(a)}{16}{section*.28}%
-\contentsline {subsubsection}{(b)}{18}{section*.29}%
-\contentsline {subsubsection}{(c)}{18}{section*.30}%
-\contentsline {subsubsection}{(d)}{18}{section*.31}%
-\contentsline {subsubsection}{(e)}{20}{section*.32}%
-\contentsline {subsubsection}{(f)}{21}{section*.33}%
-\contentsline {subsection}{Ejercicio 5}{22}{section*.34}%
-\contentsline {subsubsection}{(a)}{22}{section*.35}%
-\contentsline {subsubsection}{(b)}{22}{section*.36}%
-\contentsline {subsubsection}{(d)}{23}{section*.37}%
-\contentsline {subsubsection}{(f)}{24}{section*.38}%
-\contentsline {subsubsection}{(g)}{25}{section*.39}%
-\contentsline {subsubsection}{(h)}{26}{section*.40}%
+\contentsline {subsubsection}{(f)}{12}{section*.19}%
+\contentsline {subsection}{Ejercicio 3}{13}{section*.20}%
+\contentsline {subsubsection}{(a)}{13}{section*.21}%
+\contentsline {subsubsection}{(b)}{13}{section*.22}%
+\contentsline {subsubsection}{(c)}{13}{section*.23}%
+\contentsline {subsubsection}{(d)}{14}{section*.24}%
+\contentsline {subsubsection}{(e)}{15}{section*.25}%
+\contentsline {subsubsection}{(f)}{15}{section*.26}%
+\contentsline {subsection}{Ejercicio 4}{17}{section*.27}%
+\contentsline {subsubsection}{(a)}{17}{section*.28}%
+\contentsline {subsubsection}{(b)}{19}{section*.29}%
+\contentsline {subsubsection}{(c)}{19}{section*.30}%
+\contentsline {subsubsection}{(d)}{19}{section*.31}%
+\contentsline {subsubsection}{(e)}{21}{section*.32}%
+\contentsline {subsubsection}{(f)}{22}{section*.33}%
+\contentsline {subsection}{Ejercicio 5}{23}{section*.34}%
+\contentsline {subsubsection}{(a)}{23}{section*.35}%
+\contentsline {subsubsection}{(b)}{23}{section*.36}%
+\contentsline {subsubsection}{(c)}{24}{section*.37}%
+\contentsline {subsubsection}{(d)}{24}{section*.38}%
+\contentsline {subsubsection}{(e)}{25}{section*.39}%
+\contentsline {subsubsection}{(f)}{27}{section*.40}%
+\contentsline {subsubsection}{(g)}{28}{section*.41}%
+\contentsline {subsubsection}{(h)}{29}{section*.42}%
