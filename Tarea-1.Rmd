@@ -52,7 +52,7 @@ Consider a firm with profits given by $\pi=[\frac{(eL)^{\alpha}}{\alpha}]-wL$, $
 \end{enumerate}
 
 \centerline{\textbf{ a.1. }What value of L does the firm choose, given w$?$ what is the resulting level of profits$?$.}
-\textbf{Solucion:}
+
 Si $e=1$ y w está dado, el problema de la firma es elegir L para maximizar sus beneficios:
 $$ \max\limits_{L}\pi=  \frac{L^{\alpha}}{\alpha}-wL  $$
 CPO:
@@ -68,7 +68,7 @@ $$  \Rightarrow \pi^*= \left (\frac{1- \alpha}{\alpha} \right )w^{\frac{1}{\alph
 \begin{enumerate}
 \item[] \textbf{ a.2. }Suppose that the firm and the union choose w to maximize ${U}^{\gamma}{\pi}^{1- \gamma}$ , where $0 <{\gamma} <  {\alpha }$ indexes the union’s power in the bargaining. What level of w do they choose$?$
 \end{enumerate}
-\textbf{Solucion:}
+
 $$\max\limits_{w}{U}^{\gamma}{\pi^*}^{1- \gamma} $$
 Sustiuimos el nivel de $L^*$ en la función objetivo del sindicato, $(w-x)L^*$:
 $$\max\limits_{w} [(w-x)L^*]^{\gamma} \left[ \left (\frac{1- \alpha}{\alpha} \right)w^{\frac{1}{\alpha-1}} \right]^{1- \gamma}$$
@@ -101,7 +101,7 @@ $$
 \item[] \textit{b. Suppose that e is given by equation (11.12) in the text: $e=[\frac{(w-x}{x}]^{\beta}$ for  $w>x$ where $0<\beta <1$.}
 \end{enumerate}
 \centerline{\textbf{ b.1.} What value of L does the firm choose, given w$?$, What is the resulting level of profits$?$}
-\textbf{Solucion:}
+
 Ahora vamos a encontrar $L^*$ que maximiza $\pi$ en presencia de una ecuación de esfuerzo.
 $$
 \max\limits_{L}\pi= \frac{ \left ( \left ( \frac{w-x}{x} \right )^ \beta L \right )^{\alpha}}{\alpha}-wL
@@ -130,7 +130,7 @@ $$
  \begin{enumerate}
 \item[] \textbf{b.2. }Suppose that the firm and the union choose w to maximize ${U}^{\gamma}{\pi}^{1- \gamma}$, $0<{\gamma} < {\alpha}$ What level of w do they choose? (Hint: For the case of $\beta =0$, your answer should simplify to your answer in part [a][ii].)
 \end{enumerate}
-\textbf{Solucion:}
+
 Vamos a sustituir el nivel de $L^*$ obtenido en el inciso anterior en la función objetivo del sindicato, $(w-x)L^*$: 
 $$\max\limits_{w}{U}^{\gamma}{\pi^*}^{1- \gamma} $$
 $$
@@ -171,7 +171,7 @@ Lo cual es igual al resultado obtenido en la segunda parte del inciso a).
  \begin{enumerate}
 \item[] \textbf{b.3. }Is the proportional impact of workers’ bargaining power on wages greater with efficiency wages than without, as Summers implies? Is it greater when efficiency-wage effects, $\beta$, are greater?
 \end{enumerate}
-\textbf{Solucion: }
+
 Para comprobar en que caso tiene más poder de negociación el sindicato vamos a utilizar los resultados del salario optimo $w^*$ que se encuentra la parte ii de los incisos a) y b), en b hay salarios de eficiencia.
 Donde el subíndice s representa la ausencia de ecuación de esfuerzo y $\beta$ para cuando si hay ecuación de esfuerzo en los salarios.
 $$
@@ -207,7 +207,7 @@ $$\frac{N_p}{N} < \frac{w_s -b }{w_p -b} $$
 \begin{enumerate}
 \item[] \textit{What is equilibrium unemployment as a function of $w_p$, $w_s$, $N_p$, b, and the size of the labor force,  $\overline{N}?$}
 \end{enumerate}
-\textbf{Solucion:}
+
 En equilibrio, el número de personas en el sector primario será igual al número de personas empleadas, lo que es igual al número de trabajos en el sector primario, $N_p$, más el número de personas desempleadas en la economía U.
 $$
 \quad\text{Personas en sector primario} = N_p + U
@@ -241,7 +241,7 @@ $$
 \begin{enumerate}
 \item[] \textit{How does an increase in $N_p$ affect unemployment? Explain intuitively why, even though unemployment takes the form of workers waiting for primary sector jobs, increasing the number of these jobs can increase unemployment.}
 \end{enumerate}
-\textbf{Solucion:}
+
 Para determinar la forma en que un incremento del número de empleos primarios afecta al desempleo hacemos estática comparativa sobre el nivel de desempleo de equilibrio U con respecto a $N_p$
 $$
 \frac{\partial U}{\partial N_p}= \frac{w_p-w_s}{w_s-b}>0
@@ -253,7 +253,7 @@ La derivada es positiva porque estamos asumiendo que $b < w_s < w_p$. Además, e
 \begin{enumerate}
 \item[] \textit{What are the effects of an increase in the level of unemployment benefits$?$}
 \end{enumerate}
-\textbf{Solucion:}
+
 Podemos encontrar el efecto haciendo estática comparativa sobre el nivel de desempleo de equilibrio U con respecto a b.
 $$
 \frac{\partial U}{\partial b}= \frac{N_p(w_p-w_s)}{(w_s-b)^2}>0
@@ -282,7 +282,7 @@ pacman::p_load(tidyverse,
 
 **Obtenga del INEGI una serie anual de los salarios (en términos reales) en México, calcule la serie de su tasa de cambio anual, calcule la volatilidad de dicha serie. (Serie 1).**
 
-\textbf{Solucion: }
+
 La obuvimos de [INEGI](https://www.inegi.org.mx/app/tabulados/?nc=100100083&idrt=300&opc=t)
 
 Cambio porcentual y Volatilidad de Serie 1
@@ -354,7 +354,7 @@ La volatilidad de esta tasa de crecimiento, medido por la desviación estándar 
 ### (b)
 **Obtenga del INEGI una serie anual del empleo total en México, calcule la serie de su tasa de cambio anual, calcule la volatilidad de dicha serie. (Serie 2)**
 
-\textbf{Solucion: }
+
 La obtuvimos de INEGi, de Indicadores económicos de coyuntura > Población ocupada, subocupada y desocupada (resultados trimestrales de la ENOE, 15 años y más) > Series desestacionalizadas y tendencia-ciclo.
 
 Cambio Porcentual y Volatilidad de Serie 2
@@ -398,7 +398,7 @@ La volatilidad de esta tasa de crecimiento, medido por la desviación estándar 
 
 **Obtenga del INEGI una serie anual del producto interno bruto en términos reales, calcule su tasa de cambio anual, calcule su volatilidad. (Serie 3)}**
 
-\textbf{Solucion: }
+
 Lo obtuvimos de INEGI, de Indicadores económicos de coyuntura > Producto interno bruto trimestral, base 2013 > Series desestacionalizadas y tendencia-ciclo > A precios de 2013 > Total > Serie desestacionalizada > Valores absolutos. Para que coincida con los demás datos anualizamos el PIB, que estaba en trimestres, esto con un promedio simple, siguiendo lo que menciona Jonathan Heath.
 
 Cambio Porcentual y Volatilidad de Serie 3
@@ -1150,14 +1150,15 @@ knitr::kable(rates, booktabs = TRUE, format = 'latex', longtable = F, caption = 
   kable_styling(latex_options = "hold_position", "center")    
 
 ```
-Esta última tabla nos muestra que durante todo el 2019 se destruyeron más puestos de trabajo de los que se crearon. Durante dicho periodo hubo una contracción del empleo que coincide con la inormación que obtuvimos en el ejercicio 3.
-Podemos ver que el producto, el capital y el empleo se contraen en 2019, pero la caída en el salario observado del ejercico dos refuerza las posibles explicaciones de salarios de eficiencia y de rigideces por contratos laborales, Sufre una caída el salario solo que no es tan dramatica ( naturaleza moderadamente procíclica) y se produce despues del 2019, lo cual puede apuntar a que los salarios fijados por contratos retrasaron dicha caída. También podemos pensar que no caen tan drásticamente por la existencia de salarios de eficiencia y regulaciones legales.
-Sumado a lo anterior podemos pensar en explicaciones del mercado laboral informal, que si suponemos se comportó como el salario contrafactual calculado en el ejercicio 3, entonces sí vío una caída más drámatica.
+Esta última tabla nos muestra que durante todo el 2019 se destruyeron más puestos de trabajo de los que se crearon. Durante dicho periodo hubo una contracción del empleo que coincide con la información que obtuvimos en el ejercicio 3.
+Podemos ver que el producto, el capital y el empleo se contraen en 2019, pero la caída en el salario observado del ejercicio dos refuerza las posibles explicaciones de salarios de eficiencia y de rigideces por contratos laborales, Sufre una caída el salario solo que no es tan dramática ( naturaleza moderadamente pro cíclica) y se produce despues del 2019, lo cual puede apuntar a que los salarios fijados por contratos retrasaron dicha caída. También podemos pensar que no caen tan drasticamente por la existencia de salarios de eficiencia y regulaciones legales.
+Sumado a lo anterior podemos pensar en explicaciones del mercado laboral informal, que si suponemos se comportó como el salario contrafactual calculado en el ejercicio 3, entonces sí vio una caída más dramática.
+Otra explicación de porque el salario pudo no haber caído tanto en los datos observados podríamos llegar a encontrarla en los fenómenos de insiders-outsiders, donde los que se quedaron negociaron caídas de los salarios menos dramáticas.
 
 ### (f)
 **Calcule qué fracción de los trabajadores trabaja en empresas chicas, medianas y grandes.**
 
-Defininamos el total de personas que trabajan en este tipo de empresas, sin considerar micronegocios o personas que laboran en el sector público, como la suma: chicas + medianas + grandes. Así, las tasas (fracciones) estarán dadas por:
+Definamos el total de personas que trabajan en este tipo de empresas, sin considerar micronegocios o personas que laboran en el sector público, como la suma: chicas + medianas + grandes. Así, las tasas (fracciones) estarán dadas por:
 
 $$
 \text{Tasa}_{it} = \frac{\text{Tamaño}_{it}}{\text{Total}_t}*100 ,
